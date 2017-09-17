@@ -17,3 +17,10 @@
 /yarn-error.log
 
 .byebug_history
+
+# Other files to ignore as per A/a guidelines
+
+bundle.js
+bundle.js.map
+.DS_Store
+npm-debug.log
