@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'jquery-rails'
 
 #Gems for file hosting
 
@@ -40,7 +41,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  gem 'jquery-rails'
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'annotate'
