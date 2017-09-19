@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
     update(field) {
       return (e) => {
               // console.log(field);
-              console.log(e.target.value);
+              // console.log(e.target.value);
         this.setState({[field]: e.target.value});
       }
     }
@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
       const text = this.props.formType === "login" ? "Log In" : "Sign Up";
       const oppositeLink = this.props.formType === "login" ? "signup" : "login";
 
-      console.log(this.props);
+      // console.log(this.props);
 
       return (
         <div>

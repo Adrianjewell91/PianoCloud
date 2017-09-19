@@ -6,8 +6,13 @@ class UserPage extends React.Component {
   }
 
   render () {
-    return (<div>This is a test user page.</div>)
+    return (
+      <div>
+        <h1>{this.props.currentUser.username}</h1>
+
+      </div>
+    )
   }
 }
 
-export default UserPage
+export default UserPage;

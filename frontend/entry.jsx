@@ -7,7 +7,6 @@ import Root from "./components/root";
 
 import * as Actions from './actions/session_actions';
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
   let store;
@@ -20,12 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  window.Actions = Actions;
-
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.Actions = Actions;
+  //
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);
-  
 });

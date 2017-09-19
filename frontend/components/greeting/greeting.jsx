@@ -8,27 +8,9 @@ class Greeting extends React.Component {
 
   render () {
 
-    let display;
-    if (this.props.currentUser) {
-      display = (
-        <div>
-          <h1>You are logged in, {this.props.currentUser}!</h1>
-          <button onClick={this.props.logout.bind(this)}>Log Out</button>
-        </div>
-      )
-    } else {
-      display = (
-        <div>
-          <h1>Discover Music On PianoCloud</h1>
-          <Link to="/login">Log In</Link><br/>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      )
-    }
-
     return (
       <div>
-        {display}
+        <h1>Discover Music with PianoCloud</h1>
       </div>
     );
   }
