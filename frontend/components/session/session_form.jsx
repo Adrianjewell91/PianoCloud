@@ -22,7 +22,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
       this.props.processForm(this.state)
-        .then(() => this.props.history.push("/"));
+        .then(() => this.props.history.push(`/users/${this.state.username}`));
     }
 
     render() {
