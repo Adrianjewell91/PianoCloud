@@ -2,26 +2,40 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import {Link} from 'react-router-dom';
 
-import SessionFormContainer from '../session/session_form_container';
+import LoginFormContainer from '../session/login_form_container';
+import SignupFormContainer from '../session/signup_form_container';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showModal: false
+      showLoginModal: false,
+      showSignInModal: false
     };
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleOpenLoginModal = this.handleOpenLoginModal.bind(this);
+    this.handleOpenSigninModal = this.handleOpenSigninModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleOpenModal() {
-    this.setState({showModal: true});
+  handleOpenLoginModal() {
+    this.setState({showLoginModal: true});
+  }
+
+  handleOpenSigninModal() {
+    this.setState({showSigninModal: true});
   }
 
   handleCloseModal() {
-    this.setState({showModal: false});
+    this.setState({showLoginModal: false, showSigninModal: false});
   }
+
+  handleLogOut(e) {
+    e.preventDefault();
+    this.props.logout();
+    this.handleCloseModal();
+  }
+
 
   render () {
     let display;
@@ -38,7 +52,7 @@ class NavBar extends React.Component {
               <Link to={`/users/${username}`}>{`${username}`}</Link>
           </button>
 
-          <button onClick={this.props.logout.bind(this)}>Log Out</button>
+          <button onClick={this.handleLogOut.bind(this)}>Log Out</button>
         </div>
       );
     } else {
@@ -46,22 +60,22 @@ class NavBar extends React.Component {
       display = (
         <div>
           {home_button}
-          <button onClick={this.handleOpenModal}>Log In</button>
+          <button onClick={this.handleOpenLoginModal}>Log In</button>
           <ReactModal
-            isOpen={this.state.showModal}
+            isOpen={this.state.showLoginModal}
             contentLabel="signup-or-login"
           >
             <button onClick={this.handleCloseModal}>Close</button>
-            <SessionFormContainer/>
+            <LoginFormContainer/>
           </ReactModal>
 
-          <button onClick={this.handleOpenModal}>Sign Up</button>
+          <button onClick={this.handleOpenSigninModal}>Sign Up</button>
           <ReactModal
-            isOpen={this.state.showModal}
+            isOpen={this.state.showSigninModal}
             contentLabel="signup-or-login"
           >
             <button onClick={this.handleCloseModal}>Close</button>
-            <SessionFormContainer/>
+            <SignupFormContainer/>
           </ReactModal>
 
         </div>

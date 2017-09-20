@@ -5,14 +5,14 @@ import { signup, login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
-
+  console.log(this);
   const errors = state.errors.session;
-  const formType = ownProps.location.pathname === "/login" ? "login" : "signup";
+  const formType = "login"
   return {errors, formType};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const processForm = ownProps.location.pathname === "/login" ? login : signup;
+  const processForm = login;
 
   return {
     processForm: (formUser) => dispatch(processForm(formUser))
