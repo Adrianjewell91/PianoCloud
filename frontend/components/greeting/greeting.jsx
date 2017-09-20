@@ -6,13 +6,14 @@ class Greeting extends React.Component {
     super(props);
   }
 
-  //Set up ternary logic to redirect to user profile if logged in. 
+  //Set up ternary logic to redirect to user profile if logged in.
 
   render () {
 
     return (
       <div>
         <h1>Discover Music with PianoCloud</h1>
+        
       </div>
     );
   }

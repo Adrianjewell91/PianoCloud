@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
+    console.log(this.props);
   }
 
     update(field) {
@@ -28,7 +29,8 @@ class SessionForm extends React.Component {
     render() {
 
       const text = this.props.formType === "login" ? "Log In" : "Sign Up";
-      const oppositeLink = this.props.formType === "login" ? "signup" : "login";
+
+      // const oppositeLink = this.props.formType === "login" ? "signup" : "login";
 
       // console.log(this.props);
 
@@ -56,11 +58,11 @@ class SessionForm extends React.Component {
 
             <ul>
               {
-                this.props.errors.map((error)=> <li>{error}</li>)
+                this.props.errors.map((error)=> <li key={Math.random(1)}>
+                                                    {error}</li>)
               }
             </ul>
 
-            <Link to={`/${oppositeLink}`}>Go to {oppositeLink}</Link>
 
         </div>
       );
