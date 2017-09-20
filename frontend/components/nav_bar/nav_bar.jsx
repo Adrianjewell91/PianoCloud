@@ -40,6 +40,9 @@ class NavBar extends React.Component {
   render () {
     let display;
     let home_button = (<button><Link to="/">Home</Link></button>);
+    let search_input = (<input type="text"
+                               placeholder="Search Artists or Music"></input>)
+
 
     if (this.props.currentUser) {
 
@@ -48,6 +51,7 @@ class NavBar extends React.Component {
       display = (
         <div>
           {home_button}
+          {search_input}
           <button>
               <Link to={`/users/${username}`}>{`${username}`}</Link>
           </button>
@@ -59,8 +63,8 @@ class NavBar extends React.Component {
 
       display = (
         <div>
-          {home_button}
-          <button onClick={this.handleOpenLoginModal}>Log In</button>
+
+          <button onClick={this.handleOpenLoginModal}>Sign In</button>
           <ReactModal
             isOpen={this.state.showLoginModal}
             contentLabel="signup-or-login"
@@ -69,7 +73,7 @@ class NavBar extends React.Component {
             <LoginFormContainer/>
           </ReactModal>
 
-          <button onClick={this.handleOpenSigninModal}>Sign Up</button>
+          <button onClick={this.handleOpenSigninModal}>Create Account</button>
           <ReactModal
             isOpen={this.state.showSigninModal}
             contentLabel="signup-or-login"
@@ -83,7 +87,7 @@ class NavBar extends React.Component {
     }
 
     return (
-      <div>
+      <div className="header">
         {display}
       </div>
     );

@@ -10,10 +10,13 @@ class Greeting extends React.Component {
 
   render () {
 
+    let search_input = (<input type="text"
+                               placeholder="Search Artists or Music"></input>)
+
     return (
       <div>
         <h1>Discover Music with PianoCloud</h1>
-        
+        <p>{search_input}</p>
       </div>
     );
   }

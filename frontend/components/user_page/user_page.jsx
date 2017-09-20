@@ -9,17 +9,61 @@ class UserPage extends React.Component {
 
   }
 
-  //Want to display the user searched for, not the current user.
+  //We Want to display the user searched for, not the current user.
   //But the button in nav bar will find the current user.
 
   render () {
     console.log(this.props);
     return (
-      <div>
+      <div className="user-page">
         <h1>Soon to include User Profile Information</h1>
         <p>On mount, query the database for the user in props.match.params
         .username and display it here. THere will be quite a lot to display.</p>
-      </div>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+        <p>On mount, query the database for the user in props.match.params
+        .username and display it here. THere will be quite a lot to display.</p>
+    </div>
     )
   }
 }

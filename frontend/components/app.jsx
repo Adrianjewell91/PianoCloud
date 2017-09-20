@@ -12,10 +12,12 @@ const App = () => (
   <div>
     <NavBarContainer/>
 
-    <Route exact path="/" component={GreetingContainer} />
-    <Route exact path="/users/:username" component={UserPageContainer}/>
+    <div className="main-page">
+      <Route exact path="/" component={GreetingContainer} />
+      <Route exact path="/users/:username" component={UserPageContainer}/>
+    </div>
 
-    <footer>Footer Goes here</footer>
+    <div className="footer">Footer Goes here</div>
 
   </div>
 );
