@@ -32,39 +32,60 @@ class NavBar extends React.Component {
 
   handleLogOut(e) {
     e.preventDefault();
-    this.props.logout();
+    console.log(this.props);
+    this.props.logout().then(() => this.props.history.push(`/`));
     this.handleCloseModal();
   }
 
 
   render () {
+    //Buttons
     let display;
-    let home_button = (<button><Link to="/">Home</Link></button>);
-    let search_input = (<input type="text"
+    let logo_image =
+    (<img height="46px" width="55px" className="nav-logo"
+    src="https://cdn.pixabay.com/photo/2017/06/17/14/32/piano-2412400_640.jpg"
+    />)
+
+
+    let home_button = (<Link to="/">Home</Link>);
+    let upload_button = "Upload";
+    let search_input = (<input className="nav-search" type="text"
                                placeholder="Search Artists or Music"></input>)
 
 
+    //Class Name
+    let headerItemsClass = "header-items";
+    let navButtonClass = 'nav-button';
+
+    //Establish which one to render.
     if (this.props.currentUser) {
 
       let username = this.props.currentUser.username;
 
       display = (
-        <div>
-          {home_button}
+        <div className={headerItemsClass}>
+
+          {logo_image}
+          <button className={navButtonClass}>{home_button}</button>
           {search_input}
-          <button>
+          <button className={navButtonClass}>{upload_button}</button>
+          <button className={navButtonClass}>
               <Link to={`/users/${username}`}>{`${username}`}</Link>
           </button>
 
-          <button onClick={this.handleLogOut.bind(this)}>Log Out</button>
+          <button className={navButtonClass}
+            onClick={this.handleLogOut.bind(this)}>Log Out</button>
         </div>
       );
     } else {
 
       display = (
-        <div>
+        <div className={headerItemsClass}>
 
-          <button onClick={this.handleOpenLoginModal}>Sign In</button>
+          {logo_image}
+
+          <button className={navButtonClass}
+            onClick={this.handleOpenLoginModal}>Sign In</button>
           <ReactModal
             isOpen={this.state.showLoginModal}
             contentLabel="signup-or-login"
@@ -73,7 +94,8 @@ class NavBar extends React.Component {
             <LoginFormContainer/>
           </ReactModal>
 
-          <button onClick={this.handleOpenSigninModal}>Create Account</button>
+          <button className={navButtonClass}
+            onClick={this.handleOpenSigninModal}>Create Account</button>
           <ReactModal
             isOpen={this.state.showSigninModal}
             contentLabel="signup-or-login"
@@ -86,6 +108,7 @@ class NavBar extends React.Component {
       );
     }
 
+    //Actually Render It.
     return (
       <div className="header">
         {display}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -13,10 +13,22 @@ class Greeting extends React.Component {
     let search_input = (<input type="text"
                                placeholder="Search Artists or Music"></input>)
 
+    let display;
+    console.log(this.props);
+    if (this.props.currentUser) {
+      display = (
+        <Redirect to={`/users/${this.props.currentUser.username}`}></Redirect>
+      )
+    } else {
+      display = (        <div>
+                         <h1>Discover Music with PianoCloud</h1>
+                         <p>{search_input}</p>
+                         </div>);
+    }
+
     return (
       <div>
-        <h1>Discover Music with PianoCloud</h1>
-        <p>{search_input}</p>
+        {display}
       </div>
     );
   }

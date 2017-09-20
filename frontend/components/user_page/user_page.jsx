@@ -13,7 +13,7 @@ class UserPage extends React.Component {
   //But the button in nav bar will find the current user.
 
   render () {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="user-page">
         <h1>Soon to include User Profile Information</h1>
