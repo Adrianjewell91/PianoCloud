@@ -9,7 +9,7 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-    console.log(this.props);
+
   }
 
     update(field) {
@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
             </label>
 
             <label>Password:
-              <input type="text"
+              <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}></input>
             </label>

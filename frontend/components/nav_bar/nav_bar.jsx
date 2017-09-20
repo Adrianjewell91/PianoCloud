@@ -43,14 +43,14 @@ class NavBar extends React.Component {
     let display;
     let logo_image =
     (<img height="46px" width="55px" className="nav-logo"
-    src="https://cdn.pixabay.com/photo/2017/06/17/14/32/piano-2412400_640.jpg"
+    src="https://cdn.pixabay.com/photo/2017/06/08/10/25/art-2383231_1280.jpg"
     />)
 
 
     let home_button = (<Link to="/">Home</Link>);
     let upload_button = "Upload";
     let search_input = (<input className="nav-search" type="text"
-                               placeholder="Search Artists or Music"></input>)
+                               placeholder="  Search"></input>)
 
 
     //Class Name
@@ -65,7 +65,7 @@ class NavBar extends React.Component {
       display = (
         <div className={headerItemsClass}>
 
-          {logo_image}
+          <Link to="/">{logo_image}</Link>
           <button className={navButtonClass}>{home_button}</button>
           {search_input}
           <button className={navButtonClass}>{upload_button}</button>
@@ -74,7 +74,7 @@ class NavBar extends React.Component {
           </button>
 
           <button className={navButtonClass}
-            onClick={this.handleLogOut.bind(this)}>Log Out</button>
+            onClick={this.handleLogOut.bind(this)}>Sign Out</button>
         </div>
       );
     } else {
@@ -82,7 +82,7 @@ class NavBar extends React.Component {
       display = (
         <div className={headerItemsClass}>
 
-          {logo_image}
+          <Link to="/">{logo_image}</Link>
 
           <button className={navButtonClass}
             onClick={this.handleOpenLoginModal}>Sign In</button>
