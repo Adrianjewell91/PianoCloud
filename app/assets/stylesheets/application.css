@@ -80,9 +80,9 @@ a {
 }
 
 .fa-search {
-  position: absolute;
-  top: 14px;
-  left: 700px;
+  position: relative;
+  right: 25px;
+
   color:#666666;
 }
 
