@@ -11,7 +11,7 @@ class Greeting extends React.Component {
   render () {
 
     let search_input = (<input type="text"
-                               placeholder="Search Artists or Music"></input>)
+                               placeholder="(For Display Only)"></input>)
 
     let display;
     console.log(this.props);

@@ -31,7 +31,14 @@ body {
   background-color: #333333;
 }
 
-.header-items {
+.nav-loggedin {
+  margin-left: 41px;
+  margin-right: 41px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-loggedout {
   margin-left: 41px;
   margin-right: 41px;
   display: flex;
@@ -64,11 +71,19 @@ a {
   border-radius: 5px;
   border-style: none;
   font-size: 13px;
+  text-indent: 6px;
 }
 
 .nav-search:focus {
   background-color: #FFFFFF;
   transition: 0.3s;
+}
+
+.fa-search {
+  position: absolute;
+  top: 14px;
+  left: 700px;
+  color:#666666;
 }
 
 
