@@ -16,6 +16,8 @@ class NavBar extends React.Component {
     this.handleOpenLoginModal = this.handleOpenLoginModal.bind(this);
     this.handleOpenSigninModal = this.handleOpenSigninModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   handleOpenLoginModal() {
@@ -28,6 +30,12 @@ class NavBar extends React.Component {
 
   handleCloseModal() {
     this.setState({showLoginModal: false, showSigninModal: false});
+  }
+
+  handleDemoLogin (e) {
+    e.preventDefault();
+    this.props.login({username: 'adriantest', password:'123456'})
+      .then(() => this.props.history.push(`/users/adriantest`));
   }
 
   handleLogOut(e) {
@@ -50,7 +58,7 @@ class NavBar extends React.Component {
     let home_button = (<Link to="/">Home</Link>);
     let upload_button = "Upload";
     let search_input = (
-      <form>
+      <form className="nav-search-form">
         <input className="nav-search" type="text"
                                placeholder="(For Display Only)"></input>
         <i className="fa fa-search" aria-hidden="true"></i>
@@ -91,24 +99,30 @@ class NavBar extends React.Component {
 
           <div>
             <button className={navButtonClass}
+                    onClick={this.handleDemoLogin}>Demo Sign In</button>
+
+            <button className={navButtonClass}
               onClick={this.handleOpenLoginModal}>Sign In</button>
-            <ReactModal
-              isOpen={this.state.showLoginModal}
-              contentLabel="signup-or-login"
-            >
-              <button onClick={this.handleCloseModal}>Close</button>
-              <LoginFormContainer/>
-            </ReactModal>
+
+              <ReactModal
+                isOpen={this.state.showLoginModal}
+                contentLabel="signup-or-login"
+              >
+                <button onClick={this.handleCloseModal}>Close</button>
+                <LoginFormContainer/>
+              </ReactModal>
 
             <button className={navButtonClass}
               onClick={this.handleOpenSigninModal}>Create Account</button>
-            <ReactModal
-              isOpen={this.state.showSigninModal}
-              contentLabel="signup-or-login"
-            >
-              <button onClick={this.handleCloseModal}>Close</button>
-              <SignupFormContainer/>
-            </ReactModal>
+
+              <ReactModal
+                isOpen={this.state.showSigninModal}
+                contentLabel="signup-or-login"
+              >
+                <button onClick={this.handleCloseModal}>Close</button>
+                <SignupFormContainer/>
+              </ReactModal>
+
           </div>
 
         </div>

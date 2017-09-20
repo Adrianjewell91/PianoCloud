@@ -9,13 +9,11 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-
+    console.log(this.props.errors);
   }
 
     update(field) {
       return (e) => {
-              // console.log(field);
-              // console.log(e.target.value);
         this.setState({[field]: e.target.value});
       }
     }
@@ -29,37 +27,37 @@ class SessionForm extends React.Component {
     render() {
 
       const text = this.props.formType === "login" ? "Log In" : "Sign Up";
-
-      // const oppositeLink = this.props.formType === "login" ? "signup" : "login";
-
-      // console.log(this.props);
+      console.log(this.props.errors);
 
       return (
-        <div>
+        <div className="auth-form">
           <h1>{text}</h1>
 
           <form onSubmit={this.handleSubmit.bind(this)}>
 
-            <label>Username:
+            <label>
               <input type="text"
                 value={this.state.username}
-                onChange={this.update('username')}></input>
+                onChange={this.update('username')}
+                placeholder="Username"></input>
             </label>
-
-            <label>Password:
+            <br/>
+            <label>
               <input type="password"
                 value={this.state.password}
-                onChange={this.update('password')}></input>
+                onChange={this.update('password')}
+                placeholder="Password"></input>
             </label>
+            <br/>
 
-            <input type="submit" value={text}></input>
+            <input className="auth-button" type="submit" value={text}></input>
 
           </form>
 
             <ul>
               {
-                this.props.errors.map((error)=> <li key={Math.random(1)}>
-                                                    {error}</li>)
+                this.props.errors.map((error) => <li key={Math.random(1)}>
+                                                    {error}!</li>)
               }
             </ul>
 
