@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def index
-    #eventually implement search function with params query.
+    #eventually implement search-for-users functionality with params query.
     @users = User.all
     render :index
   end

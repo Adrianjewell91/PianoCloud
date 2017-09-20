@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {login, signup, logout} from "../../actions/session_actions";
+import {login, signup, logout,
+        clearSessionErrors } from "../../actions/session_actions";
 
 import NavBar from './nav_bar';
 
@@ -11,7 +12,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => ({
   login: (formUser) => dispatch(login(formUser)),
-  signup: (formUser) => dispatch(signup(formUser)),
+  clearSessionErrors: () => dispatch(clearSessionErrors()),
+  // signup: (formUser) => dispatch(signup(formUser)),
   logout: () => dispatch(logout())
 });
 

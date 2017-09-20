@@ -13,6 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+/*Reset*/
+html body div form ul li a button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {line-height: 1.5}
+
+ol ul {
+  list-style: none;
+}
+
+/*img { width: 100% }*/
  /*
 Organization of CSS Styling:
 1. From Top to Bottom, moving in the order of NavBar, to MainPage, to footer
@@ -20,7 +38,7 @@ Organization of CSS Styling:
  */
 
  /*--Nav Bar-*/
- 
+
 body {
   background-color: #F2F2F2;
 }
@@ -89,6 +107,7 @@ button:focus {outline:0;}
   transition: 0.3s;
 }
 
+
 .fa-search {
   position:relative;
   right: 25px;
@@ -99,13 +118,37 @@ button:focus {outline:0;}
   .fa-search {
     position:relative;
     left: 500px;
-    top: -22px;
+    top: -25px;
     color:#666666;
   }
 
 }
 
 /*--Auth Form -*/
+
+.auth-modal {
+  background-color: white;
+  position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) !important;
+  width: 500px;
+  height: 500px;
+
+}
+
+.auth-modal:focus {
+  outline: 0;
+}
+
+.auth-modal button {
+  background-color: inherit;
+  border-style: none;
+  float: right;
+  font-size: 22px;
+  padding-right: 4px;
+}
+
 
 .auth-form {
   /*display: flex;

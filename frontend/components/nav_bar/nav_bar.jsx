@@ -30,6 +30,8 @@ class NavBar extends React.Component {
 
   handleCloseModal() {
     this.setState({showLoginModal: false, showSigninModal: false});
+    this.props.clearSessionErrors();
+    //Clear the errors
   }
 
   handleDemoLogin (e) {
@@ -105,10 +107,11 @@ class NavBar extends React.Component {
               onClick={this.handleOpenLoginModal}>Sign In</button>
 
               <ReactModal
+                className="auth-modal"
                 isOpen={this.state.showLoginModal}
-                contentLabel="signup-or-login"
+                contentLabel="auth-form"
               >
-                <button onClick={this.handleCloseModal}>Close</button>
+                <button onClick={this.handleCloseModal}>X</button>
                 <LoginFormContainer/>
               </ReactModal>
 
@@ -116,10 +119,11 @@ class NavBar extends React.Component {
               onClick={this.handleOpenSigninModal}>Create Account</button>
 
               <ReactModal
+                className="auth-modal"
+                contentLabel="auth-form"
                 isOpen={this.state.showSigninModal}
-                contentLabel="signup-or-login"
               >
-                <button onClick={this.handleCloseModal}>Close</button>
+                <button onClick={this.handleCloseModal}>X</button>
                 <SignupFormContainer/>
               </ReactModal>
 
