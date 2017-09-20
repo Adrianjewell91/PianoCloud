@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     // gonna need other stuff, here like, add song, delete song. All that stuff.
+    
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserPage);

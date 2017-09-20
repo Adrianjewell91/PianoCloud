@@ -8,17 +8,25 @@ class NavBar extends React.Component {
 
   render () {
     let display;
+    let home_button = (<button><Link to="/">Home</Link></button>);
+
+
 
     if (this.props.currentUser) {
+
+      let username = this.props.currentUser.username;
+
       display = (
         <div>
-          <span>{`${this.props.currentUser.username} `}</span>
+          {home_button}
+          <Link to={`/users/${username}`}>{` ${username} `}</Link>
           <button onClick={this.props.logout.bind(this)}>Log Out</button>
         </div>
       )
     } else {
       display = (
         <div>
+          {home_button}
           <button><Link to="/login">Log In</Link></button>
           <button><Link to="/signup">Sign Up</Link></button>
         </div>

@@ -5,16 +5,9 @@ import { logout } from '../../actions/session_actions';
 
 import Greeting from './greeting';
 
-const currentUserArray = ({currentUser}) => {
-  if (currentUser) {
-    return currentUser.username;
-  } else {
-    return undefined;
-  }
-}
 
 const mapStateToProps = state => ({
-  currentUser: currentUserArray(state.session)
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

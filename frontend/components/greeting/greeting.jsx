@@ -6,6 +6,8 @@ class Greeting extends React.Component {
     super(props);
   }
 
+  //Set up ternary logic to redirect to user profile if logged in. 
+
   render () {
 
     return (

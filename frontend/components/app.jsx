@@ -12,11 +12,13 @@ import {AuthRoute, ProtectedRoute} from "../util/route_util.jsx"
 const App = () => (
   <div>
     <NavBarContainer/>
+
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/login" component={SessionFormContainer} />
 
     <Route exact path="/" component={GreetingContainer} />
-    <ProtectedRoute exact path="/users/:username" component={UserPageContainer}/>
+    <Route exact path="/users/:username" component={UserPageContainer}/>
+
     <footer>Footer Goes here</footer>
 
   </div>
