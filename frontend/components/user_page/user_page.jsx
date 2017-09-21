@@ -6,11 +6,11 @@ class UserPage extends React.Component {
   }
 
   componentDidMount() {
+    //We Want to display the user searched for, not the current user.
+    //But the button in nav bar will find the current user.
 
   }
 
-  //We Want to display the user searched for, not the current user.
-  //But the button in nav bar will find the current user.
 
   render () {
     // console.log(this.props);

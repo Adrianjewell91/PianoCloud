@@ -33,16 +33,16 @@ class NavBar extends React.Component {
     this.props.clearSessionErrors();
     //Clear the errors
   }
-
+  //A special thing !
   handleDemoLogin (e) {
     e.preventDefault();
     this.props.login({username: 'adriantest', password:'123456'})
-      .then(() => this.props.history.push(`/users/adriantest`));
+      .then(() => this.props.history.push(`/stream`));
   }
 
   handleLogOut(e) {
     e.preventDefault();
-    // console.log(this.props);
+
     this.props.logout()
       .then(() => this.props.history.push(`/`));
     this.handleCloseModal();
@@ -59,12 +59,13 @@ class NavBar extends React.Component {
 
 
     let home_button = (<Link to="/">Home</Link>);
+    let stream_button = (<Link to="/stream">Stream</Link>);
     let upload_button = "Upload";
     let search_input = (
       <form className="nav-search-form">
         <input className="nav-search" type="text"
                                placeholder="(For Display Only)"></input>
-        <i className="fa fa-search" aria-hidden="true"></i>
+
       </form>)
 
 
@@ -90,6 +91,7 @@ class NavBar extends React.Component {
 
 
           <button className={navButtonClass}>{home_button}</button>
+          <button className={navButtonClass}>{stream_button}</button>
           {search_input}
 
           <button className={navButtonClass}>{upload_button}</button>
@@ -111,8 +113,11 @@ class NavBar extends React.Component {
 
       display = (
         <div className={navLoggedOut}>
-
-          <Link to="/">{logo_image}</Link>
+          <div>
+            <Link to="/">{logo_image}</Link>
+            <button className={`${navButtonClass} nav-stream`}>
+            {stream_button}</button>
+          </div>
 
           <div>
             <button className={navButtonClass}

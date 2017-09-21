@@ -2,8 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {deleteTrack,
-        requestTracks, updateTracks} from "../actions/tracks_actions";
-import {toArray} from "../util/selectors"
+        requestTracks, updateTracks} from "../../actions/tracks_actions";
+        
+import {toArray} from "../../util/selectors";
 import StreamPage from "./stream_page";
 
 const mapStateToProps = state => {

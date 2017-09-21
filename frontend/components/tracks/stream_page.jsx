@@ -6,10 +6,19 @@ class StreamPage extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.requestTracks();
+  }
+
   render() {
+    //put more here soon.
     return (
       <div className="stream">
-        
+        <ul>
+        {
+          this.props.tracks.map((track) => <li>{track.title}</li>)
+        }
+      </ul>
       </div>
     );
   }
