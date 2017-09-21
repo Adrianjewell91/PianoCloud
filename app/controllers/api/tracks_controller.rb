@@ -16,7 +16,7 @@ class Api::TracksController < ApplicationController
 
   def create
     @track = Track.new(track_params)
-
+    @track.artist = currentUser
     if @track.save
       render :show
     else
@@ -27,7 +27,7 @@ class Api::TracksController < ApplicationController
   def update
     @track = Track.find_by(id: params[:id])
 
-    if @track.update_attributes(track_params)
+    if @track.update_attributes(track_params) && @track.artist == currentUser
       render :show
     else
       render json: {errors: @track.errors.full_messages}, status: 422
@@ -39,10 +39,12 @@ class Api::TracksController < ApplicationController
 
     if @track.nil?
       render json: {errors: ["Could not be found"]}, status: 404
-    else
+    elsif @track.artist == currentUser
       id = @track.id
       @track.destroy
       render json: {id: id}
+    else
+      render json: {errors: ["Not Authorized to Delete"]}, status: 422
     end
   end
 
