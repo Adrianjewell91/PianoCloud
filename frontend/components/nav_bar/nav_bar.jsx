@@ -140,8 +140,8 @@ class NavBar extends React.Component {
 
               <ReactModal
                 className="auth-modal"
-                contentLabel="auth-form"
                 isOpen={this.state.showSigninModal}
+                contentLabel="auth-form"
               >
                 <button onClick={this.handleCloseModal}>X</button>
                 <SignupFormContainer/>

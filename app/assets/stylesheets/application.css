@@ -138,12 +138,11 @@ button:focus {outline:0;}
 .auth-modal {
   background-color: white;
   position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
   width: 500px;
   height: 500px;
-
 }
 
 .auth-modal:focus {
