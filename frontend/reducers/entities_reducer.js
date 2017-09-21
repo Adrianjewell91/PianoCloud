@@ -5,4 +5,4 @@ const EntitiesReducer = combineReducers({
   tracks: TracksReducer
 });
 
-export default TracksReducer;
+export default EntitiesReducer;

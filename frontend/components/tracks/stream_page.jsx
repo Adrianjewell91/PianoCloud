@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 
 class StreamPage extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.requestTracks();
   }
 
@@ -16,7 +16,7 @@ class StreamPage extends React.Component {
       <div className="stream">
         <ul>
         {
-          this.props.tracks.map((track) => <li>{track.title}</li>)
+          this.props.tracks.map((track) => {return (<li>{track.title}</li>)})
         }
       </ul>
       </div>

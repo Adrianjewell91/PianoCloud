@@ -9,7 +9,6 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-
   }
 
     update(field) {
