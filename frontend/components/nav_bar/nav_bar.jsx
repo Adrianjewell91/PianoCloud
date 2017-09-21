@@ -76,7 +76,12 @@ class NavBar extends React.Component {
     //Establish which one to render.
     if (this.props.currentUser) {
 
-      let username = this.props.currentUser.username;
+      let user = this.props.currentUser;
+
+      //This is a f***ing hack.
+      const user_profile_url = user.thumb_nail_url.includes("missing") ?
+      user.thumb_nail_url    : user.thumb_nail_url.substring(0,4) +
+      '-us-west-2' + user.thumb_nail_url.substring(4,user.thumb_nail_url.length);
 
       display = (
         <div className={navLoggedIn}>
@@ -88,8 +93,13 @@ class NavBar extends React.Component {
 
           <button className={navButtonClass}>{upload_button}</button>
 
+          <Link to={`/users/${user.username}`}>
+            <img className = 'profile-nav-thumbnail'
+                 height="20px" width="20px"
+                 src={user_profile_url}/></Link>
+
           <button className={navButtonClass}>
-              <Link to={`/users/${username}`}>{`${username}`}</Link>
+              <Link to={`/users/${user.username}`}>{`${user.username}`}</Link>
           </button>
 
           <button className={navButtonClass}

@@ -32,6 +32,7 @@ ol ul {
 
 /*img { width: 100% }*/
  /*
+
 Organization of CSS Styling:
 1. From Top to Bottom, moving in the order of NavBar, to MainPage, to footer
 
@@ -73,6 +74,10 @@ body {
   font-size: 14px;
   height: 46px;
   /*border-left: black, solid, 1px;*/
+}
+
+.profile-nav-thumbnail {
+  padding-top: 11px;
 }
 
 a {

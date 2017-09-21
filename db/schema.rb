@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920231508) do
+ActiveRecord::Schema.define(version: 20170921181601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.string "genre"
+    t.string "user_id", null: false
+    t.string "track_recording_file_name", null: false
+    t.string "track_recording_content_type", null: false
+    t.integer "track_recording_file_size", null: false
+    t.datetime "track_recording_updated_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "track_thumb_nail_file_name"
+    t.string "track_thumb_nail_content_type"
+    t.integer "track_thumb_nail_file_size"
+    t.datetime "track_thumb_nail_updated_at"
+    t.index ["title"], name: "index_tracks_on_title", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false

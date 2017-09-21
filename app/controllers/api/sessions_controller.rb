@@ -20,7 +20,7 @@ class Api::SessionsController < ApplicationController
       logout!
       render json: {}
     else
-      render json: {errors: ["Can't process logout request!"]}, status: 404
+      render json: {errors: ["Can't process logout request!"]}, status: 422
     end
 
   end

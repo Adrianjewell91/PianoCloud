@@ -1,1 +1,3 @@
-json.array! @users, :id, :username, :name, :location 
+json.array! @users do user
+  json.partial! 'api/users/user', user: user
+end
