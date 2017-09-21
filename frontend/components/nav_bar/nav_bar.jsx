@@ -81,7 +81,7 @@ class NavBar extends React.Component {
       display = (
         <div className={navLoggedIn}>
           <Link to="/">{logo_image}</Link>
-          <img src={this.props.currentUser.image_url}/>
+
 
           <button className={navButtonClass}>{home_button}</button>
           {search_input}
