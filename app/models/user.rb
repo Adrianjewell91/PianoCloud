@@ -5,8 +5,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_attached_file :thumb_nail, default_url:  "missing.png"
-  validates_attachment_content_type :thumb_nail, content_type: /\Aimage\/.*\Z/
+  # has_attached_file :thumb_nail, default_url:  "missing.png"
+  # validates_attachment_content_type :thumb_nail, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
 
