@@ -42,8 +42,9 @@ class NavBar extends React.Component {
 
   handleLogOut(e) {
     e.preventDefault();
-    console.log(this.props);
-    this.props.logout().then(() => this.props.history.push(`/`));
+    // console.log(this.props);
+    this.props.logout()
+      .then(() => this.props.history.push(`/`));
     this.handleCloseModal();
   }
 
@@ -53,7 +54,7 @@ class NavBar extends React.Component {
     let display;
     let logo_image =
     (<img height="46px" width="55px" className="nav-logo"
-    src="https://cdn.pixabay.com/photo/2017/06/08/10/25/art-2383231_1280.jpg"
+    src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"
     />)
 
 

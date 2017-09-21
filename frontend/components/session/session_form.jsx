@@ -9,7 +9,7 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-    console.log(this.props.errors);
+
   }
 
     update(field) {
@@ -27,7 +27,6 @@ class SessionForm extends React.Component {
     render() {
 
       const text = this.props.formType === "login" ? "Log In" : "Create Account";
-      console.log(this.props.errors);
 
       return (
         <div className="auth-form">
