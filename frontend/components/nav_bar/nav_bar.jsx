@@ -80,8 +80,9 @@ class NavBar extends React.Component {
 
       //This is a f***ing hack.
       const user_profile_url = user.thumb_nail_url.includes("missing") ?
-      user.thumb_nail_url    : user.thumb_nail_url.substring(0,4) +
-      '-us-west-2' + user.thumb_nail_url.substring(4,user.thumb_nail_url.length);
+        "https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg" :
+        user.thumb_nail_url.substring(0,4) + '-us-west-2' +
+        user.thumb_nail_url.substring(4,user.thumb_nail_url.length);
 
       display = (
         <div className={navLoggedIn}>

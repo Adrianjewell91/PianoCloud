@@ -4,6 +4,9 @@ export const RECEIVE_TRACK = "RECEIVE_TRACK";
 export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
 export const REMOVE_TRACKS = "REMOVE_TRACK";
 
+export const RECEIVE_TRACK_ERRORS = "RECEIVE_TRACK_ERRORS";
+export const REMOVE_TRACK_ERRORS = "REMOVE_TRACK_ERRORS";
+
 export const receiveTrack  = (track) => ({
   type: RECEIVE_TRACKS,
   track
