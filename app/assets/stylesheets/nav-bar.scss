@@ -1,0 +1,87 @@
+// nav bar
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 46px;
+  background-color: #333333;
+}
+
+.nav-loggedin {
+  min-width: 1000px;
+  margin-left: 41px;
+  margin-right: 41px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-loggedout {
+  min-width: 700px;
+  margin-left: 41px;
+  margin-right: 41px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-button {
+  background-color: #333333;
+  color: #B0B0B0;
+  border-style: none;
+  font-size: 14px;
+  height: 46px;
+  /*border-left: black, solid, 1px;*/
+}
+
+.nav-stream {
+  position: relative;
+  bottom: 18px;
+}
+
+.profile-nav-thumbnail {
+  padding-top: 11px;
+}
+
+a {
+  text-decoration: none;
+  color: #B0B0B0
+}
+
+button:focus {outline:0;}
+
+.nav-button:hover, a:hover {
+  color: #FFFFFF;
+}
+
+.nav-search-form {
+  /*min-width: 100px;*/
+}
+
+.nav-search {
+  background-color: #E5E5E5;
+  width: 521px;
+  height: 26px;
+  margin-top: 9px;
+  border-radius: 5px;
+  border-style: none;
+  font-size: 13px;
+  text-indent: 6px;
+  transition: 0.5s;
+}
+
+.nav-search:focus {
+  background-color: #FFFFFF;
+  transition: 0.3s;
+}
+
+/*
+.fa-search {
+  position:relative;
+  right: 25px;
+  color:#666666;
+}*/
+
+@media screen and (max-width: 948px) {
+  .nav-search {width: 300px;}
+}
