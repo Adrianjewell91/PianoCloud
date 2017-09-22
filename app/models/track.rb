@@ -2,7 +2,7 @@ class Track < ApplicationRecord
   validates :title, :user_id, presence: true
 
   has_attached_file :track_recording
-  validates_attachment_content_type :track_recording, content_type: ['audio/mpeg']
+  validates_attachment_content_type :track_recording, content_type: 'audio/mpeg'
 
   has_attached_file :track_thumb_nail
   validates_attachment_content_type :track_thumb_nail, content_type: /\Aimage\/.*\Z/

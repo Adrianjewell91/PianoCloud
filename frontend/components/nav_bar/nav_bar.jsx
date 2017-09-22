@@ -60,7 +60,7 @@ class NavBar extends React.Component {
 
     let home_button = (<Link to="/">Home</Link>);
     let stream_button = (<Link to="/stream">Stream</Link>);
-    let upload_button = "Upload";
+    let upload_button = (<Link to="/upload">Upload</Link>);
     let search_input = (
       <form className="nav-search-form">
         <input className="nav-search" type="text"
@@ -82,8 +82,8 @@ class NavBar extends React.Component {
       //This is a f***ing hack.
       const user_profile_url = user.thumb_nail_url.includes("missing") ?
         "https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg" :
-        user.thumb_nail_url.substring(0,4) + '-us-west-2' +
-        user.thumb_nail_url.substring(4,user.thumb_nail_url.length);
+        user.thumb_nail_url.substring(0,9) + '-us-west-2' +
+        user.thumb_nail_url.substring(9,user.thumb_nail_url.length);
 
       display = (
         <div className={navLoggedIn}>

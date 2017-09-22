@@ -51,7 +51,7 @@ export const createTrack = (track) => (dispatch) => {
 }
 
 export const updateTrack = (track) => (dispatch) => {
-  return TrackUtil.createTrack(track)
+  return TrackUtil.updateTrack(track)
     .then((track) => dispatch(receiveTrack(track)))
     .fail((errors) => dispatch(receiveTrackErrors(errors)));
 }

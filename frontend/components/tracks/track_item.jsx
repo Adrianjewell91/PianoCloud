@@ -17,7 +17,11 @@ export const TrackItem = ({track}) => {
 
 export default TrackItem;
 
+
+
+ //Deal with track Item later.
+
  // <audio src={"test"} type="audio/mp3"/>
- 
+
  //  <button onClick={this.handleClick.bind(this)}>▶</button>
  //  {track.artist}
