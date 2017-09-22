@@ -13,6 +13,11 @@
  *
  *= require_self
  */
+ body {
+   background-color: #F2F2F2;
+ }
+
+
 @import "./reset";
 @import "./splash";
 @import "./nav-bar";
@@ -28,9 +33,6 @@ Organization of CSS Styling:
 
  /*--Nav Bar-*/
 
-body {
-  background-color: #F2F2F2;
-}
 
 /*--Main Page-*/
 
