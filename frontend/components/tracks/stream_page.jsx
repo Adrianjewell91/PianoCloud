@@ -18,8 +18,10 @@ class StreamPage extends React.Component {
       <div className="stream">
         <ul>
         {
-          this.props.tracks.map((track) => {return <TrackItem key={track.title}
-                                                              track={track} />})
+          this.props.tracks.map((track) => {
+            return <TrackItem key={track.title}
+                            track={track}
+                      currentUser={this.props.currentUser}/>})
         }
       </ul>
       </div>

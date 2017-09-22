@@ -10,28 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *
  *= require_self
  */
+@import "./reset";
 
-/*Reset*/
-html body div form ul li a button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-body {
-  line-height: 1.5
-
-}
-
-ol ul {
-  list-style: none;
-}
 
 /*img { width: 100% }*/
  /*

@@ -57,13 +57,17 @@ class TrackForm extends React.Component {
 
       const text = this.props.formType === "create" ? "Upload A Song" : "Save";
 
+      const fileUploadElement = this.props.formType === "create" ?
+     (<input type="file" onChange={this.handleUpload.bind(this)}/>) : (<span/>);
+
+
       return (
         <div className="auth-form">
           <h1>{text}</h1>
 
           <form onSubmit={this.handleSubmit.bind(this)}>
-
-            <input type="file" onChange={this.handleUpload.bind(this)}/>
+            
+            {fileUploadElement}
             <br/>
 
             <label>
@@ -96,7 +100,7 @@ class TrackForm extends React.Component {
 
             <ul>
               {
-                this.props.errors.map((error) => <li key={Math.random(1)}>
+                this.props.errors.map((error) => <li key={error}>
                                                     {error}!</li>)
               }
             </ul>

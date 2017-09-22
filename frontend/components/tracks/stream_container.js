@@ -8,9 +8,10 @@ import {toArray} from "../../util/selectors";
 import StreamPage from "./stream_page";
 
 const mapStateToProps = state => {
-  console.log(state);
+
   return {
-    tracks: toArray(state.entities.tracks)
+    tracks: toArray(state.entities.tracks),
+    currentUser: state.session.currentUser
   };
 }
 

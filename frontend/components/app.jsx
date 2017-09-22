@@ -16,13 +16,14 @@ const App = () => (
 
 
     <div className="main-page">
-        <Route exact path="/stream" component={StreamPageContainer} />
-        <Route exact path="/users/:username" component={UserPageContainer} />
-        <Route exact path="/upload" component={TrackFormContainer} />
-        <Route exact path="/" component={GreetingContainer} />
+      <Route exact path="/stream" component={StreamPageContainer} />
+      <Route exact path="/users/:username" component={UserPageContainer} />
+      <Route exact path="/upload" component={TrackFormContainer} />
+      <Route exact path="/:username/:track_name" component={UserPageContainer}/>
+      <Route exact path="/" component={GreetingContainer} />
     </div>
 
-    <div className="footer">Continuos Playback Goes Here (Soon to Come.)</div>
+    <div className="footer">Continuous Playback Goes Here (Soon to Come.)</div>
 
   </div>
 );

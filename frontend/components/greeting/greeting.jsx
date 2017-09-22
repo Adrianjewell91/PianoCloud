@@ -14,7 +14,7 @@ class Greeting extends React.Component {
                                placeholder="(For Display Only)"></input>)
 
     let display;
-    console.log(this.props);
+
     if (this.props.currentUser) {
       display = (
         <Redirect to={`/users/${this.props.currentUser.username}`}></Redirect>
