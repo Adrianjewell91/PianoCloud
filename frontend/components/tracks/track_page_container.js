@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch,ownProps) => {
   return {
     deleteTrack: (id) => dispatch(deleteTrack(id)),
     updateTrack: (track) => dispatch(updateTrack(track)),
-    requestTrack: () => dispatch(requestTrack())
+    requestTrack: (id) => dispatch(requestTrack(id))
   };
 }
 

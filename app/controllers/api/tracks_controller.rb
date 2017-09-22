@@ -5,7 +5,8 @@ class Api::TracksController < ApplicationController
   end
 
   def show
-    @track = Track.includes(:artist).find_by(id: params[:id])
+    # debugger
+    @track = Track.includes(:artist).find_by(title: params[:id])
 
     if @track.nil?
       render json: {errors: ["Could not be found"]}, status: 404
@@ -15,7 +16,6 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    # debugger
     @track = Track.new(track_params)
     @track.user_id = current_user.id
     if @track.save

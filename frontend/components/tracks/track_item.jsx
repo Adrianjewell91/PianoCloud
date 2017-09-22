@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
+import TrackPageContainer from './track_page_container';
 
 export const TrackItem = ({track, currentUser}) => {
     const source_url = track.track_recording.substring(0,4) + '-us-west-2' +
@@ -13,7 +14,9 @@ export const TrackItem = ({track, currentUser}) => {
     return (<li>
               {track.artist}
               <br/>
-              <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>,
+              <Link to={{ pathname: `/tracks/${track.title}`, query: {id: track.id}}}>
+              {track.title}</Link>
+
             </li>);
 
 };
