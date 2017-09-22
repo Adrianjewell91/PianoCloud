@@ -33,6 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'faker'
 #Gems for file hosting
+gem 'paperclip', "~> 5.0.0"
+gem 'aws-sdk', '~>2.0'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,9 +48,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'annotate'
   gem 'pry-rails'
-  gem 'paperclip'
-  gem 'aws-sdk', '~>2.0'
-  gem 'figaro'
 
 end
 
