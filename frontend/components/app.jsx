@@ -15,12 +15,13 @@ const App = () => (
     <NavBarContainer/>
 
     <div className="main-page">
+      <Switch>
       <Route exact path="/stream" component={StreamPageContainer} />
       <Route exact path="/users/:user_name" component={UserPageContainer} />
       <Route exact path="/upload" component={TrackFormContainer} />
-      <Route path={`/tracks/:track_name`}
-          component={TrackPageContainer}/>
       <Route exact path="/" component={GreetingContainer} />
+      <Route exact path={`/:user_name/:track_name`} component={TrackPageContainer}/>
+      </Switch>
     </div>
 
     <div className="footer">Continuous Playback Goes Here (Soon to Come.)</div>

@@ -12,14 +12,13 @@ class Greeting extends React.Component {
       this.props.history.push(`/users/${this.props.currentUser.username}`);}
   }
 
-
   render () {
 
     let search_input = (<input type="text"
                                placeholder="(For Display Only)"></input>)
 
 
-    let display = (        <div>
+    let display = (    <div>
                        <h1>Discover Music with PianoCloud</h1>
                        <p>{search_input}</p>
                        </div>);

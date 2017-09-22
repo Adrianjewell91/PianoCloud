@@ -5,10 +5,10 @@ export const getTracks = () => {
   });
 }
 
-export const getTrack = (id) => {
+export const getTrack = (title) => {
   return $.ajax({
     method: "GET",
-    url: `/api/tracks/${id}`
+    url: `/api/tracks/${title}`
   });
 }
 

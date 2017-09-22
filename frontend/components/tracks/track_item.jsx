@@ -17,7 +17,7 @@ export const TrackItem = ({track, currentUser}) => {
     return (<li>
               {track.artist}
               <br/>
-              <Link to={{ pathname: `/tracks/${track.title}`, query: {id: track.id}}}>
+              <Link to={{ pathname: `/${track.artist}/${track.title}`, query: {id: track.id}}}>
               {track.title}</Link>
               {editButton}
               {deleteButton}
