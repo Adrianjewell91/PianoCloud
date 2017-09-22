@@ -6,20 +6,19 @@ import GreetingContainer from "./greeting/greeting_container";
 import UserPageContainer from './user_page/user_page_container';
 import StreamPageContainer from "./tracks/stream_container";
 import TrackFormContainer from "./upload_edit_track_form/track_form_container";
-
+import TrackPageContainer from "./tracks/track_page_container";
 
 import {AuthRoute, ProtectedRoute} from "../util/route_util.jsx"
 
 const App = () => (
   <div>
     <NavBarContainer/>
-
-
+    
     <div className="main-page">
       <Route exact path="/stream" component={StreamPageContainer} />
-      <Route exact path="/users/:username" component={UserPageContainer} />
+      <Route exact path="/users/:user_name" component={UserPageContainer} />
       <Route exact path="/upload" component={TrackFormContainer} />
-      <Route exact path="/:username/:track_name" component={UserPageContainer}/>
+      <Route exact path="/:user_name/:track_name" component={TrackPageContainer}/>
       <Route exact path="/" component={GreetingContainer} />
     </div>
 

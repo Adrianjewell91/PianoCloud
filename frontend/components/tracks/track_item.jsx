@@ -10,19 +10,10 @@ export const TrackItem = ({track, currentUser}) => {
       e.target.value = e.target.value === "▶" ? "Pause" : "▶";
     }
 
-
-    // let editButton;
-    // if (currentUser !== undefined) {
-    //   if (currentUser.id === track.artist_id) {
-    //     editButton = <button>Edit</button>;
-    //   } else {
-    //     editButton = "";
-    //   }
-    // }
-
     return (<li>
-              <Link to={`/${track.artist}/${track.name}`}>{track.title}</Link>,
               {track.artist}
+              <br/>
+              <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>,
             </li>);
 
 };
