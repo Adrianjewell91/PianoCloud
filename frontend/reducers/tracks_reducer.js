@@ -20,9 +20,8 @@ const TracksReducer = (state = {}, action) => {
       return {[action.track.id]: action.track}
     case REMOVE_TRACK:
 
-      let newState = {};
-      newState = merge({}, state);
-      delete newState[action.trackId];
+      let newState = Object.assign({}, state);
+      delete newState[`${action.trackId.id}`];
       return newState;
     default:
       return state;

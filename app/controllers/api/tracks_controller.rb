@@ -35,12 +35,12 @@ class Api::TracksController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @track = Track.find_by(id: params[:id])
 
     if @track.nil?
       render json: {errors: ["Could not be found"]}, status: 404
-    elsif @track.artist == currentUser
+    elsif @track.artist.id == current_user.id
       id = @track.id
       @track.destroy
       render json: {id: id}

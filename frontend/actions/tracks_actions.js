@@ -2,7 +2,7 @@ import * as TrackUtil from "../util/track_api_util.js";
 
 export const RECEIVE_TRACKS = "RECEIVE_TRACKS";
 export const RECEIVE_TRACK = "RECEIVE_TRACK";
-export const REMOVE_TRACKS = "REMOVE_TRACK";
+export const REMOVE_TRACK = "REMOVE_TRACK";
 
 export const RECEIVE_TRACK_ERRORS = "RECEIVE_TRACK_ERRORS";
 export const CLEAR_TRACK_ERRORS = "REMOVE_TRACK_ERRORS";
@@ -18,7 +18,7 @@ export const receiveTrack  = (track) => ({
 });
 
 export const removeTrack = (id) => ({
-  type: REMOVE_TRACKS,
+  type: REMOVE_TRACK,
   trackId: id
 });
 

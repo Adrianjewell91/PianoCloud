@@ -11,14 +11,28 @@ class TrackPage extends React.Component {
   }
 
 
+  handleEditClick (e) {
+    e.preventDefault();
+  }
+
+  handleDeleteClick (e) {
+    e.preventDefault();
+    const id = this.props.tracks[0].id;
+    this.props.deleteTrack(id).then(this.props.history.push('/stream'));
+  }
+
+
+//Do I build in the ui with information or do I keep working with what I have?
 
   render () {
 
-    const track = this.props.tracks.length > 0 ?
+    const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
 
-    const editButton = <button>Edit</button>;
-    const deleteButton = <button>Delete</button>;
+    const editButton = <button onClick={this.handleEditClick.bind(this)}>
+                         Edit</button>;
+    const deleteButton = <button onClick={this.handleDeleteClick.bind(this)}>
+                         Delete</button>;
 
     return (
       <div>

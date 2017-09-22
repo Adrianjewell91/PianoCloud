@@ -15,12 +15,15 @@ class Greeting extends React.Component {
   render () {
 
     let search_input = (<input type="text"
-                               placeholder="(For Display Only)"></input>)
+                               placeholder="Search Music and Artists"></input>)
 
 
-    let display = (    <div>
+    let display = (    <div className="splash">
+
+<img src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"/>
+
                        <h1>Discover Music with PianoCloud</h1>
-                       <p>{search_input}</p>
+                       {search_input}
                        </div>);
 
     return (

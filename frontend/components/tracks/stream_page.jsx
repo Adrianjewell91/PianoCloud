@@ -8,12 +8,12 @@ class StreamPage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.requestTracks();
   }
 
   render() {
-
+    console.log(this.props);
     return (
       <div className="stream">
         <ul>
@@ -21,7 +21,9 @@ class StreamPage extends React.Component {
           this.props.tracks.map((track) => {
             return <TrackItem key={track.title}
                             track={track}
-                      currentUser={this.props.currentUser}/>})
+                      currentUser={this.props.currentUser}
+                        editTrack={this.props.updateTrack}
+                      deleteTrack={this.props.deleteTrack}/>})
         }
       </ul>
       </div>
