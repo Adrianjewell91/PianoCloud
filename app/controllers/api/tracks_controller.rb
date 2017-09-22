@@ -1,11 +1,11 @@
 class Api::TracksController < ApplicationController
   def index
     #Implement Search Here Eventually
-    @tracks = Track.all
+    @tracks = Track.includes(:artist).all
   end
 
   def show
-    @track = Track.find_by(id: params[:id])
+    @track = Track.includes(:artist).find_by(id: params[:id])
 
     if @track.nil?
       render json: {errors: ["Could not be found"]}, status: 404
