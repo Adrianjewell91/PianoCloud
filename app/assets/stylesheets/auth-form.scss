@@ -27,10 +27,9 @@
   padding-right: 4px;
 }
 
+// ______________________________FORM BELOW< MODAL ABOVE______
+
 .auth-form {
-  /*display: flex;
-  flex-direction: column;
-  justify-content: center;*/
   text-align: center;
 }
 
@@ -38,7 +37,7 @@
   text-indent: 38px;
 }
 
-.auth-form form input {
+.auth-form form input, select {
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
@@ -49,6 +48,12 @@
   font-weight: lighter;
   margin: 3px;
   text-indent: 10px;
+}
+
+.auth-form select {
+  background-color: white;
+  border-color: black;
+  width: 304px;
 }
 
 .auth-form form .auth-button {

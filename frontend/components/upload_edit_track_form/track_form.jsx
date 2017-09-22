@@ -66,7 +66,7 @@ class TrackForm extends React.Component {
           <h1>{text}</h1>
 
           <form onSubmit={this.handleSubmit.bind(this)}>
-            
+
             {fileUploadElement}
             <br/>
 
@@ -78,10 +78,14 @@ class TrackForm extends React.Component {
             </label>
             <br/>
             <label>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('genre')}
-                placeholder="Genre"></input>
+              <select value={this.state.genre}
+                      onChange={this.update('genre')}>
+                <option value="none" selected="true" >Genre</option>
+                <option value="Classical">Classical</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Rock">Rock</option>
+                <option value="Avant Garde">Avant Garde</option>
+              </select>
             </label>
             <br/>
             <br/>
