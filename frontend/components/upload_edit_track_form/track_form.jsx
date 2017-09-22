@@ -29,9 +29,9 @@ class TrackForm extends React.Component {
       formData.append("track[description]", this.state.description);
       formData.append("track[genre]", this.state.genre);
       formData.append("track[track_recording]", this.state.recordingFile)
-      console.log(this.state);
+      // debugger
       this.props.processForm(formData)
-        .then(() => this.props.history.push(`/stream`));
+        .then(() => this.props.history.push(`/`));
     }
 
     handleUpload(e) {

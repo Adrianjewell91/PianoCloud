@@ -18,7 +18,7 @@ const App = () => (
     <div className="main-page">
         <Route exact path="/stream" component={StreamPageContainer} />
         <Route exact path="/users/:username" component={UserPageContainer} />
-        <ProtectedRoute path="/upload" component={TrackFormContainer} />
+        <Route exact path="/upload" component={TrackFormContainer} />
         <Route exact path="/" component={GreetingContainer} />
     </div>
 

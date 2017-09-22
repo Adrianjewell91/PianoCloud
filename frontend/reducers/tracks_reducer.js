@@ -1,6 +1,6 @@
 import {
-  RECEIVE_TRACK,
   RECEIVE_TRACKS,
+  RECEIVE_TRACK,
   REMOVE_TRACK
 } from '../actions/tracks_actions';
 
@@ -12,11 +12,12 @@ const TracksReducer = (state = {}, action) => {
     case RECEIVE_TRACKS:
 
       let allTracks = {};
+      // debugger
       action.tracks.forEach((track) => allTracks[track.id] = track);
       return allTracks;
     case RECEIVE_TRACK:
 
-      return merge({}, state, { [action.track.id]: action.track } )
+      return {[action.track.id]: action.track}
     case REMOVE_TRACK:
 
       let newState = {};
