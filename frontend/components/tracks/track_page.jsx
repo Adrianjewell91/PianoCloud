@@ -10,20 +10,21 @@ class TrackPage extends React.Component {
     this.props.requestTrack(this.props.match.params.track_name);
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   if (this.props.params.track_name !== this.newProps.params.track_name) {
-  //       this.props.requestTrack(this.newProps.match.params.track_name);
-  //   }
-  // }
+
 
   render () {
-    console.log(this.props);
+
     const track = this.props.tracks.length > 0 ?
       this.props.tracks[0] : "";
+
+    const editButton = <button>Edit</button>;
+    const deleteButton = <button>Delete</button>;
 
     return (
       <div>
         {track.title}
+        {editButton}
+        {deleteButton}
       </div>
     );
   }

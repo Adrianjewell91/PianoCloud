@@ -11,12 +11,16 @@ export const TrackItem = ({track, currentUser}) => {
       e.target.value = e.target.value === "▶" ? "Pause" : "▶";
     }
 
+    const editButton = <button>Edit</button>;
+    const deleteButton = <button>Delete</button>;
+
     return (<li>
               {track.artist}
               <br/>
               <Link to={{ pathname: `/tracks/${track.title}`, query: {id: track.id}}}>
               {track.title}</Link>
-
+              {editButton}
+              {deleteButton}
             </li>);
 
 };
