@@ -27,11 +27,14 @@ class Api::TracksController < ApplicationController
 
   def update
     @track = Track.find_by(id: params[:id])
-
-    if @track.update_attributes(track_params) && @track.artist == currentUser
-      render :show
+    if !@track.nil?
+      if @track.update_attributes(track_params) && @track.artist == current_user
+        render :show
+      else
+        render json: {errors: @track.errors.full_messages}, status: 422
+      end
     else
-      render json: {errors: @track.errors.full_messages}, status: 422
+      render json: {errors: ["Not Found"]}, status: 404
     end
   end
 
