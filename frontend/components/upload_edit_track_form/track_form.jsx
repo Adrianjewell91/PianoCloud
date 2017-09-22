@@ -80,7 +80,7 @@ class TrackForm extends React.Component {
             <label>
               <select value={this.state.genre}
                       onChange={this.update('genre')}>
-                <option value="none" selected="true" >Genre</option>
+                <option defaultValue="Genre" >Genre</option>
                 <option value="Classical">Classical</option>
                 <option value="Jazz">Jazz</option>
                 <option value="Rock">Rock</option>
