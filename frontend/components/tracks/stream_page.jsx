@@ -25,7 +25,7 @@ class StreamPage extends React.Component {
                         editTrack={this.props.updateTrack}
                       deleteTrack={this.props.deleteTrack}/>})
         }
-      </ul>
+        </ul>
       </div>
     );
   }
