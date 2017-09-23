@@ -18,7 +18,7 @@ export const getTrack = (title) => {
 
   return $.ajax({
     method: "GET",
-    url: `/api/tracks/${title}`
+    url: `/api/tracks/${parsedTitle}`
   });
 }
 
