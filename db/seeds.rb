@@ -31,3 +31,6 @@ User.create(username: Faker::Name.first_name,
 User.create(username: Faker::Name.first_name,
             password: '123456',
             name: Faker::Name.name)
+User.create(username: 'adriantest',
+            password: '123456',
+            name: Faker::Name.name)

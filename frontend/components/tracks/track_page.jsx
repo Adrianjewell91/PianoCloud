@@ -8,6 +8,13 @@ class TrackPage extends React.Component {
   }
 
   componentWillMount() {
+    console.log(); //may need to user regex to remove %, or search by id.
+    //searching by ID would be easier.
+
+    //Get the song name and find the id of the song.
+    // searching by ID would solve the bug,
+    // but it would make it harder to get from the params.
+    // the other solution is to parse the track_name into something with spaces.
     this.props.requestTrack(this.props.match.params.track_name)
   }
 
