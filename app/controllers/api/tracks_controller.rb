@@ -7,8 +7,8 @@ class Api::TracksController < ApplicationController
   def show
     # debugger
     # Change the params[:id] (actually a title) into a parsed file.
-    debugger
-    newTitle = params[:id].gsub! '%20', ' ' 
+
+    newTitle = params[:id].gsub! '%20', ' '
 
     @track = Track.includes(:artist).find_by(title: params[:id])
 
