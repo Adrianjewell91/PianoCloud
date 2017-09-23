@@ -30,17 +30,18 @@ class TrackForm extends React.Component {
       e.preventDefault();
 
       //if there aren't pictures or images uploaded, set the errors.
+      if (this.state.recordingURL === "" ||
+      this.state.recordingURL === undefined) {
+        return this.props
+        .receiveTrackErrors(
+          {responseJSON: {errors: ["Must have a song!"]}});
+        }
 
-      if (this.state.imageURL === "") {
+      if (this.state.imageURL === "" ||
+          this.state.imageURL === undefined) {
         return this.props
                    .receiveTrackErrors(
                      {responseJSON: {errors: ["Must have an image!"]}});
-      }
-
-      if (this.state.recordingURL === "") {
-        return this.props
-                   .receiveTrackErrors(
-                     {responseJSON: {errors: ["Must have a song!"]}});
       }
 
 
