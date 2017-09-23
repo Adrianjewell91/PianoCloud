@@ -34,19 +34,17 @@ class TrackForm extends React.Component {
       e.preventDefault();
 
       //if there aren't pictures or images uploaded, set the errors.
-
-      if (this.state.imageURL === "" ||
-          this.state.imageURL === undefined) {
+      debugger
+      if (this.state.imageURL === "") {
         return this.props
                    .receiveTrackErrors(
-                     {responseJSON: {errors: ["Must have a song and image"]}});
+                     {responseJSON: {errors: ["Must have an image!"]}});
       }
 
-      if (this.state.recordingURL === "" ||
-          this.state.recordingURL === undefined) {
+      if (this.state.recordingURL === "") {
         return this.props
                    .receiveTrackErrors(
-                     {responseJSON: {errors: ["Must have a song and image"]}});
+                     {responseJSON: {errors: ["Must have a song!"]}});
       }
 
 
@@ -59,6 +57,7 @@ class TrackForm extends React.Component {
         formData.append("track[track_recording]", this.state.recordingFile);
         formData.append("track[track_thumb_nail]", this.state.imageFile);
       }
+
       if (this.props.formType === "create") {
         this.props.processForm(formData)
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
@@ -104,7 +103,7 @@ class TrackForm extends React.Component {
                          <img height="160px" width="160px"
                            src={this.props.track.thumb_nail_url}/> : (
                             <div>
-                              
+
                              <label>Thumbnail File (must be image)
                                <input type="file"
                                       onChange={this.handleUpload("image")}/>
