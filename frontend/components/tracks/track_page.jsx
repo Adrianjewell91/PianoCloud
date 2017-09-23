@@ -22,13 +22,10 @@ class TrackPage extends React.Component {
     this.props.deleteTrack(id).then(this.props.history.push('/stream'));
   }
 
-
-//Do I build in the ui with information or do I keep working with what I have?
-
   render () {
 
     const track = this.props.tracks.length === 1 ?
-      this.props.tracks[0] : "test";
+      this.props.tracks[0] : "";
 
     const editButton = <button onClick={this.handleEditClick.bind(this)}>
                          Edit</button>;
