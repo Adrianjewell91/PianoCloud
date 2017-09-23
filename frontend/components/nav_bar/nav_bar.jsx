@@ -110,7 +110,7 @@ class NavBar extends React.Component {
             onClick={this.handleLogOut.bind(this)}>Sign Out</button>
         </div>
       );
-    } else {
+    } else { //If Logged out
 
       display = (
         <div className={navLoggedOut}>
