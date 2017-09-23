@@ -65,7 +65,6 @@ class TrackForm extends React.Component {
       } else {
         this.setState({recordingFile: null, recordingURL: ""});
       }
-
     }
 
     render() {
