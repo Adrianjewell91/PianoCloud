@@ -56,19 +56,20 @@ class TrackForm extends React.Component {
     render() {
 
       const text = this.props.formType === "create" ? "Upload A Song" : "Save"
-
+      console.log(this.state);
       return (
         <div className="update-form">
           <h1>{text}</h1>
 
             <form onSubmit={this.handleSubmit.bind(this)}>
 
-            <input type="file" onChange={this.handleUpload.bind(this)}/>
+            <input type="file"
+                   onChange={this.handleUpload.bind(this)}/>
             <br/>
 
             <label>
               <input type="text"
-                value={this.state.username}
+                value={this.state.title}
                 onChange={this.update('title')}
                 placeholder="Title"></input>
             </label>
@@ -88,7 +89,7 @@ class TrackForm extends React.Component {
             <label>
               <textarea rows="10" cols="47"
                 style={{resize: 'none'}}
-                value={this.state.password}
+                value={this.state.description}
                 onChange={this.update('description')}
                 placeholder="Description"></textarea>
             </label>

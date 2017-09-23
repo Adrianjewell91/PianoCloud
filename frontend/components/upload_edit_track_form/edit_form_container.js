@@ -8,7 +8,7 @@ import TrackForm from './track_form';
 const mapStateToProps = (state, ownProps) => {
   const errors = state.errors.tracks;
   const formType = "update";
-  const track = toArray(state.tracks)[0];
+  const track = toArray(state.entities.tracks)[0];
   return {track, errors, formType};
 };
 

@@ -8,17 +8,14 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
       e.target.value = e.target.value === "▶" ? "Pause" : "▶";
     }
 
-    const handleEditClick = (e) => {
-      e.preventDefault();
-    }
 
     const handleDeleteClick = (e) => {
       e.preventDefault();
       deleteTrack(track.id);
     }
 
-    const editButton = <button onClick={handleEditClick.bind(this)}>
-                        Edit</button>;
+    const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
+                       <button>Edit</button></Link>;
     const deleteButton = <button onClick={handleDeleteClick.bind(this)}>
                         Delete</button>;
 
