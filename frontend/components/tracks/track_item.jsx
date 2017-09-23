@@ -8,9 +8,6 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
       e.target.value = e.target.value === "▶" ? "||" : "▶";
     }
 
-    //test if the currentUser.id === the track_name.artist_id, if so, show the
-    // edit and delete buttons.
-
     let modifyButtons = null;
 
     if (currentUser) {
