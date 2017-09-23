@@ -72,6 +72,9 @@ class TrackForm extends React.Component {
 
       const text = this.props.formType === "create" ? "Upload A Song" : "Save"
 
+      const backButton = <Link to="/stream">
+                         <button>Back To Stream</button></Link>
+
       return (
         <div className="update-form">
           <h1>{text}</h1>
@@ -120,6 +123,8 @@ class TrackForm extends React.Component {
                                                     {error}!</li>)
               }
             </ul>
+
+            {backButton}
 
         </div>
       );

@@ -5,7 +5,6 @@ import TrackPageContainer from './track_page_container';
 export const EditAndDeleteButtons = ({track, deleteTrack}) => {
   const handleDeleteClick = (e) => {
     e.preventDefault();
-    console.log(this);
     deleteTrack(track.id);
   }
 
