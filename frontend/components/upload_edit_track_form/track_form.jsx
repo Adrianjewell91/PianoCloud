@@ -8,11 +8,7 @@ class TrackForm extends React.Component {
     this.state = this.props.track || {
       title: "",
       description: "",
-      genre: "",
-      recordingFile: null,
-      recordingURL: "",
-      imageFile: null,
-      imageURL: ""
+      genre: ""
     };
   }
 
@@ -34,7 +30,7 @@ class TrackForm extends React.Component {
       e.preventDefault();
 
       //if there aren't pictures or images uploaded, set the errors.
-      debugger
+
       if (this.state.imageURL === "") {
         return this.props
                    .receiveTrackErrors(
@@ -53,10 +49,8 @@ class TrackForm extends React.Component {
       formData.append("track[title]", this.state.title);
       formData.append("track[description]", this.state.description);
       formData.append("track[genre]", this.state.genre);
-      if (this.formType = "create") {
-        formData.append("track[track_recording]", this.state.recordingFile);
-        formData.append("track[track_thumb_nail]", this.state.imageFile);
-      }
+      formData.append("track[track_thumb_nail]", this.state.imageFile);
+      formData.append("track[track_recording]", this.state.recordingFile);
 
       if (this.props.formType === "create") {
         this.props.processForm(formData)
@@ -101,22 +95,7 @@ class TrackForm extends React.Component {
 
       const currentImage = this.props.track ?
                          <img height="160px" width="160px"
-                           src={this.props.track.thumb_nail_url}/> : (
-                            <div>
-
-                             <label>Thumbnail File (must be image)
-                               <input type="file"
-                                      onChange={this.handleUpload("image")}/>
-                             </label>
-
-                             <br/>
-
-                             <label>Song File (must be mp3)
-                               <input type="file"
-                                      onChange={this.handleUpload("recording")}/>
-                             </label>
-
-                            </div>);
+                           src={this.props.track.thumb_nail_url}/> : "";
 
       return (
         <div>
@@ -124,9 +103,21 @@ class TrackForm extends React.Component {
 
           {currentImage}
 
+
             <form className="track-form"
                   onSubmit={this.handleSubmit.bind(this)}>
 
+                  <label>Thumbnail File (must be image)
+                    <input type="file"
+                      onChange={this.handleUpload("image")}/>
+                  </label>
+                  <br/>
+                  <label>Song File (must be mp3)
+                    <input type="file"
+                      onChange={this.handleUpload("recording")}/>
+                  </label>
+
+                  <br/>
 
               <br/>
 
