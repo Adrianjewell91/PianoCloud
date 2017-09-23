@@ -33,6 +33,8 @@ class TrackPage extends React.Component {
 
     return (
       <div>
+        <img
+          src={track.thumb_nail_url}></img>
         {track.title}
         {modifyButtons}
       </div>

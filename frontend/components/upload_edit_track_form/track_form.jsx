@@ -40,7 +40,7 @@ class TrackForm extends React.Component {
       formData.append("track[description]", this.state.description);
       formData.append("track[genre]", this.state.genre);
       formData.append("track[track_recording]", this.state.recordingFile);
-      formData.append("track[track_thumbnail]", this.state.imageFile);
+      formData.append("track[track_thumb_nail]", this.state.imageFile);
 
       if (this.props.formType === "create") {
         this.props.processForm(formData)
@@ -59,8 +59,8 @@ class TrackForm extends React.Component {
         let file = e.currentTarget.files[0];
 
         let that = this;
-        fieldURL = `${field}URL`;
-        fieldFile = `${field}File`;
+        let fieldURL = `${field}URL`;
+        let fieldFile = `${field}File`;
 
         reader.onloadend = function() {
           that.setState({[fieldURL]: reader.result, [fieldFile]: file});
