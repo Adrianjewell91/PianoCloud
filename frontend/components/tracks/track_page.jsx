@@ -8,14 +8,14 @@ class TrackPage extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props.match.params.track_name); //may need to user regex to remove %, or search by id.
+    console.log(this.props); //may need to user regex to remove %, or search by id.
     //searching by ID would be easier.
 
     //Get the song name and find the id of the song.
     // searching by ID would solve the bug,
     // but it would make it harder to get from the params.
     // the other solution is to parse the track_name into something with spaces.
-
+    //Search by ID and not by name. How do I do this given only the song?
 
     this.props.requestTrack(this.props.match.params.track_name)
   }
@@ -36,7 +36,7 @@ class TrackPage extends React.Component {
 
     const deleteButton = <button onClick={this.handleDeleteClick.bind(this)}>
                          Delete</button>;
-     console.log(track);
+
     return (
       <div>
         {track.title}
