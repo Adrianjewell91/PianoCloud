@@ -15,6 +15,8 @@ const mapStateToProps = (state,ownProps) => {
   };
 }
 
+//How does the ui work?
+
 const mapDispatchToProps = (dispatch,ownProps) => {
   return {
     deleteTrack: (id) => dispatch(deleteTrack(id)),

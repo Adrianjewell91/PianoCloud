@@ -5,9 +5,10 @@ class TrackPage extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     //Find the song by id from this.props.tracks.
-    this.props.requestTrack(this.props.match.params.track_name);
+    console.log(this.props);
+    this.props.requestTrack(this.props.match.params.track_name)
   }
 
 
@@ -27,7 +28,7 @@ class TrackPage extends React.Component {
   render () {
 
     const track = this.props.tracks.length === 1 ?
-      this.props.tracks[0] : "";
+      this.props.tracks[0] : "test";
 
     const editButton = <button onClick={this.handleEditClick.bind(this)}>
                          Edit</button>;

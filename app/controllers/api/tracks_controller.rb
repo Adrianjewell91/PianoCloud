@@ -18,15 +18,19 @@ class Api::TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     @track.user_id = current_user.id
+
     if @track.save
       render :show
     else
       render json: {errors: @track.errors.full_messages}, status: 422
     end
+
   end
 
   def update
+
     @track = Track.find_by(id: params[:id])
+    
     if !@track.nil?
       if @track.update_attributes(track_params) && @track.artist == current_user
         render :show
@@ -36,6 +40,7 @@ class Api::TracksController < ApplicationController
     else
       render json: {errors: ["Not Found"]}, status: 404
     end
+
   end
 
   def destroy

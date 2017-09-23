@@ -3,9 +3,6 @@ import {Route, Link} from 'react-router-dom';
 import TrackPageContainer from './track_page_container';
 
 export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
-    const source_url = track.track_recording.substring(0,4) + '-us-west-2' +
-    track.track_recording.substring(4,track.track_recording.length);
-
     const handleClick = (e) => {
       e.preventDefault();
       e.target.value = e.target.value === "▶" ? "Pause" : "▶";
