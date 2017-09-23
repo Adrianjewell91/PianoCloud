@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import TrackPageContainer from './track_page_container';
+import { EditAndDeleteButtons } from './edit_delete';
 
 export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
     const handleClick = (e) => {
@@ -8,25 +8,15 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
       e.target.value = e.target.value === "▶" ? "Pause" : "▶";
     }
 
-    const handleDeleteClick = (e) => {
-      e.preventDefault();
-      deleteTrack(track.id);
-    }
-
-    const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
-                       <button>Edit</button></Link>;
-
-    const deleteButton = <button onClick={handleDeleteClick.bind(this)}>
-                        Delete</button>;
-
     return (<li>
               {track.artist}
+
               <br/>
 
-              <Link to={`/${track.artist}/${track.title}`}>
-              {track.title}</Link>
-              {editButton}
-              {deleteButton}
+              <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>
+
+              <EditAndDeleteButtons track={track}
+                                    deleteTrack={deleteTrack}/>
             </li>);
 
 };
