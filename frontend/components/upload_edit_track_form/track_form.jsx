@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { Route, Link} from 'react-router-dom';
+
 
 class TrackForm extends React.Component {
   constructor (props) {
@@ -33,6 +33,14 @@ class TrackForm extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
+
+      //if there aren't pictures or images uploaded, set the errors.
+      if (this.state.recordingURL === "" || this.state.recordingURL === "") {
+        return this.props
+                   .receiveTrackErrors(
+                     {responseJSON: {errors: ["Must have a song and image"]}});
+      }
+      //
 
       const formData = new FormData();
 
@@ -71,6 +79,7 @@ class TrackForm extends React.Component {
         } else {
           this.setState({[fieldURL]: "", [fieldFile]: null});
         }
+
       }
     }
 

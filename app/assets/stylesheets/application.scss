@@ -22,7 +22,7 @@
 @import "./splash";
 @import "./nav-bar";
 @import "./auth-form";
-
+@import "./stream";
 
  /*
 
@@ -56,6 +56,10 @@ Organization of CSS Styling:
   display: flex;
   justify-content: flex-start;
   margin-top: 40px;
+}
+
+.stream ul li div {
+  padding-left: 30px;
 }
 
 /*---*/

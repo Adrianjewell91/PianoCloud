@@ -16,6 +16,7 @@ class StreamPage extends React.Component {
 
     return (
       <div className="stream">
+        <h1>Stream</h1>
         <ul>
         {
           this.props.tracks.map((track) => {
