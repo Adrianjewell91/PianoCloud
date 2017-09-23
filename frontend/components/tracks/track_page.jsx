@@ -8,15 +8,8 @@ class TrackPage extends React.Component {
   }
 
   componentWillMount() {
-    //Find the song by id from this.props.tracks.
-    console.log(this.props);
     this.props.requestTrack(this.props.match.params.track_name)
   }
-
-
-  // handleEditClick (e) {
-  //   e.preventDefault();
-  // }
 
   handleDeleteClick (e) {
     e.preventDefault();

@@ -13,7 +13,7 @@ class StreamPage extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+
     return (
       <div className="stream">
         <ul>

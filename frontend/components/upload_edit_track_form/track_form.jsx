@@ -14,6 +14,15 @@ class TrackForm extends React.Component {
     };
   }
 
+  componentWillMount() {
+    if (this.props.match.params.track_name) {
+      this.props.requestTrack(this.props.match.params.track_name).then((res) => {
+          console.log(res);
+          this.setState(res.track);
+      });
+    }
+  }
+
     update(field) {
       return (e) => {
         this.setState({[field]: e.target.value});
@@ -56,7 +65,7 @@ class TrackForm extends React.Component {
     render() {
 
       const text = this.props.formType === "create" ? "Upload A Song" : "Save"
-      console.log(this.state);
+      console.log(this.props);
       return (
         <div className="update-form">
           <h1>{text}</h1>
