@@ -38,9 +38,15 @@ class TrackForm extends React.Component {
       formData.append("track[description]", this.state.description);
       formData.append("track[genre]", this.state.genre);
       formData.append("track[track_recording]", this.state.recordingFile)
-    
-      this.props.processForm(formData)
+
+      if (this.props.formType === "create") {
+        this.props.processForm(formData)
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
+      } else {
+        this.props.processForm(formData, this.state.id)
+        .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
+      }
+
     }
 
     handleUpload(e) {

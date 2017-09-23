@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const processForm = updateTrack;
 
   return {
-    processForm: (formTrack) => dispatch(processForm(formTrack)),
+    processForm: (formTrack, id) => dispatch(processForm(formTrack, id)),
     requestTrack: (track) => dispatch(requestTrack(track))
   };
 };

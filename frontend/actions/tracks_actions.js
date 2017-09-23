@@ -50,8 +50,8 @@ export const createTrack = (track) => (dispatch) => {
     .fail((errors) => dispatch(receiveTrackErrors(errors)));
 }
 
-export const updateTrack = (track) => (dispatch) => {
-  return TrackUtil.updateTrack(track)
+export const updateTrack = (track, id) => (dispatch) => {
+  return TrackUtil.updateTrack(track, id)
     .then((track) => dispatch(receiveTrack(track)))
     .fail((errors) => dispatch(receiveTrackErrors(errors)));
 }
