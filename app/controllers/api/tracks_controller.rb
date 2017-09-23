@@ -6,6 +6,10 @@ class Api::TracksController < ApplicationController
 
   def show
     # debugger
+    # Change the params[:id] (actually a title) into a parsed file.
+    debugger
+    newTitle = params[:id].gsub! '%20' ' ' 
+
     @track = Track.includes(:artist).find_by(title: params[:id])
 
     if @track.nil?
@@ -30,7 +34,7 @@ class Api::TracksController < ApplicationController
   def update
 
     @track = Track.find_by(id: params[:id])
-    
+
     if !@track.nil?
       if @track.update_attributes(track_params) && @track.artist == current_user
         render :show
