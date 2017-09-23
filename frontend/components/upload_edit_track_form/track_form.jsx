@@ -19,7 +19,6 @@ class TrackForm extends React.Component {
   componentWillMount() {
     if (this.props.match.params.track_name) {
       this.props.requestTrack(this.props.match.params.track_name).then((res) => {
-          console.log(res);
           this.setState(res.track);
       });
     }
@@ -35,12 +34,21 @@ class TrackForm extends React.Component {
       e.preventDefault();
 
       //if there aren't pictures or images uploaded, set the errors.
-      if (this.state.recordingURL === "" || this.state.recordingURL === "") {
+
+      if (this.state.imageURL === "" ||
+          this.state.imageURL === undefined) {
         return this.props
                    .receiveTrackErrors(
                      {responseJSON: {errors: ["Must have a song and image"]}});
       }
-      //
+
+      if (this.state.recordingURL === "" ||
+          this.state.recordingURL === undefined) {
+        return this.props
+                   .receiveTrackErrors(
+                     {responseJSON: {errors: ["Must have a song and image"]}});
+      }
+
 
       const formData = new FormData();
 
@@ -84,7 +92,7 @@ class TrackForm extends React.Component {
     }
 
     render() {
-
+    console.log(this.state);
       const text = this.props.formType === "create" ? "Upload A Song" : "Save"
 
       const backButton = <Link to="/stream">

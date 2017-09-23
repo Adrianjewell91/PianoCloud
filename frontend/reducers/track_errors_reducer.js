@@ -10,7 +10,6 @@ const TrackErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_TRACK_ERRORS:
-
       const errors = action.errors.responseJSON.errors;
       return errors;
 
