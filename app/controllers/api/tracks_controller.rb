@@ -5,9 +5,7 @@ class Api::TracksController < ApplicationController
   end
 
   def show
-    # debugger
-    # Change the params[:id] (actually a title) into a parsed file.
-
+    #This makes things work on heroku!
     newTitle = params[:id].gsub! '%20', ' '
 
     @track = Track.includes(:artist).find_by(title: params[:id])
