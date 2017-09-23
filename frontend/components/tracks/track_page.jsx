@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
 import EditFormContainer from '../upload_edit_track_form/edit_form_container';
-import { EditAndDeleteButtons } from "./edit_delete";
 
 
 class TrackPage extends React.Component {
@@ -18,6 +17,7 @@ class TrackPage extends React.Component {
     const id = this.props.tracks[0].id;
     this.props.deleteTrack(id).then(this.props.history.push('/stream'));
   }
+  //can each have their own handleDeleteClick - lets have a try.
 
   render () {
 

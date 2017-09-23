@@ -5,7 +5,21 @@ import { EditAndDeleteButtons } from './edit_delete';
 export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
     const handleClick = (e) => {
       e.preventDefault();
-      e.target.value = e.target.value === "▶" ? "Pause" : "▶";
+      e.target.value = e.target.value === "▶" ? "||" : "▶";
+    }
+
+    //test if the currentUser.id === the track_name.artist_id, if so, show the
+    // edit and delete buttons.
+    console.log(currentUser);
+    console.log(track);
+
+    let modifyButtons = null;
+
+    if (currentUser) {
+      modifyButtons = currentUser.id === parseInt(track.artist_id) ?
+        <EditAndDeleteButtons track={track}
+                              deleteTrack={deleteTrack}
+                              /> : null;
     }
 
     return (<li>
@@ -15,8 +29,7 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
 
               <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>
 
-              <EditAndDeleteButtons track={track}
-                                    deleteTrack={deleteTrack}/>
+              {modifyButtons}
             </li>);
 
 };
