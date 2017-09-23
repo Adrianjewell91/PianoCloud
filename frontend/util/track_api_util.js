@@ -6,6 +6,16 @@ export const getTracks = () => {
 }
 
 export const getTrack = (title) => {
+  //right here try the editing.
+  let parsedTitle = "";
+  for(let i=0; i < title.length; i++) {
+    if (title.slice(i,i+3) === "%20") {
+      parsedTitle += " ";
+    } else {
+      parsedTitle += title[i];
+    }
+  }
+
   return $.ajax({
     method: "GET",
     url: `/api/tracks/${title}`

@@ -8,8 +8,7 @@ class TrackPage extends React.Component {
   }
 
   componentWillMount() {
-    console.log(this.props); //may need to user regex to remove %, or search by id.
-    //searching by ID would be easier.
+    console.log(this.props);
 
     //Get the song name and find the id of the song.
     // searching by ID would solve the bug,
