@@ -81,53 +81,66 @@ class TrackForm extends React.Component {
       const backButton = <Link to="/stream">
                          <button>Back To Stream</button></Link>
 
+      const currentImage = this.props.track ?
+                         <img height="160px" width="160px"
+                           src={this.props.track.thumb_nail_url}/> : "";
+
       return (
-        <div className="update-form">
+        <div>
           <h1>{text}</h1>
 
-            <form onSubmit={this.handleSubmit.bind(this)}>
+          {currentImage}
 
-            <label>Thumbnail File (must be image)
-              <input type="file"
-                     onChange={this.handleUpload("image")}/>
-            </label>
+            <form className="track-form"
+                  onSubmit={this.handleSubmit.bind(this)}>
 
-            <label>Song File (must be mp3)
-              <input type="file"
-                     onChange={this.handleUpload("recording")}/>
-            </label>
+              <label>Thumbnail File (must be image)
+                <input type="file"
+                       onChange={this.handleUpload("image")}/>
+              </label>
 
-            <br/>
+              <br/>
+
+              <label>Song File (must be mp3)
+                <input type="file"
+                       onChange={this.handleUpload("recording")}/>
+              </label>
+
+              <br/>
+
+              <label>
+                <input type="text"
+                  value={this.state.title}
+                  onChange={this.update('title')}
+                  placeholder="Title"></input>
+              </label>
+
+              <br/>
 
             <label>
-              <input type="text"
-                value={this.state.title}
-                onChange={this.update('title')}
-                placeholder="Title"></input>
-            </label>
-            <br/>
-            <label>
-              <select value={this.state.genre}
-                      onChange={this.update('genre')}>
-                <option defaultValue="Genre" >Genre</option>
-                <option value="Classical">Classical</option>
-                <option value="Jazz">Jazz</option>
-                <option value="Rock">Rock</option>
-                <option value="Avant Garde">Avant Garde</option>
-              </select>
-            </label>
-            <br/>
-            <br/>
-            <label>
-              <textarea rows="10" cols="47"
-                style={{resize: 'none'}}
-                value={this.state.description}
-                onChange={this.update('description')}
-                placeholder="Description"></textarea>
-            </label>
-            <br/>
+                <select
+                        onChange={this.update('genre')}>
+                  <option defaultValue="Genre" >Genre</option>
+                  <option value="Classical">Classical</option>
+                  <option value="Jazz">Jazz</option>
+                  <option value="Rock">Rock</option>
+                  <option value="Avant Garde">Avant Garde</option>
+                </select>
+              </label>
 
-            <input className="auth-button" type="submit" value={text}></input>
+              <br/>
+              <br/>
+
+              <label>
+                <textarea rows="10" cols="47"
+                  style={{resize: 'none'}}
+                  value={this.state.description || ""}
+                  onChange={this.update('description')}
+                  placeholder="Description"></textarea>
+              </label>
+              <br/>
+
+              <input className="track-form-submit" type="submit" value={text}></input>
 
           </form>
 
