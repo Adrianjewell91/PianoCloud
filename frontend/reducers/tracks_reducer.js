@@ -17,7 +17,7 @@ const TracksReducer = (state = {}, action) => {
       return allTracks;
     case RECEIVE_TRACK:
 
-      return {[action.track.id]: action.track}
+      return Object.assign({}, state, {[action.track.id]: action.track});
     case REMOVE_TRACK:
 
       let newState = Object.assign({}, state);
@@ -29,3 +29,7 @@ const TracksReducer = (state = {}, action) => {
 };
 
 export default TracksReducer;
+
+//I'm not being clear about what I want my state to look like when I navigate
+//Between pages and when editing forms and stuff like that. When I update a song,
+//Soundcloud stays on the page it was on, but
