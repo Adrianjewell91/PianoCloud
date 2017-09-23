@@ -40,7 +40,7 @@ class TrackForm extends React.Component {
       formData.append("track[track_recording]", this.state.recordingFile)
 
       this.props.processForm(formData)
-        .then(() => this.props.history.push(`/`));
+        .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
     }
 
     handleUpload(e) {
@@ -65,7 +65,7 @@ class TrackForm extends React.Component {
     render() {
 
       const text = this.props.formType === "create" ? "Upload A Song" : "Save"
-      console.log(this.props);
+
       return (
         <div className="update-form">
           <h1>{text}</h1>
