@@ -55,9 +55,10 @@ class TrackForm extends React.Component {
       formData.append("track[title]", this.state.title);
       formData.append("track[description]", this.state.description);
       formData.append("track[genre]", this.state.genre);
-      formData.append("track[track_recording]", this.state.recordingFile);
-      formData.append("track[track_thumb_nail]", this.state.imageFile);
-
+      if (this.formType = "create") {
+        formData.append("track[track_recording]", this.state.recordingFile);
+        formData.append("track[track_thumb_nail]", this.state.imageFile);
+      }
       if (this.props.formType === "create") {
         this.props.processForm(formData)
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
@@ -101,7 +102,22 @@ class TrackForm extends React.Component {
 
       const currentImage = this.props.track ?
                          <img height="160px" width="160px"
-                           src={this.props.track.thumb_nail_url}/> : "";
+                           src={this.props.track.thumb_nail_url}/> : (
+                            <div>
+                              
+                             <label>Thumbnail File (must be image)
+                               <input type="file"
+                                      onChange={this.handleUpload("image")}/>
+                             </label>
+
+                             <br/>
+
+                             <label>Song File (must be mp3)
+                               <input type="file"
+                                      onChange={this.handleUpload("recording")}/>
+                             </label>
+
+                            </div>);
 
       return (
         <div>
@@ -112,17 +128,6 @@ class TrackForm extends React.Component {
             <form className="track-form"
                   onSubmit={this.handleSubmit.bind(this)}>
 
-              <label>Thumbnail File (must be image)
-                <input type="file"
-                       onChange={this.handleUpload("image")}/>
-              </label>
-
-              <br/>
-
-              <label>Song File (must be mp3)
-                <input type="file"
-                       onChange={this.handleUpload("recording")}/>
-              </label>
 
               <br/>
 
