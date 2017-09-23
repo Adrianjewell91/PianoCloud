@@ -18,14 +18,17 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
     }
 
     return (<li>
-              {track.artist}
+              <Link to={`/${track.artist}/${track.title}`}>
+                <img height="160px" width="160px" src={track.thumb_nail_url}/>
+              </Link>
 
-              <br/>
-                <img height="160px" width="160px"
-                  src={track.thumb_nail_url}></img>
-              <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>
+              <div>
+                {track.artist}
+                <br/>
+                <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>
+                {modifyButtons}
+              </div>
 
-              {modifyButtons}
             </li>);
 
 };

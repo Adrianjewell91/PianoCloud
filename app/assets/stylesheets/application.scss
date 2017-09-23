@@ -48,6 +48,16 @@ Organization of CSS Styling:
   border-radius: 7px;
 }
 
+.stream ul {
+  list-style: none;
+}
+
+.stream ul li {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+
 /*---*/
 
 .footer {
