@@ -29,7 +29,7 @@ class TrackPage extends React.Component {
     const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
 
-    const editButton = <Link to={`/edit`}>
+    const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
                        <button>Edit</button></Link>;
 
     const deleteButton = <button onClick={this.handleDeleteClick.bind(this)}>

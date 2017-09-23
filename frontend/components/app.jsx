@@ -22,7 +22,7 @@ const App = () => (
       <Route exact path="/users/:user_name" component={UserPageContainer} />
       <Route exact path="/upload" component={TrackFormContainer} />
       <Route exact path="/" component={GreetingContainer} />
-      <Route path="/edit"
+      <Route path="/:user_name/:track_name/edit"
              component={EditFormContainer} />
       <Route exact path="/:user_name/:track_name"
              component={TrackPageContainer} />
