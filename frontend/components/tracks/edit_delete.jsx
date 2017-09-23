@@ -19,3 +19,18 @@ export const EditAndDeleteButtons = ({track, deleteTrack}) => {
             {deleteButton}
           </div>);
 };
+
+
+export const JustTheButtons = ({track, handleClick}) => {
+
+    const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
+                       <button>Edit</button></Link>;
+
+    const deleteButton = <button onClick={handleClick}>
+                         Delete</button>;
+
+   return (<div>
+             {editButton}
+             {deleteButton}
+           </div>);
+}

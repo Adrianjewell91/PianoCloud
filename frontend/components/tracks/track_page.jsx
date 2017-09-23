@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
 import EditFormContainer from '../upload_edit_track_form/edit_form_container';
-
+import { JustTheButtons } from './edit_delete';
 
 class TrackPage extends React.Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class TrackPage extends React.Component {
   //can each have their own handleDeleteClick - lets have a try.
 
   render () {
+
     const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
 
@@ -33,7 +34,8 @@ class TrackPage extends React.Component {
 
      if (this.props.currentUser) {
        modifyButtons = this.props.currentUser.id === parseInt(track.artist_id) ?
-         <div>{editButton}{deleteButton}</div> : '';
+         <JustTheButtons track={track}
+                         handleClick={this.handleDeleteClick.bind(this)}/> : '';
      }
 
     return (
