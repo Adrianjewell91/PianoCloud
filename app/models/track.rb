@@ -5,7 +5,7 @@ class Track < ApplicationRecord
   validates_attachment_content_type :track_recording, content_type: /\Aaudio\/.*\Z/
   # do_not_validate_attachment_file_type :track_recording
 
-  has_attached_file :track_thumb_nail
+  has_attached_file :track_thumb_nail, default_url: "https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"
   validates_attachment_content_type :track_thumb_nail, content_type: /\Aimage\/.*\Z/
 
   #Add this later:

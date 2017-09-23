@@ -54,15 +54,15 @@ class NavBar extends React.Component {
   render () {
     //Buttons
     let display;
-    let logo_image =
+    let logoImage =
     (<img height="46px" width="55px" className="nav-logo"
     src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"
     />)
 
 
-    let home_button = (<Link to="/">Home</Link>);
-    let stream_button = (<Link to="/stream">Stream</Link>);
-    let upload_button = (<Link to="/upload">Upload</Link>);
+    let homeButton = (<Link to="/">Home</Link>);
+    let streamButton = (<Link to="/stream">Stream</Link>);
+    let uploadButton = (<Link to="/upload">Upload</Link>);
     let search_input = (
       <form className="nav-search-form">
         <input className="nav-search" type="text"
@@ -82,25 +82,25 @@ class NavBar extends React.Component {
       let user = this.props.currentUser;
 
       //This is a f***ing hack.
-      const user_profile_url = user.thumb_nail_url.includes("missing") ?
+      const userProfileUrl = user.thumb_nail_url.includes("missing") ?
         "https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg" :
         user.thumb_nail_url;
 
       display = (
         <div className={navLoggedIn}>
-          <Link to="/">{logo_image}</Link>
+          <Link to="/">{logoImage}</Link>
 
 
-          <button className={navButtonClass}>{home_button}</button>
-          <button className={navButtonClass}>{stream_button}</button>
+          <button className={navButtonClass}>{homeButton}</button>
+          <button className={navButtonClass}>{streamButton}</button>
           {search_input}
 
-          <button className={navButtonClass}>{upload_button}</button>
+          <button className={navButtonClass}>{uploadButton}</button>
 
           <Link to={`/users/${user.username}`}>
             <img className = 'profile-nav-thumbnail'
                  height="20px" width="20px"
-                 src={user_profile_url}/></Link>
+                 src={userProfileUrl}/></Link>
 
           <button className={navButtonClass}>
               <Link to={`/users/${user.username}`}>{`${user.username}`}</Link>
@@ -115,9 +115,9 @@ class NavBar extends React.Component {
       display = (
         <div className={navLoggedOut}>
           <div>
-            <Link to="/">{logo_image}</Link>
+            <Link to="/">{logoImage}</Link>
             <button className={`${navButtonClass} nav-stream`}>
-            {stream_button}</button>
+            {streamButton}</button>
           </div>
 
           <div>

@@ -21,7 +21,8 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
               {track.artist}
 
               <br/>
-
+                <img height="160px" width="160px"
+                  src={track.thumb_nail_url}></img>
               <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>
 
               {modifyButtons}
