@@ -17,18 +17,11 @@ class TrackPage extends React.Component {
     const id = this.props.tracks[0].id;
     this.props.deleteTrack(id).then(this.props.history.push('/stream'));
   }
-  //can each have their own handleDeleteClick - lets have a try.
 
   render () {
 
     const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
-
-    const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
-                       <button>Edit</button></Link>;
-
-    const deleteButton = <button onClick={this.handleDeleteClick.bind(this)}>
-                         Delete</button>;
 
      let modifyButtons = null;
 

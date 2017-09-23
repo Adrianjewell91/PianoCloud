@@ -10,7 +10,9 @@ class TrackForm extends React.Component {
       description: "",
       genre: "",
       recordingFile: null,
-      recordingURL: ""
+      recordingURL: "",
+      imageFile: null,
+      imageURL: ""
     };
   }
 
@@ -30,7 +32,6 @@ class TrackForm extends React.Component {
     }
 
     handleSubmit(e) {
-
       e.preventDefault();
 
       const formData = new FormData();
@@ -38,7 +39,8 @@ class TrackForm extends React.Component {
       formData.append("track[title]", this.state.title);
       formData.append("track[description]", this.state.description);
       formData.append("track[genre]", this.state.genre);
-      formData.append("track[track_recording]", this.state.recordingFile)
+      formData.append("track[track_recording]", this.state.recordingFile);
+      formData.append("track[track_thumbnail]", this.state.imageFile);
 
       if (this.props.formType === "create") {
         this.props.processForm(formData)
@@ -50,21 +52,25 @@ class TrackForm extends React.Component {
 
     }
 
-    handleUpload(e) {
-      e.preventDefault();
-      let reader = new FileReader();
-      let file = e.currentTarget.files[0];
+    handleUpload(field) {
+      return (e) => {
+        e.preventDefault();
+        let reader = new FileReader();
+        let file = e.currentTarget.files[0];
 
-      let that = this;
+        let that = this;
+        fieldURL = `${field}URL`;
+        fieldFile = `${field}File`;
 
-      reader.onloadend = function() {
-        that.setState({recordingURL: reader.result, recordingFile: file});
-      };
+        reader.onloadend = function() {
+          that.setState({[fieldURL]: reader.result, [fieldFile]: file});
+        };
 
-      if (file) {
-        reader.readAsDataURL(file);
-      } else {
-        this.setState({recordingFile: null, recordingURL: ""});
+        if (file) {
+          reader.readAsDataURL(file);
+        } else {
+          this.setState({[fieldURL]: "", [fieldFile]: null});
+        }
       }
     }
 
@@ -81,8 +87,16 @@ class TrackForm extends React.Component {
 
             <form onSubmit={this.handleSubmit.bind(this)}>
 
-            <input type="file"
-                   onChange={this.handleUpload.bind(this)}/>
+            <label>Thumbnail File (must be image)
+              <input type="file"
+                     onChange={this.handleUpload("image")}/>
+            </label>
+
+            <label>Song File (must be mp3)
+              <input type="file"
+                     onChange={this.handleUpload("recording")}/>
+            </label>
+
             <br/>
 
             <label>
