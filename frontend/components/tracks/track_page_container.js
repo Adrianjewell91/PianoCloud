@@ -11,6 +11,7 @@ import TrackPage from "./track_page";
 const mapStateToProps = (state,ownProps) => {
 
   return {
+    currentUser: state.session.currentUser,
     tracks: toArray(state.entities.tracks)
   };
 }

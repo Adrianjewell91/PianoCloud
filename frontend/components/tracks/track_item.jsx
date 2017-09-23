@@ -10,8 +10,6 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
 
     //test if the currentUser.id === the track_name.artist_id, if so, show the
     // edit and delete buttons.
-    console.log(currentUser);
-    console.log(track);
 
     let modifyButtons = null;
 

@@ -20,9 +20,10 @@ class TrackPage extends React.Component {
   //can each have their own handleDeleteClick - lets have a try.
 
   render () {
-
     const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
+
+
 
     const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
                        <button>Edit</button></Link>;
@@ -30,13 +31,20 @@ class TrackPage extends React.Component {
     const deleteButton = <button onClick={this.handleDeleteClick.bind(this)}>
                          Delete</button>;
 
+     let modifyButtons = null;
+
+     console.log(this.props.currentUser);
+     console.log(parseInt(track.artist_id));
+
+     if (this.props.currentUser) {
+       modifyButtons = this.props.currentUser.id === parseInt(track.artist_id) ?
+         <div>{editButton}{deleteButton}</div> : '';
+     }
+
     return (
       <div>
         {track.title}
-        <div>
-          {editButton}
-          {deleteButton}
-        </div>
+        {modifyButtons}
       </div>
     );
   }
