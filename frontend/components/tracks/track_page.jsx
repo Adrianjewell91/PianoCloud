@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link, Route} from 'react-router-dom';
+import EditFormContainer from '../upload_edit_track_form/edit_form_container';
 
 class TrackPage extends React.Component {
   constructor(props) {
@@ -12,9 +14,9 @@ class TrackPage extends React.Component {
   }
 
 
-  handleEditClick (e) {
-    e.preventDefault();
-  }
+  // handleEditClick (e) {
+  //   e.preventDefault();
+  // }
 
   handleDeleteClick (e) {
     e.preventDefault();
@@ -27,11 +29,12 @@ class TrackPage extends React.Component {
     const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
 
-    const editButton = <button onClick={this.handleEditClick.bind(this)}>
-                         Edit</button>;
+    const editButton = <Link to={`/edit`}>
+                       <button>Edit</button></Link>;
+
     const deleteButton = <button onClick={this.handleDeleteClick.bind(this)}>
                          Delete</button>;
-
+     console.log(track);
     return (
       <div>
         {track.title}

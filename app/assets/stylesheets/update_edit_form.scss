@@ -1,0 +1,41 @@
+.update-form {
+  text-align: center;
+}
+
+.update-form form input, select {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+
+  height: 40px;
+  width: 300px;
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 3px;
+  text-indent: 10px;
+}
+
+.update-form select {
+  background-color: white;
+  border-color: black;
+  width: 304px;
+}
+
+.update-form form .update-button {
+  background-color: #FF5500;
+  border-style: none;
+  height: 40px;
+  width: 304px;
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+.update-form form .update-button:focus {
+  outline: 0;
+}
+
+.update-form ul li {
+  list-style: none;
+  // list-style-position: inside;
+  color: red;
+}

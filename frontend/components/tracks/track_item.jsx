@@ -26,7 +26,7 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
               {track.artist}
               <br/>
 
-              <Link to={{ pathname: `/${track.artist}/${track.title}`, query: {id: track.id}}}>
+              <Link to={`/${track.artist}/${track.title}`}>
               {track.title}</Link>
               {editButton}
               {deleteButton}

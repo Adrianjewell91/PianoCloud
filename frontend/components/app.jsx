@@ -7,6 +7,8 @@ import UserPageContainer from './user_page/user_page_container';
 import StreamPageContainer from "./tracks/stream_container";
 import TrackFormContainer from "./upload_edit_track_form/track_form_container";
 import TrackPageContainer from "./tracks/track_page_container";
+import EditFormContainer from './upload_edit_track_form/edit_form_container';
+
 
 import {AuthRoute, ProtectedRoute} from "../util/route_util.jsx"
 
@@ -20,7 +22,11 @@ const App = () => (
       <Route exact path="/users/:user_name" component={UserPageContainer} />
       <Route exact path="/upload" component={TrackFormContainer} />
       <Route exact path="/" component={GreetingContainer} />
-      <Route exact path={`/:user_name/:track_name`} component={TrackPageContainer}/>
+      <Route path="/edit"
+             component={EditFormContainer} />
+      <Route exact path="/:user_name/:track_name"
+             component={TrackPageContainer} />
+
       </Switch>
     </div>
 

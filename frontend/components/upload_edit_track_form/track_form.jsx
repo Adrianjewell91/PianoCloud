@@ -5,7 +5,7 @@ import { Route, Link} from 'react-router-dom';
 class TrackForm extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
+    this.state = this.props.track || {
       title: "",
       description: "",
       genre: "",
@@ -29,7 +29,7 @@ class TrackForm extends React.Component {
       formData.append("track[description]", this.state.description);
       formData.append("track[genre]", this.state.genre);
       formData.append("track[track_recording]", this.state.recordingFile)
-      // debugger
+
       this.props.processForm(formData)
         .then(() => this.props.history.push(`/`));
     }
@@ -55,19 +55,15 @@ class TrackForm extends React.Component {
 
     render() {
 
-      const text = this.props.formType === "create" ? "Upload A Song" : "Save";
-
-      const fileUploadElement = this.props.formType === "create" ?
-     (<input type="file" onChange={this.handleUpload.bind(this)}/>) : (<span/>);
-
+      const text = this.props.formType === "create" ? "Upload A Song" : "Save"
 
       return (
-        <div className="auth-form">
+        <div className="update-form">
           <h1>{text}</h1>
 
-          <form onSubmit={this.handleSubmit.bind(this)}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
 
-            {fileUploadElement}
+            <input type="file" onChange={this.handleUpload.bind(this)}/>
             <br/>
 
             <label>
@@ -108,7 +104,6 @@ class TrackForm extends React.Component {
                                                     {error}!</li>)
               }
             </ul>
-
 
         </div>
       );
