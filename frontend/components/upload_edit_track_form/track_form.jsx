@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Link} from 'react-router-dom';
 
-
 class TrackForm extends React.Component {
   constructor (props) {
     super(props);
@@ -18,6 +17,10 @@ class TrackForm extends React.Component {
           this.setState(res.track);
       });
     }
+  }
+
+  componentWillUnmount() {
+    dispatch({type: "CLEAR_TRACK_ERRORS"});
   }
 
     update(field) {

@@ -5,7 +5,7 @@ export const RECEIVE_TRACK = "RECEIVE_TRACK";
 export const REMOVE_TRACK = "REMOVE_TRACK";
 
 export const RECEIVE_TRACK_ERRORS = "RECEIVE_TRACK_ERRORS";
-export const CLEAR_TRACK_ERRORS = "REMOVE_TRACK_ERRORS";
+export const CLEAR_TRACK_ERRORS = "CLEAR_TRACK_ERRORS";
 
 export const receiveTracks = (tracks) => ({
   type: RECEIVE_TRACKS,
@@ -25,11 +25,11 @@ export const removeTrack = (id) => ({
 export const receiveTrackErrors = (errors) => ({
   type: RECEIVE_TRACK_ERRORS,
   errors
-})
+});
 
 export const clearTrackErrors = ({
   type: CLEAR_TRACK_ERRORS
-})
+});
 
 //Thunks
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createTrack, receiveTrackErrors } from '../../actions/tracks_actions';
+import { createTrack,
+         receiveTrackErrors } from '../../actions/tracks_actions';
 import TrackForm from './track_form';
 
 const mapStateToProps = (state, ownProps) => {
