@@ -6,9 +6,8 @@ class UserPage extends React.Component {
   }
 
   componentDidMount() {
-    //We Want to display the user searched for, not the current user.
-    //But the button in nav bar will find the current user.
-
+    console.log(this.props);
+    this.props.requestUser(this.props.match.params.user_name);
   }
 
 
@@ -16,53 +15,7 @@ class UserPage extends React.Component {
     // console.log(this.props);
     return (
       <div className="user-page">
-        <h1>Soon to include User Profile Information</h1>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
-        <p>On mount, query the database for the user in props.match.params
-        .username and display it here. THere will be quite a lot to display.</p>
+
     </div>
     )
   }
