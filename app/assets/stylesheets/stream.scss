@@ -12,3 +12,23 @@
   justify-content: flex-start;
   margin-top: 40px;
 }
+
+.stream a {
+  text-decoration: none;
+  color: black;
+  font-family: "Interstate" sans-serif;
+  font-size: 18px;
+}
+
+.stream span {
+  color: #B1B1B1;
+}
+
+.stream span:hover {
+  color: black;
+}
+
+.edit-delete {
+  position: relative;
+  right: 30px;
+}

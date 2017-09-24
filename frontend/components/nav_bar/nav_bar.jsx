@@ -90,7 +90,6 @@ class NavBar extends React.Component {
         <div className={navLoggedIn}>
           <Link to="/">{logoImage}</Link>
 
-
           <button className={navButtonClass}>{homeButton}</button>
           <button className={navButtonClass}>{streamButton}</button>
           {search_input}

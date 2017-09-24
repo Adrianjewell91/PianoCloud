@@ -44,14 +44,14 @@
   padding-top: 11px;
 }
 
-a {
+.nav-button a {
   text-decoration: none;
   color: #B0B0B0
 }
 
 button:focus {outline:0;}
 
-.nav-button:hover, a:hover {
+.nav-button:hover, .nav-button a:hover {
   color: #FFFFFF;
 }
 

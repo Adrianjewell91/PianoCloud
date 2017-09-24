@@ -14,10 +14,7 @@ export const EditAndDeleteButtons = ({track, deleteTrack}) => {
   const deleteButton = <button onClick={handleDeleteClick.bind(this)}>
                        Delete</button>;
 
-  return (<div>
-            {editButton}
-            {deleteButton}
-          </div>);
+  return (<div className="edit-delete">{editButton}{deleteButton}</div>);
 };
 
 
@@ -29,8 +26,5 @@ export const JustTheButtons = ({track, handleClick}) => {
     const deleteButton = <button onClick={handleClick}>
                          Delete</button>;
 
-   return (<div>
-             {editButton}
-             {deleteButton}
-           </div>);
+   return (<div className="edit-delete">{editButton}{deleteButton}</div>);
 }

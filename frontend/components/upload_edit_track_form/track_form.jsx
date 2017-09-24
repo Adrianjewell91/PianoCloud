@@ -87,7 +87,7 @@ class TrackForm extends React.Component {
     }
 
     render() {
-    console.log(this.state);
+
       const text = this.props.formType === "create" ?
         "Upload A Song" : "Save(You need to reupload the media)"
 

@@ -23,9 +23,11 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
               </Link>
 
               <div>
-                {track.artist}
-                <br/>
+                <span>{track.artist}</span><br/>
                 <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>
+                <br/>
+                <img height="80px" width="400px"
+ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
                 {modifyButtons}
               </div>
 
