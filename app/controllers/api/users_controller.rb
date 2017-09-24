@@ -6,13 +6,16 @@ class Api::UsersController < ApplicationController
     render :index
   end
 
-  # def show
-  #   @user = User.find_by(username: username)
-  #   if @user
-  #     render :show
-  #   else
-  #     render json: ["User doesn't exist"], status: 404
-  # end
+  def show
+    params[:id].gsub! '%20', ' ' #to switch the thing.
+    #could potentially do a rescue for track or song errors
+    @user = User.find_by(username: params[:id])
+    if @user
+      render :show_profile
+    else
+      render json: ["User doesn't exist"], status: 404
+    end
+  end
 
   def create
     @user = User.new(user_params)
@@ -24,10 +27,25 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = Track.find_by(id: params[:id])
+
+    if !@user.nil?
+      if @user.update_attributes(user_params) && current_user.id = @user.id
+        render :show
+      else
+        render json: {errors: @user.errors.full_messages}, status: 422
+      end
+    else
+      render json: {errors: ["Not Found"]}, status: 404
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :email
+                                 :name, :location, :thumb_nail)
   end
 
 end

@@ -18,14 +18,14 @@ const App = () => (
 
     <div className="main-page">
       <Switch>
-      <Route exact path="/stream" component={StreamPageContainer} />
-      <Route exact path="/users/:user_name" component={UserPageContainer} />
-      <Route exact path="/upload" component={TrackFormContainer} />
-      <Route exact path="/" component={GreetingContainer} />
-      <Route path="/:user_name/:track_name/edit"
-             component={EditFormContainer} />
-      <Route exact path="/:user_name/:track_name"
-             component={TrackPageContainer} />
+        <Route exact path="/stream" component={StreamPageContainer} />
+        <Route exact path="/users/:user_name" component={UserPageContainer} />
+        <Route exact path="/upload" component={TrackFormContainer} />
+        <Route exact path="/" component={GreetingContainer} />
+        <Route path="/:user_name/:track_name/edit"
+               component={EditFormContainer} />
+        <Route exact path="/:user_name/:track_name"
+               component={TrackPageContainer} />
 
       </Switch>
     </div>
