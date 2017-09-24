@@ -34,16 +34,23 @@ class TrackPage extends React.Component {
     return (
       <div>
         <div className="song-stats">
-          <div className="song-and-play-button">
-            <button id="play-button-large">▶</button>
 
-            <div className="song-info">
-              <span>{track.artist}</span>
+          <div className="stats-waveform">
+            <div className="song-and-play-button">
+              <button id="play-button-large">▶</button>
 
-              <span>{track.title}</span>
+              <div className="song-info">
+                <span>{track.artist}</span>
 
-              <span>{track.genre}</span>
+                <span>{track.title}</span>
+
+                <span>{track.genre}</span>
+              </div>
             </div>
+
+            <img height="100px" width="500px"
+src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
+
           </div>
 
           <img height="340px" width="340px"
