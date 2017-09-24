@@ -18,17 +18,31 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
     }
 
     return (<li>
-              <Link to={`/${track.artist}/${track.title}`}>
-                <img height="160px" width="160px" src={track.thumb_nail_url}/>
-              </Link>
+              <div id="thumb-nail">
+                <Link to={`/${track.artist}/${track.title}`}>
+                  <img height="160px" width="160px" src={track.thumb_nail_url}/>
+                </Link>
+              </div>
 
-              <div>
-                <span>{track.artist}</span><br/>
-                <Link to={`/${track.artist}/${track.title}`}>{track.title}</Link>
-                <br/>
-                <img height="80px" width="400px"
+              <div id="information">
+                <div id="first-row">
+                <button id="play-button-small">▶</button>
+
+                <span>{track.artist}</span>
+
+                <Link to={`/${track.artist}/${track.title}`}>
+                                           {track.title}</Link>
+                </div>
+
+                <div id="second-row">
+                  <img height="80px" width="400px"
  src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
-                {modifyButtons}
+
+                </div>
+
+                <div id="third-row">
+                   {modifyButtons}
+                 </div>
               </div>
 
             </li>);

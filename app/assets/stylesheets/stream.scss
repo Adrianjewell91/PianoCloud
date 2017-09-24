@@ -28,6 +28,15 @@
   color: black;
 }
 
+#play-button-small {
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  background-color: #FF3300;
+  color: white;
+  border-style: none;
+}
+
 .edit-delete {
   position: relative;
   right: 30px;
