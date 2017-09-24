@@ -31,7 +31,7 @@ class UserPage extends React.Component {
       this.props.artist[0] : "";
 
     let track_display = "Loading";
-
+    debugger
     if (artist !== "") {
       track_display = (
           artist.tracks.map((track) => <TrackItem key={track.title}
@@ -47,6 +47,7 @@ class UserPage extends React.Component {
           <div className="user-info">
             <span>{artist.username}</span>
             <span>{artist.name}</span>
+            <span>{artist.email}</span>
             <span>{artist.location}</span>
           </div>
 

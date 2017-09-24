@@ -33,7 +33,7 @@ class EditUserForm extends React.Component {
     e.preventDefault();
 
     this.props.updateUser(this.state)
-    .then((res) => this.props.history.push(`/stream`));
+      .then((res) => this.props.history.push(`/`));
   }
 
   render () {
