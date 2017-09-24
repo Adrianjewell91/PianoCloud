@@ -81,16 +81,18 @@ class NavBar extends React.Component {
 
       let user = this.props.currentUser;
 
-      //This is a f***ing hack.
+      //This is a hack.
       const userProfileUrl = user.thumb_nail_url.includes("missing") ?
         "https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg" :
         user.thumb_nail_url;
 
       display = (
         <div className={navLoggedIn}>
-          <Link to="/">{logoImage}</Link>
+          <Link to={`/users/${user.username}`}>{logoImage}</Link>
 
-          <button className={navButtonClass}>{homeButton}</button>
+          <button className={navButtonClass}>
+            <Link to={`/users/${user.username}`}>Home</Link>
+          </button>
           <button className={navButtonClass}>{streamButton}</button>
           {search_input}
 

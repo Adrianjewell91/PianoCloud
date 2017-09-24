@@ -10,8 +10,6 @@ import TrackPageContainer from "./tracks/track_page_container";
 import EditFormContainer from './upload_edit_track_form/edit_form_container';
 
 
-import {AuthRoute, ProtectedRoute} from "../util/route_util.jsx"
-
 const App = () => (
   <div>
     <NavBarContainer/>

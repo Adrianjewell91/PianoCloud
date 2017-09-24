@@ -1,3 +1,5 @@
+//May delete this because current I don't use it and don't intend to usei t. F
+
 import React from 'react';
 import {connect } from 'react-redux';
 import {Route, Redirect, withRouter} from "react-router-dom";
