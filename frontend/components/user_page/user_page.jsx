@@ -85,11 +85,8 @@ class UserPage extends React.Component {
       <div className="user-page">
         <div className="profile-stats">
           <div className="picture-and-info">
-
-
             <img className="profile-pic"
               src={userProfileUrl}/>
-
             <div className="user-info">
               <span>{artist.username}</span>
               <span>{artist.name}</span>
@@ -100,13 +97,7 @@ class UserPage extends React.Component {
             <button
               onClick={this.handleOpenModal.bind(this)}>Edit Profile
             </button>
-            <form onSubmit={this.handleSubmit.bind(this)}>
-              <input type="file"
-                onChange={this.handleUpload("image")}>
-              </input>
-              <br/>
-              <input type="submit" value="Change Thumbnail"/>
-            </form>
+
 
             <ReactModal
               className="edit-modal"
@@ -114,6 +105,15 @@ class UserPage extends React.Component {
               contentLabel="edit-form">
               <button onClick={this.handleCloseModal.bind(this)}>X</button>
               <EditUserContainer/>
+
+              <form onSubmit={this.handleSubmit.bind(this)}>
+                <input type="file"
+                  onChange={this.handleUpload("image")}>
+                </input>
+                <br/>
+                <input type="submit" value="Change Thumbnail"/>
+              </form>
+              
             </ReactModal>
           </div>
 
