@@ -24,14 +24,11 @@ export const createTrack = track => {
   });
 };
 
-export const updateTrack = (track, id) => {
+export const updateTrack = (track) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/tracks/${id}`,
-    datatype: "json",
-    data: track,
-    contentType: false,
-    processData: false
+    url: `/api/tracks/${track.id}`,
+    data: {track}
   });
 };
 

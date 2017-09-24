@@ -32,35 +32,36 @@ class TrackForm extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
 
-      //if there aren't pictures or images uploaded, set the errors.
-      if (this.state.recordingURL === "" ||
-      this.state.recordingURL === undefined) {
-        return this.props
-        .receiveTrackErrors(
-          {responseJSON: {errors: ["Must have a song!"]}});
+      if (this.props.formType === "create") {
+
+        if (this.state.recordingURL === "" ||
+        this.state.recordingURL === undefined) {
+          return this.props
+          .receiveTrackErrors(
+            {responseJSON: {errors: ["Must have a song!"]}});
+          }
+
+        if (this.state.imageURL === "" ||
+            this.state.imageURL === undefined) {
+          return this.props
+                     .receiveTrackErrors(
+                       {responseJSON: {errors: ["Must have an image!"]}});
         }
 
-      if (this.state.imageURL === "" ||
-          this.state.imageURL === undefined) {
-        return this.props
-                   .receiveTrackErrors(
-                     {responseJSON: {errors: ["Must have an image!"]}});
-      }
+
+        const formData = new FormData();
+
+        formData.append("track[title]", this.state.title);
+        formData.append("track[description]", this.state.description);
+        formData.append("track[genre]", this.state.genre);
+        formData.append("track[track_thumb_nail]", this.state.imageFile);
+        formData.append("track[track_recording]", this.state.recordingFile);
 
 
-      const formData = new FormData();
-
-      formData.append("track[title]", this.state.title);
-      formData.append("track[description]", this.state.description);
-      formData.append("track[genre]", this.state.genre);
-      formData.append("track[track_thumb_nail]", this.state.imageFile);
-      formData.append("track[track_recording]", this.state.recordingFile);
-
-      if (this.props.formType === "create") {
         this.props.processForm(formData)
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
       } else {
-        this.props.processForm(formData, this.state.id)
+        this.props.processForm(this.state)
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
       }
 
@@ -92,14 +93,28 @@ class TrackForm extends React.Component {
     render() {
 
       const text = this.props.formType === "create" ?
-        "Upload A Song" : "Edit (Reupload media for successful edit.)"
+        "Upload A Song" : "Edit"
 
       const backButton = <Link to="/stream">
                          <button>Back To Stream</button></Link>
 
       const currentImage = this.props.track ?
                          <img height="260px" width="260px"
-                           src={this.props.track.thumb_nail_url}/> : "";
+                           src={this.props.track.thumb_nail_url}/> : (
+                             <div id='upload-buttons'>
+                                 <label>Thumbnail:
+                                   <input type="file"
+                                     onChange={this.handleUpload("image")}/>
+                                 </label>
+
+                                 <br/>
+
+                                 <label>Song File(*.mp3):
+                                   <input type="file"
+                                     onChange={this.handleUpload("recording")}/>
+                                 </label>
+                             </div>
+                           );
 
       return (
         <div >
@@ -108,21 +123,9 @@ class TrackForm extends React.Component {
           {currentImage}
 
             <form onSubmit={this.handleSubmit.bind(this)}>
-              <div id='upload-buttons'>
-                  <label>Thumbnail:
-                    <input type="file"
-                      onChange={this.handleUpload("image")}/>
-                  </label>
 
-                  <br/>
 
-                  <label>Song File(*.mp3):
-                    <input type="file"
-                      onChange={this.handleUpload("recording")}/>
-                  </label>
-              </div>
 
-                  <br/>
 
               <br/>
 
