@@ -26,13 +26,14 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
 
               <div id="information">
                 <div id="first-row">
-                <button id="play-button-small">▶</button>
+                  <button id="play-button-small">▶</button>
+                    <div id="artist-and-title">
+                      <span>{track.artist}</span>
 
-                <span>{track.artist}</span>
-
-                <Link to={`/${track.artist}/${track.title}`}>
-                                           {track.title}</Link>
-                </div>
+                      <Link to={`/${track.artist}/${track.title}`}>
+                                               {track.title}</Link>
+                     </div>
+                  </div>
 
                 <div id="second-row">
                   <img height="80px" width="400px"
@@ -42,8 +43,9 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
 
                 <div id="third-row">
                    {modifyButtons}
-                 </div>
+                </div>
               </div>
+
 
             </li>);
 
