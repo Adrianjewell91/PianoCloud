@@ -1,6 +1,11 @@
+.stream {
+  display: flex;
+  flex-direction: column;
+}
+
 .stream h1 {
   text-align: left;
-  text-indent: 40px;
+  text-indent: 72px;
 }
 
 .stream ul {
@@ -42,12 +47,27 @@
   right: 30px;
 }
 
+#information {
+  position: relative;
+  right: 47px;
+}
 
 #first-row {
   display: flex;
+  position: relative;
+  top: 5px;
 }
 
+
 #artist-and-title {
+  position: relative;
+  right: 25px;
+  bottom: 5px;
   display: flex;
   flex-direction: column;
+}
+
+#artist-and-title a {
+  position: relative;
+  bottom: 7px;
 }

@@ -36,7 +36,7 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
                   </div>
 
                 <div id="second-row">
-                  <img height="80px" width="400px"
+                  <img height="75px" width="400px"
  src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
                 </div>
