@@ -4,11 +4,19 @@ import {Link} from 'react-router-dom';
 class EditUserForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {name:"", location: "", email:""};//this.props.artist;
+    this.state = {name: this.props.artist.name,
+                  location: this.props.artist.location,
+                  email: this.props.artist.email};//this.props.artist;
   }
 
   componentWillMount() {
-    
+    this.props.requestUser(this.props.match.params.user_name)
+      .then((res) => { this.setState(
+                                      { id: res.user.id,
+                                        email: res.user.email,
+                                       location: res.user.location,
+                                       name: res.user.name})
+                      });
   }
 
   componentWillUnmount() {
@@ -30,7 +38,7 @@ class EditUserForm extends React.Component {
 
   render () {
     //Add image upload later.
-    console.log(this.props);
+    console.log(this.state);
     return (
       <div className="edit-form">
         <form onSubmit={this.handleSubmit.bind(this)}>

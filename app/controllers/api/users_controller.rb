@@ -28,7 +28,8 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = Track.find_by(id: params[:id])
+    debugger
+    @user = User.find_by(id: params[:id])
 
     if !@user.nil?
       if @user.update_attributes(user_params) && current_user.id = @user.id

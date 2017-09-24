@@ -36,8 +36,8 @@ export const requestUser = (username) => (dispatch) => {
     .fail((errors) => dispatch(receiveUserErrors(errors)));
 };
 
-export const updateUser = (user, id) => (dispatch) => {
-  return UserProfileUtil.updateUser(user, id)
+export const updateUser = (user) => (dispatch) => {
+  return UserProfileUtil.updateUser(user)
     .then((user) => dispatch(receiveUser(user)))
     .fail((errors) => dispatch(receiveUserErrors(errors)));
 }
