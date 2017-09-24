@@ -1,22 +1,40 @@
 import React from 'react';
+import TrackItem from "../tracks/track_item";
 
 class UserPage extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
-    console.log(this.props);
     this.props.requestUser(this.props.match.params.user_name);
   }
 
 
   render () {
-    // console.log(this.props);
+    console.log(this.props);
+
+    const artist = this.props.artist.length === 1 ?
+      this.props.artist[0] : "";
+
+    let track_display = "Loading";
+    debugger
+    if (artist !== "") {
+      track_display = (
+          artist.tracks.map((track) => <TrackItem key={track.title}
+                                                  track={track}/>)
+      )
+    }
+
     return (
       <div className="user-page">
 
-    </div>
+        <div className="stream">
+          <ul>
+            {track_display}
+          </ul>
+        </div>
+      </div>
     )
   }
 }
