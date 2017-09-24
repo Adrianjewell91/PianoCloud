@@ -41,7 +41,7 @@ class EditUserForm extends React.Component {
     console.log(this.state);
     return (
       <div className="edit-form">
-        <h1>Edit Profile Information</h1>
+        <h1>Edit Profile Info</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
 
             <input type="text"

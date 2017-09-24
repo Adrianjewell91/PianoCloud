@@ -1,0 +1,26 @@
+.song-info {
+  display: flex;
+  flex-direction: column;
+}
+.song-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.song-and-play-button {
+  display: flex;
+}
+#play-button-large {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background-color: #FF6B00;
+  color: white;
+  font-size: 30px;
+  border-style: none;
+}
+
+#play-button-large:hover {
+  background-color: #FF3300;
+}

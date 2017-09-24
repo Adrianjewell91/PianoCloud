@@ -33,10 +33,35 @@ class TrackPage extends React.Component {
 
     return (
       <div>
-        {track.title}
-        <img height="340px" width="340px"
-          src={track.thumb_nail_url}></img>
-        {modifyButtons}
+        <div className="song-stats">
+          <div className="song-and-play-button">
+            <button id="play-button-large">▶</button>
+
+            <div className="song-info">
+              <span>{track.artist}</span>
+
+              <span>{track.title}</span>
+
+              <span>{track.genre}</span>
+            </div>
+          </div>
+
+          <img height="340px" width="340px"
+            src={track.thumb_nail_url}></img>
+
+        </div>
+
+        <div className="comment-form">
+
+          <form>
+            <input type='text' placeholder="Comment Here"></input>
+          </form>
+
+        </div>
+
+        <div>
+          {modifyButtons}
+        </div>
       </div>
     );
   }
