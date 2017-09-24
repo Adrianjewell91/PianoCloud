@@ -95,25 +95,27 @@ class UserPage extends React.Component {
           </div>
           <div className='edit-profile'>
             <button
-              onClick={this.handleOpenModal.bind(this)}>Edit Profile
-            </button>
-
+              onClick={this.handleOpenModal.bind(this)}>Edit</button>
 
             <ReactModal
               className="edit-modal"
               isOpen={this.state.showModal}
               contentLabel="edit-form">
-              <button onClick={this.handleCloseModal.bind(this)}>X</button>
-              <EditUserContainer/>
+              <button className="close-edit-modal"
+                onClick={this.handleCloseModal.bind(this)}>X</button>
+              <div className="inside-edit-modal">
+                <EditUserContainer/>
 
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type="file"
-                  onChange={this.handleUpload("image")}>
-                </input>
                 <br/>
-                <input type="submit" value="Change Thumbnail"/>
-              </form>
-              
+                <h1>Change Profile Image</h1>
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                  <input type="file"
+                    onChange={this.handleUpload("image")}>
+                  </input>
+                  <br/>
+                  <input type="submit" value="Change Thumbnail"/>
+                </form>
+              </div>
             </ReactModal>
           </div>
 
