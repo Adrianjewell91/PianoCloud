@@ -1,10 +1,44 @@
+.user-page {
+  // display: flex;
+  // flex-direction: column;
+}
 .profile-stats {
-    display: flex;
-    
+  display: flex;
+  margin-left: 60px;
+  justify-content: space-between;
+  margin-right: 60px;
+  margin-top: 25px;
+  background-image: url("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg");
 }
 
-.profile-stats img {
+.picture-and-info {
+  display:flex;
+  justify-content: flex-start;
+}
+
+.profile-pic{
   border-radius: 50%;
   height: 200px;
   width: 200px;
+  background-color: white;
+  margin-right: 8px;
+}
+
+.user-info{
+  display: flex;
+  flex-direction: column;
+  // text-align: left;
+  // position: relative;
+  // right: 140px;
+  // top: 10px;
+}
+
+.user-info span {
+  color:white;
+  background-color: black;
+  margin: 2px;
+}
+
+.edit-profile {
+  float: right;
 }

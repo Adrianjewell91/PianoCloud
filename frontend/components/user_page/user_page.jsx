@@ -31,26 +31,34 @@ class UserPage extends React.Component {
       this.props.artist[0] : "";
 
     let track_display = "Loading";
-    debugger
+    let userProfileUrl = "";
+    // debugger
     if (artist !== "") {
       track_display = (
           artist.tracks.map((track) => <TrackItem key={track.title}
                                                   track={track}/>)
       )
+
+      userProfileUrl = artist.thumb_nail_url.includes("missing") ?
+      "https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg" :
+      artist.thumb_nail_url;
+
     }
 
+
     return (
+
       <div className="user-page">
         <div className="profile-stats">
-          <img src={artist.thumb_nail_url}/>
+          <div className="picture-and-info">
+            <img className="profile-pic" src={userProfileUrl}/>
 
-          <div className="user-info">
-            <span>{artist.username}</span>
-            <span>{artist.name}</span>
-            <span>{artist.email}</span>
-            <span>{artist.location}</span>
+            <div className="user-info">
+              <span>{artist.username}</span>
+              <span>{artist.name}</span>
+              <span>{artist.location}</span>
+            </div>
           </div>
-
           <div className='edit-profile'>
             <button
               onClick={this.handleOpenModal.bind(this)}>Edit Profile
