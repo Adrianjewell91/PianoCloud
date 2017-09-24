@@ -1,13 +1,12 @@
 .user-page {
-  // display: flex;
-  // flex-direction: column;
+
 }
 .profile-stats {
   display: flex;
   margin-left: 60px;
   justify-content: space-between;
-  margin-right: 60px;
-  margin-top: 25px;
+  padding-right: 100px;
+  padding-top: 25px;
   background-image: url("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg");
 }
 
