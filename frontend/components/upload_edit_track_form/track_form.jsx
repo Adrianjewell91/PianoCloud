@@ -89,41 +89,42 @@ class TrackForm extends React.Component {
     render() {
 
       const text = this.props.formType === "create" ?
-        "Upload A Song" : "Save(You need to reupload the media)"
+        "Upload A Song" : "Edit (Reupload media for successful edit.)"
 
       const backButton = <Link to="/stream">
                          <button>Back To Stream</button></Link>
 
       const currentImage = this.props.track ?
-                         <img height="160px" width="160px"
+                         <img height="260px" width="260px"
                            src={this.props.track.thumb_nail_url}/> : "";
 
       return (
-        <div>
+        <div >
           <h1>{text}</h1>
-
+          <div className="track-form">
           {currentImage}
 
-
-            <form className="track-form"
-                  onSubmit={this.handleSubmit.bind(this)}>
-
-                  <label>Thumbnail File (must be image)
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <div id='upload-buttons'>
+                  <label>Thumbnail:
                     <input type="file"
                       onChange={this.handleUpload("image")}/>
                   </label>
+
                   <br/>
-                  <label>Song File (must be mp3)
+
+                  <label>Song File(*.mp3):
                     <input type="file"
                       onChange={this.handleUpload("recording")}/>
                   </label>
+              </div>
 
                   <br/>
 
               <br/>
 
               <label>
-                <input type="text"
+                <input id="title" type="text"
                   value={this.state.title}
                   onChange={this.update('title')}
                   placeholder="Title"></input>
@@ -131,9 +132,9 @@ class TrackForm extends React.Component {
 
               <br/>
 
-            <label>
-                <select
-                        onChange={this.update('genre')}>
+              <label>
+                <select id="genre"
+                  onChange={this.update('genre')}>
                   <option defaultValue="Genre" >Genre</option>
                   <option value="Classical">Classical</option>
                   <option value="Jazz">Jazz</option>
@@ -146,7 +147,7 @@ class TrackForm extends React.Component {
               <br/>
 
               <label>
-                <textarea rows="10" cols="47"
+                <textarea id="description" rows="10" cols="47"
                   style={{resize: 'none'}}
                   value={this.state.description || ""}
                   onChange={this.update('description')}
@@ -154,8 +155,9 @@ class TrackForm extends React.Component {
               </label>
               <br/>
 
-              <input className="track-form-submit" type="submit" value={text}></input>
+              <input className="track-form-submit" type="submit" value={text}/>
 
+              {backButton}
           </form>
 
             <ul>
@@ -165,8 +167,7 @@ class TrackForm extends React.Component {
               }
             </ul>
 
-            {backButton}
-
+          </div>
         </div>
       );
     }
