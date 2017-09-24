@@ -24,9 +24,43 @@ class UserPage extends React.Component {
     this.setState({showModal: true});
   }
 
-  render () {
-    console.log(this.props);
+  handleUpload(field) {
+    return (e) => {
+      e.preventDefault();
+      let reader = new FileReader();
+      let file = e.currentTarget.files[0];
 
+      let that = this;
+      let fieldURL = `${field}URL`;
+      let fieldFile = `${field}File`;
+
+      reader.onloadend = function() {
+        that.setState({[fieldURL]: reader.result, [fieldFile]: file});
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        this.setState({[fieldURL]: "", [fieldFile]: null});
+      }
+
+    }
+  }
+
+  handleSubmit(e) {
+      e.preventDefault();
+
+      const formData = new FormData();
+
+      formData.append("user[thumb_nail]", this.state.imageFile);
+
+      this.props.updateUserImage(formData, this.props.artist[0].id)
+      .then(() => this.props.history.push(`/`));
+  }
+
+
+
+  render () {
     const artist = this.props.artist.length === 1 ?
       this.props.artist[0] : "";
 
@@ -51,7 +85,10 @@ class UserPage extends React.Component {
       <div className="user-page">
         <div className="profile-stats">
           <div className="picture-and-info">
-            <img className="profile-pic" src={userProfileUrl}/>
+
+
+            <img className="profile-pic"
+              src={userProfileUrl}/>
 
             <div className="user-info">
               <span>{artist.username}</span>
@@ -63,6 +100,13 @@ class UserPage extends React.Component {
             <button
               onClick={this.handleOpenModal.bind(this)}>Edit Profile
             </button>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <input type="file"
+                onChange={this.handleUpload("image")}>
+              </input>
+              <br/>
+              <input type="submit" value="Change Thumbnail"/>
+            </form>
 
             <ReactModal
               className="edit-modal"

@@ -41,3 +41,9 @@ export const updateUser = (user) => (dispatch) => {
     .then((user) => dispatch(receiveUser(user)))
     .fail((errors) => dispatch(receiveUserErrors(errors)));
 }
+
+export const updateUserImage = (user, id) => (dispatch) => {
+  return UserProfileUtil.updateUserImage(user, id)
+    .then((user) => dispatch(receiveUser(user)))
+    .fail((errors) => dispatch(receiveUserErrors(errors)));
+}
