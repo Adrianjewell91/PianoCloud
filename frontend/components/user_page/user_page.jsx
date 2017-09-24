@@ -3,7 +3,7 @@ import TrackItem from "../tracks/track_item";
 import {Link} from 'react-router-dom';
 import ReactModal from 'react-modal';
 
-// import EditUserContainer from "./edit_user_container";
+import EditUserContainer from "./edit_user_container";
 
 class UserPage extends React.Component {
   constructor(props) {
@@ -60,7 +60,7 @@ class UserPage extends React.Component {
               isOpen={this.state.showModal}
               contentLabel="edit-form">
               <button onClick={this.handleCloseModal.bind(this)}>X</button>
-              <h1>Some text</h1>
+              <EditUserContainer/>
             </ReactModal>
           </div>
 

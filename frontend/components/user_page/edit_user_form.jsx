@@ -1,14 +1,14 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-class EditUserForm extends React.component {
+class EditUserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {name:"", location: "", email:""};//this.props.artist;
   }
 
   componentWillMount() {
-
+    
   }
 
   componentWillUnmount() {
@@ -33,7 +33,7 @@ class EditUserForm extends React.component {
     console.log(this.props);
     return (
       <div className="edit-form">
-        <form>
+        <form onSubmit={this.handleSubmit.bind(this)}>
 
             <input type="text"
                    placeholder="Name"
@@ -50,6 +50,7 @@ class EditUserForm extends React.component {
                    onChange={this.update('location')}
                    value={this.state.location}></input>
 
+                 <input type="submit"/>
         </form>
 
         <ul>

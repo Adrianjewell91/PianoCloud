@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    updateUser: (formTrack) => dispatch(updateUser(formUser)),
+    updateUser: (formUser) => dispatch(updateUser(formUser)),
     requestUser: (user) => dispatch(requestUser(user)),
     receiveUserErrors: (errors) => dispatch(receiveUserErrors(errors))
   };
