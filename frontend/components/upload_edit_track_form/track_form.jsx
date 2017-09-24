@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class TrackForm extends React.Component {
   constructor (props) {
@@ -120,12 +120,10 @@ class TrackForm extends React.Component {
         <div >
           <h1>{text}</h1>
           <div className="track-form">
-          {currentImage}
+
+            {currentImage}
 
             <form onSubmit={this.handleSubmit.bind(this)}>
-
-
-
 
               <br/>
 
@@ -140,8 +138,9 @@ class TrackForm extends React.Component {
 
               <label>
                 <select id="genre"
-                  onChange={this.update('genre')}>
-                  <option defaultValue="Genre" >Genre</option>
+                  onChange={this.update('genre')}
+                  defaultValue={this.state.genre} >
+                  <option >Genre</option>
                   <option value="Classical">Classical</option>
                   <option value="Jazz">Jazz</option>
                   <option value="Rock">Rock</option>

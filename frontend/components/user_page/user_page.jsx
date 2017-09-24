@@ -1,15 +1,28 @@
 import React from 'react';
 import TrackItem from "../tracks/track_item";
+import {Link} from 'react-router-dom';
+import ReactModal from 'react-modal';
+
+// import EditUserContainer from "./edit_user_container";
 
 class UserPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {showModal: false};
   }
 
   componentDidMount() {
     this.props.requestUser(this.props.match.params.user_name);
   }
 
+  handleCloseModal() {
+    this.setState({showModal: false});
+    //Clear the errors remember!
+  }
+
+  handleOpenModal() {
+    this.setState({showModal: true});
+  }
 
   render () {
     console.log(this.props);
@@ -35,8 +48,22 @@ class UserPage extends React.Component {
             <span>{artist.username}</span>
             <span>{artist.name}</span>
             <span>{artist.location}</span>
-
           </div>
+
+          <div className='edit-profile'>
+            <button
+              onClick={this.handleOpenModal.bind(this)}>Edit Profile
+            </button>
+
+            <ReactModal
+              className="edit-modal"
+              isOpen={this.state.showModal}
+              contentLabel="edit-form">
+              <button onClick={this.handleCloseModal.bind(this)}>X</button>
+              <h1>Some text</h1>
+            </ReactModal>
+          </div>
+
         </div>
 
         <div className="stream">
