@@ -34,6 +34,7 @@ class TrackForm extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
 
+
       if (this.props.formType === "create") {
 
         if (this.state.recordingURL === "" ||
@@ -67,6 +68,7 @@ class TrackForm extends React.Component {
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
       }
 
+  
     }
 
     handleUpload(field) {

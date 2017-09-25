@@ -1,10 +1,6 @@
 .track-form {
   display: flex;
-
-}
-
-.track-form form {
-  margin-left: 40px;
+  flex-direction: column;
 }
 
 .track-form ul {
@@ -17,6 +13,7 @@
 #upload-buttons {
   display: flex;
   flex-direction: column;
+
 }
 
 #title {
