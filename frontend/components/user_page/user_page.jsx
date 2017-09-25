@@ -66,6 +66,7 @@ class UserPage extends React.Component {
 
     let track_display = "Loading";
     let userProfileUrl = "";
+    let editButton ="";
     // debugger
     if (artist !== "") {
       track_display = (
@@ -77,7 +78,12 @@ class UserPage extends React.Component {
       "https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg" :
       artist.thumb_nail_url;
 
+      if (this.props.currentUser && (this.props.currentUser.id === artist.id)){
+        editButton = (<button onClick={this.handleOpenModal.bind(this)}>Edit
+                      </button>);}
+
     }
+
 
 
     return (
@@ -94,8 +100,7 @@ class UserPage extends React.Component {
             </div>
           </div>
           <div className='edit-profile'>
-            <button
-              onClick={this.handleOpenModal.bind(this)}>Edit</button>
+            {editButton}
 
             <ReactModal
               className="edit-modal"

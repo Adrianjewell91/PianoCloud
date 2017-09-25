@@ -6,7 +6,8 @@ import {toArray} from "../../util/selectors";
 import {requestUser, updateUserImage} from "../../actions/users_actions";
 //Will need to add ownProps to get history in order to search
 const mapStateToProps = (state, ownProps) => {
-  return {artist: toArray(state.entities.users)}
+  return {artist: toArray(state.entities.users),
+          currentUser: state.session.currentUser}
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
