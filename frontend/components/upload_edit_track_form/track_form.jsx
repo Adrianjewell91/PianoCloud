@@ -24,8 +24,10 @@ class TrackForm extends React.Component {
   }
 
     update(field) {
-      return (e) => {
-        this.setState({[field]: e.target.value});
+      return (e) => { //no periods allowed for some reason.
+        let str = e.target.value
+        let res = str.replace(".", "");
+        this.setState({[field]: res});
       }
     }
 
@@ -160,8 +162,9 @@ class TrackForm extends React.Component {
               </label>
               <br/>
 
-              <input className="track-form-submit" type="submit" value={text}/>
-
+              <input className="track-form-submit"
+                     type="submit"
+                     value={text}/>
               {backButton}
           </form>
 
