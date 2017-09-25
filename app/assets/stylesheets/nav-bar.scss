@@ -42,7 +42,18 @@
 }
 
 .profile-nav-thumbnail {
-  padding-top: 11px;
+  margin-top: 8px;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.profile-nav-thumbnail-frame {
+  height:30px;
+  width: 30px;
+  // overflow: hidden;
+  // // display: flex;
+  // // justify-content: center;
 }
 
 .nav-button a {

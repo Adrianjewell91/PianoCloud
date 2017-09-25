@@ -16,7 +16,8 @@ class AudioPlayer extends React.Component {
       <div className='footer'>
         <ReactAudioPlayer
           src={NowPlayingUrl}
-          autoplay controls/>
+          autoplay="true"
+          controls/>
       </div>
     );
   }

@@ -4,7 +4,11 @@ const NowPlayingReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case ADD_TRACK_TO_PLAY:
-      return [action.track, ...state]
+      if ((state.length > 0) && (state[0].id === action.track.id)) {
+        return state;
+      } else {
+        return [action.track, ...state]
+      }
     default:
       return state;
   }
