@@ -15,6 +15,12 @@ class UserPage extends React.Component {
     this.props.requestUser(this.props.match.params.user_name);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.match.params.user_name !== this.props.match.params.user_name) {
+      newProps.requestUser(newProps.match.params.user_name);
+    }
+  }
+
   handleCloseModal() {
     this.setState({showModal: false});
     //Clear the errors remember!
