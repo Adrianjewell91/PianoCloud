@@ -36,10 +36,9 @@ class AudioPlayer extends React.Component {
 
         </ReactAudioPlayer>
 
-        <div>
           {NowPlayingStats}
 
-        </div>
+
       </div>
     );
   }
