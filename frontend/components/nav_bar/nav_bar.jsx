@@ -101,7 +101,8 @@ class NavBar extends React.Component {
           <div className = 'profile-nav-thumbnail-frame'>
             <Link to={`/users/${user.username}`}>
               <img className = 'profile-nav-thumbnail'
-                   src={userProfileUrl}/></Link>
+                   src={userProfileUrl}/>
+            </Link>
           </div>
 
           <button className={navButtonClass}>
