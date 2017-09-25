@@ -77,7 +77,12 @@ class UserPage extends React.Component {
     if (artist !== "") {
       track_display = (
           artist.tracks.map((track) => <TrackItem key={track.title}
-                                                  track={track}/>)
+                                                  track={track}
+                                                  currentUser={this.props.currentUser}
+                                                  editTrack={this.props.updateTrack}
+                                                  deleteTrack={this.props.deleteTrack}
+                                                  receiveTrackToPlay={this.props.receiveTrackToPlay}
+                                                  />)
       )
 
       userProfileUrl = artist.thumb_nail_url.includes("missing") ?
