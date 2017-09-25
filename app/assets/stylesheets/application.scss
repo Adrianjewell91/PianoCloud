@@ -75,7 +75,7 @@ Organization of CSS Styling:
  bottom: 0px;
  width: 100%;
  display: flex;
- justify-content: space-around;
+ justify-content: flex-start;
  background-color: #E5E5E5;
  padding-bottom: 14px;
  padding-top: 14px;
@@ -83,6 +83,11 @@ Organization of CSS Styling:
  border-color: #CCCCCC;
  border-width: 1px;
  z-index: 1000;
+}
+
+.react-audio-player {
+  width: 75%;
+  margin-left: 45px;
 }
 
 /*---*/

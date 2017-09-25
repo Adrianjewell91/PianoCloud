@@ -16,10 +16,13 @@ class AudioPlayer extends React.Component {
 
     return(
       <div className='footer'>
-        <ReactAudioPlayer
+        <ReactAudioPlayer className="react-audio-player"
           controls
-          src={NowPlayingUrl}/>
-        <button>Play</button>
+          controlsList="nodownload"
+          autoPlay
+          src={NowPlayingUrl}>
+
+        </ReactAudioPlayer>
       </div>
     );
   }
