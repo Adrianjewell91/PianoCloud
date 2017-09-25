@@ -6,6 +6,8 @@ class AudioPlayer extends React.Component {
     super(props)
   }
 
+
+
   render() {
     let NowPlayingUrl = "";
     if(this.props.nowPlaying){
@@ -15,9 +17,9 @@ class AudioPlayer extends React.Component {
     return(
       <div className='footer'>
         <ReactAudioPlayer
-          src={NowPlayingUrl}
-          autoplay="true"
-          controls/>
+          controls
+          src={NowPlayingUrl}/>
+        <button>Play</button>
       </div>
     );
   }
