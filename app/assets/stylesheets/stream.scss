@@ -25,11 +25,13 @@
   font-size: 18px;
 }
 
-.stream span {
+.stream span, .stream span a{
+  position: relative;
+  top: 1px;
   color: #B1B1B1;
 }
 
-.stream span:hover {
+.stream span:hover, .stream span a:hover {
   color: black;
 }
 
@@ -41,7 +43,7 @@
   color: white;
   border-style: none;
 }
-  
+
 
 .edit-delete {
   position: relative;

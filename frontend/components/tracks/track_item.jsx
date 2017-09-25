@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { EditAndDeleteButtons } from './edit_delete';
 
 export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
@@ -28,7 +28,8 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
                 <div id="first-row">
                   <button id="play-button-small">▶</button>
                     <div id="artist-and-title">
-                      <span>{track.artist}</span>
+                      <span><Link to={`/users/${track.artist}`}>
+                      {track.artist}</Link></span>
 
                       <Link to={`/${track.artist}/${track.title}`}>
                                                {track.title}</Link>
