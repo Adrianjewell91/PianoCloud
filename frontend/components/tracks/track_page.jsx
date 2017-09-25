@@ -32,7 +32,7 @@ class TrackPage extends React.Component {
      }
 
     return (
-      <div>
+      <div className="track-show">
         <div className="song-stats">
 
           <div className="stats-waveform">
@@ -53,7 +53,7 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
           </div>
 
-          <img height="340px" width="340px"
+          <img className="song-stats-img" height="340px" width="340px"
             src={track.thumb_nail_url}></img>
 
         </div>
