@@ -11,7 +11,7 @@ class UserPage extends React.Component {
     this.state = {showModal: false};
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.requestUser(this.props.match.params.user_name);
   }
 
