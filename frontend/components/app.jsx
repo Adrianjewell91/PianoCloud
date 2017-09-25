@@ -8,6 +8,8 @@ import StreamPageContainer from "./tracks/stream_container";
 import TrackFormContainer from "./upload_edit_track_form/track_form_container";
 import TrackPageContainer from "./tracks/track_page_container";
 import TrackEditFormContainer from './upload_edit_track_form/edit_form_container';
+import AudioPlayerContainer from "./audio_player/audio_player_container";
+
 
 const App = () => (
   <div>
@@ -27,7 +29,7 @@ const App = () => (
       </Switch>
     </div>
 
-    <div className="footer">Continuous Playback Goes Here (Soon to Come.)</div>
+    <AudioPlayerContainer/>
 
   </div>
 );
