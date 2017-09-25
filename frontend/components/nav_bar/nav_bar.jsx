@@ -6,6 +6,7 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 
 ReactModal.defaultStyles.overlay.backgroundColor = "rgba(128,128,128,0.75)";
+ReactModal.defaultStyles.overlay.zIndex="2";
 
 class NavBar extends React.Component {
   constructor(props) {
