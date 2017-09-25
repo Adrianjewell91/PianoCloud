@@ -88,6 +88,19 @@ Organization of CSS Styling:
 .react-audio-player {
   width: 75%;
   margin-left: 45px;
+
+}
+
+audio::-internal-media-controls-download-button {
+    display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
 }
 
 /*---*/
