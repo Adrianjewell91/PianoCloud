@@ -1,0 +1,73 @@
+.footer {
+ position: fixed;
+ left: 0px;
+ bottom: 0px;
+ width: 100%;
+ display: flex;
+ justify-content: flex-start;
+ background-color: #E5E5E5;
+ padding-bottom: 14px;
+ padding-top: 14px;
+ border-top-style: solid;
+ border-color: #CCCCCC;
+ border-width: 1px;
+ z-index: 1000;
+}
+
+.react-audio-player {
+  width: 75%;
+  margin-left: 45px;
+
+}
+
+.now-playing-stats {
+  display: flex;
+  height: 32px;
+}
+
+.now-playing-pic-frame {
+  height: 30px;
+  width: 30px;
+  padding-top: 1px;
+  padding-left: 10px;
+}
+
+.now-playing-pic {
+  height: 100%;
+  width: 100%;
+}
+
+.artist-and-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 10px;
+  font-size: 15px;
+  padding-left: 3px;
+}
+
+#artistNP {
+  position: relative;
+  top: 6px;
+  color: #999;
+  cursor: pointer;
+}
+
+#titleNP {
+  padding-top: 2px;
+  color: #666;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+audio::-internal-media-controls-download-button {
+    display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}

@@ -69,39 +69,7 @@ Organization of CSS Styling:
 
 /*---*/
 
-.footer {
- position: fixed;
- left: 0px;
- bottom: 0px;
- width: 100%;
- display: flex;
- justify-content: flex-start;
- background-color: #E5E5E5;
- padding-bottom: 14px;
- padding-top: 14px;
- border-top-style: solid;
- border-color: #CCCCCC;
- border-width: 1px;
- z-index: 1000;
-}
-
-.react-audio-player {
-  width: 75%;
-  margin-left: 45px;
-
-}
-
-audio::-internal-media-controls-download-button {
-    display:none;
-}
-
-audio::-webkit-media-controls-enclosure {
-    overflow:hidden;
-}
-
-audio::-webkit-media-controls-panel {
-    width: calc(100% + 30px); /* Adjust as needed */
-}
+@import "react_audio_player";
 
 /*---*/
 

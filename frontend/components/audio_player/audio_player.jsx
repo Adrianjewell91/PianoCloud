@@ -6,12 +6,24 @@ class AudioPlayer extends React.Component {
     super(props)
   }
 
-
-
   render() {
     let NowPlayingUrl = "";
+    let NowPlayingStats = '';
     if(this.props.nowPlaying){
       NowPlayingUrl = this.props.nowPlaying.track_recording;
+
+      NowPlayingStats = (
+        <div className="now-playing-stats">
+          <div className="now-playing-pic-frame">
+            <img  className="now-playing-pic"
+                  src={this.props.nowPlaying.thumb_nail_url}></img>
+          </div>
+          <div className="artist-and-title">
+            <span id="artistNP">{this.props.nowPlaying.artist}</span>
+            <span id="titleNP">{this.props.nowPlaying.title}</span>
+          </div>
+        </div>
+      )
     }
 
     return(
@@ -23,6 +35,11 @@ class AudioPlayer extends React.Component {
           src={NowPlayingUrl}>
 
         </ReactAudioPlayer>
+
+        <div>
+          {NowPlayingStats}
+
+        </div>
       </div>
     );
   }
