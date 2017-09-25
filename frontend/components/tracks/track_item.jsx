@@ -26,9 +26,9 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
     }
 
     return (<li>
-              <div id="thumb-nail">
+              <div id="track-item-thumb-nail">
                 <Link to={`/${track.artist}/${track.title}`}>
-                  <img height="160px" width="160px" src={track.thumb_nail_url}/>
+                  <img height="100%" width="auto" src={track.thumb_nail_url}/>
                 </Link>
               </div>
 

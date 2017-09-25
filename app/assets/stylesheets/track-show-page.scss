@@ -7,10 +7,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 20px;
+  background: linear-gradient(to right,#7B6653,#2F2622);
+}
+
+.stats-waveform {
+  margin-left: 20px;
 }
 
 .song-stats-img {
-  padding-left: 20px;
+  background: white;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .song-and-play-button {
