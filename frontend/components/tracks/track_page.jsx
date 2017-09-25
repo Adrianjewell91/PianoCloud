@@ -18,6 +18,13 @@ class TrackPage extends React.Component {
     this.props.deleteTrack(id).then(this.props.history.push('/stream'));
   }
 
+  addToQueue(e) {
+    e.preventDefault();
+    //call the receiveTrackToPlay action creator right here.
+    // dispatch({type: "ADD_TRACK_TO_PLAY", track: this.props.tracks[0]});
+    this.props.receiveTrackToPlay(this.props.tracks[0]);
+  }
+
   render () {
 
     const track = this.props.tracks.length === 1 ?
@@ -37,7 +44,8 @@ class TrackPage extends React.Component {
 
           <div className="stats-waveform">
             <div className="song-and-play-button">
-              <button id="play-button-large">▶</button>
+              <button onClick={this.addToQueue.bind(this)}
+                      id="play-button-large">▶</button>
 
               <div className="song-info">
                 <span>{track.artist}</span>

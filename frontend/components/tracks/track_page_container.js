@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import {deleteTrack,
         requestTrack, updateTracks} from "../../actions/tracks_actions";
+import {receiveTrackToPlay} from '../../actions/audio_player_actions';
 
 import {toArray} from "../../util/selectors";
 import TrackPage from "./track_page";
@@ -22,7 +23,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
   return {
     deleteTrack: (id) => dispatch(deleteTrack(id)),
     updateTrack: (track) => dispatch(updateTrack(track)),
-    requestTrack: (id) => dispatch(requestTrack(id))
+    requestTrack: (id) => dispatch(requestTrack(id)),
+    receiveTrackToPlay: (track) => dispatch(receiveTrackToPlay(track))
   };
 }
 
