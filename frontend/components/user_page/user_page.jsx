@@ -97,8 +97,12 @@ class UserPage extends React.Component {
       <div className="user-page">
         <div className="profile-stats">
           <div className="picture-and-info">
-            <img className="profile-pic"
-              src={userProfileUrl}/>
+
+            <div className="picture-frame">
+              <img className="profile-pic"
+                src={userProfileUrl}/>
+            </div>
+
             <div className="user-info">
               <span>{artist.username}</span>
               <span>{artist.name}</span>

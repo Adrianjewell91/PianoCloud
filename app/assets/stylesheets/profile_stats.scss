@@ -18,10 +18,18 @@
 
 .profile-pic{
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
   background-color: white;
   margin-right: 8px;
+  height: 100%;
+  width: auto;
+}
+
+.picture-frame {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .user-info{

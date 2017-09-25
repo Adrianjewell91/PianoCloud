@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { EditAndDeleteButtons } from './edit_delete';
 
-export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
+
+export const TrackItem = ({track, currentUser, receiveTrackToPlay,
+                           updateTrack, deleteTrack}) => {
     const handleClick = (e) => {
       e.preventDefault();
       e.target.value = e.target.value === "▶" ? "||" : "▶";
@@ -17,6 +19,12 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
                               /> : null;
     }
 
+
+    const handleQueue = (e) => {
+      e.preventDefault();
+      receiveTrackToPlay(track);
+    }
+
     return (<li>
               <div id="thumb-nail">
                 <Link to={`/${track.artist}/${track.title}`}>
@@ -26,10 +34,12 @@ export const TrackItem = ({track, currentUser, updateTrack, deleteTrack}) => {
 
               <div id="information">
                 <div id="first-row">
-                  <button id="play-button-small">▶</button>
+                  <button onClick={handleQueue.bind(this)}
+                          id="play-button-small">▶</button>
+
                     <div id="artist-and-title">
                       <span><Link to={`/users/${track.artist}`}>
-                      {track.artist}</Link></span>
+                                    {track.artist}</Link></span>
 
                       <Link to={`/${track.artist}/${track.title}`}>
                                                {track.title}</Link>

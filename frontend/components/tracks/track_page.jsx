@@ -20,8 +20,6 @@ class TrackPage extends React.Component {
 
   addToQueue(e) {
     e.preventDefault();
-    //call the receiveTrackToPlay action creator right here.
-    // dispatch({type: "ADD_TRACK_TO_PLAY", track: this.props.tracks[0]});
     this.props.receiveTrackToPlay(this.props.tracks[0]);
   }
 
