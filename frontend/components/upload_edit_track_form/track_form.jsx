@@ -17,6 +17,7 @@ class TrackForm extends React.Component {
           this.setState(res.track);
       });
     }
+
   }
 
   componentWillUnmount() {
@@ -72,6 +73,7 @@ class TrackForm extends React.Component {
         this.props.processForm(this.state)
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
       }
+
     }
 
     handleUpload(field) {
@@ -99,8 +101,14 @@ class TrackForm extends React.Component {
 
     render() {
 
-      const text = this.props.formType === "create" ?
-        "Upload A Song" : "Edit"
+      let text = this.props.formType === "create" ?
+      "Upload A Song" : "Edit"
+
+      if (this.props.errors.length > 0) {
+        document.getElementsByClassName("track-form-submit")[0]
+          .disabled = false;
+        text = "Try again!";
+      }
 
       const backButton = <Link to="/stream">
                          <button>Back To Stream</button></Link>
