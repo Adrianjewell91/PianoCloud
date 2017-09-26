@@ -46,7 +46,7 @@
 .comment-img-frame {
   height: 40px;
   width: 40px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .comment-img-pic {
@@ -54,7 +54,6 @@
   width: auto;
   max-width: 40px;
   border-radius: 50%;
-  border: 1px solid black;
 }
 
 .comment-li {
@@ -66,13 +65,20 @@
 .commentor-stats {
   display: flex;
   flex-direction: column;
+  position: relative;
+  bottom: 5px;
 }
 
 .commentor-stats a {
   text-decoration: none;
-    color: gray;
+  color: gray;
 }
 
 .commentor-stats a:hover {
   color: black;
+}
+
+.commentor-stats span {
+  position: relative;
+  bottom: 6px;
 }
