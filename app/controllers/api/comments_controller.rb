@@ -1,6 +1,6 @@
 class Api::CommentsController < ApplicationController
   def index
-    @comments = Comment.find_by(params[:track_id])
+    @comments = Comment.where(track_id: params[:track_id])
     render :index
   end
 
@@ -9,9 +9,9 @@ class Api::CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.track_id = params[:track_id]
 
-    unless @comment.save
-      #Hope fully do nothing if saves and rerender.
-      #Components will getIndex as a promise callback and trigger rerender.
+    if @comment.save
+      render :show
+    else
       render json: {errors: @comment.errors.full_messages}, status: 422
     end
 
