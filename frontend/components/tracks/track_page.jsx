@@ -72,9 +72,9 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
         </div>
 
-        <div>
+
           {modifyButtons}
-        </div>
+
       </div>
     );
   }
