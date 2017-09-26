@@ -3,6 +3,33 @@
   margin-left: 20px;
 }
 
+.comment-form {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 557px;
+  background: #F2F2F2;
+  border: 1px solid #e5e5e5;
+}
+
+.comment-form form {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 90%;
+  margin-left: 5px;
+}
+
+.comment-form input {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px #F2F2F2;
+  text-indent: 5px;
+  font-family: Lucide Grande sans-serif;
+  font-size: 15px;
+  border: 1px solid #e5e5e5;
+}
+
 .comment-pic-frame {
   height: 40px;
   width: 40px;
