@@ -17,6 +17,6 @@ export const fetchComments = (track_id) => (dispatch) => {
 }
 
 export const createComment = (comment,track_id) => (dispatch) => {
-  return CommentUtil.getComments(track_id)
+  return CommentUtil.createComment(comment, track_id)
     .then((comment) => dispatch(receiveComment(comment)));
 }

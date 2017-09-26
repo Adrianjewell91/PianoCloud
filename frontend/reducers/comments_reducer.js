@@ -8,7 +8,7 @@ const CommentsReducer = (state = {}, action) => {
           action.comments.forEach((comment) => allComments[comment.id] = comment);
           return allComments;
     case RECEIVE_COMMENT:
-          return {[action.comment.id]: action.comment};
+          return Object.assign({}, state, {[action.comment.id]: action.comment});
     default:
           return state;
   }

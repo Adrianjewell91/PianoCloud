@@ -72,7 +72,7 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
         <div className="comment-form">
 
-          <CommentFormContainer/>
+          <CommentFormContainer trackId={track.id}/>
 
         </div>
 
