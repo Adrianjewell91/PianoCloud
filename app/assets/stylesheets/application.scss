@@ -40,6 +40,11 @@ Organization of CSS Styling:
 
 /*--Main Page-*/
 
+#root {
+  display: flex;
+  justify-content: center;
+}
+
 .main-page {
   background-color: white;
   padding-top: 35px;
@@ -50,7 +55,7 @@ Organization of CSS Styling:
   margin-left: 33px;
   margin-right: 33px;
   border-radius: 7px;
-
+  max-width: 1020px;
   min-width:1000px;
 }
 
