@@ -19,7 +19,7 @@
 }
 
 .stream ul li div {
-  padding-left: 30px;
+  // padding-left: 30px;
 }
 
 .stream a {
@@ -57,20 +57,20 @@
 }
 
 #information {
-  position: relative;
-  right: 47px;
+  padding-left: 10px;
 }
 
 #first-row {
   display: flex;
   position: relative;
+  flex-direction: row;
   top: 5px;
 }
 
 
 #artist-and-title {
   position: relative;
-  right: 25px;
+  padding-left: 5px;
   bottom: 5px;
   display: flex;
   flex-direction: column;
