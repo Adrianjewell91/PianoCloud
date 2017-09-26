@@ -52,7 +52,7 @@ class TrackPage extends React.Component {
                       id="play-button-large">▶</button>
 
               <div className="song-info">
-                <span>{track.artist}</span>
+                <span className="first-span">{track.artist}</span>
 
                 <span>{track.title}</span>
 

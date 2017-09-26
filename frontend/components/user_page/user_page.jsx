@@ -109,7 +109,7 @@ class UserPage extends React.Component {
             </div>
 
             <div className="user-info">
-              <span>{artist.username}</span>
+              <span className="first-span">{artist.username}</span>
               <span>{artist.name}</span>
               <span>{artist.location}</span>
             </div>

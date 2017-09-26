@@ -3,13 +3,21 @@
   display: flex;
   flex-direction: column;
   margin-left: 5px;
+  align-items: left;
 }
 
 .song-info span {
   color: white;
   background-color: black;
   margin-top: 3px;
+  text-indent: 5px;
+  padding-right: 5px;
 }
+
+.first-span {
+  font-size: 30px;
+}
+
 .song-stats {
   display: flex;
   flex-direction: row;

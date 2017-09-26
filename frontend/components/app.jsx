@@ -21,7 +21,7 @@ const App = () => (
         <Route exact path="/users/:user_name" component={UserPageContainer} />
         <Route exact path="/upload" component={TrackFormContainer} />
         <Route exact path="/" component={GreetingContainer} />
-        <Route path="/:user_name/:track_name/edit"
+        <Route exact path="/:user_name/:track_name/edit" 
                component={TrackEditFormContainer} />
         <Route exact path="/:user_name/:track_name"
                component={TrackPageContainer} />
