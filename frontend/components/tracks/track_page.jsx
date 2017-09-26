@@ -52,7 +52,7 @@ class TrackPage extends React.Component {
                       id="play-button-large">▶</button>
 
               <div className="song-info">
-                <span>{track.artist}</span>
+                <span><Link to={`/users/${track.artist}`}>{track.artist}</Link></span>
 
                 <span className="first-span">{track.title}</span>
 
@@ -64,7 +64,7 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
           </div>
           <div className="song-stats-frame">
-            <img className="song-stats-img" 
+            <img className="song-stats-img"
               src={track.thumb_nail_url}></img>
           </div>
         </div>

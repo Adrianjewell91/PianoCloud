@@ -24,7 +24,7 @@ export const JustTheButtons = ({track, handleClick}) => {
                        <button>Edit</button></Link>;
 
     const deleteButton = <button onClick={handleClick}>
-                         Delete</button>;
+                         Delete Track</button>;
 
    return (<div className="edit-delete">{editButton}{deleteButton}</div>);
 }

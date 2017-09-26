@@ -9,7 +9,6 @@
   transform: translate(-50%, -50%) !important;
   width: 400px;
   height: 500px;
-
 }
 
 .auth-modal:focus {
@@ -25,6 +24,7 @@
   right: 5px;
   font-size: 22px;
   padding-right: 4px;
+  cursor: pointer;
 }
 
 // ______________________________FORM BELOW< MODAL ABOVE______
@@ -63,6 +63,7 @@
   width: 304px;
   color: #FFFFFF;
   font-weight: normal;
+  cursor: pointer;
 }
 
 .auth-form form .auth-button:focus {
