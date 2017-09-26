@@ -1,6 +1,8 @@
 // nav bar
 
 .header {
+  display: flex;
+  justify-content: center;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -8,6 +10,9 @@
   height: 46px;
   background-color: #333333;
   z-index: 1000;
+}
+.nav-loggedin, .nav-loggedout {
+  max-width: 1020px;
 }
 
 .nav-loggedin {
@@ -19,7 +24,7 @@
 }
 
 .nav-loggedout {
-  min-width: 700px;
+  min-width: 1020px;
   margin-left: 41px;
   margin-right: 41px;
   display: flex;

@@ -68,7 +68,7 @@ class TrackForm extends React.Component {
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
       }
 
-  
+
     }
 
     handleUpload(field) {
@@ -122,8 +122,8 @@ class TrackForm extends React.Component {
 
       return (
         <div >
-          <h1>{text}</h1>
           <div className="track-form">
+            <h1>{text}</h1>
 
             {currentImage}
 

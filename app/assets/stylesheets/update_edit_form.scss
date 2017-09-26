@@ -1,6 +1,8 @@
 .track-form {
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 50px;
 }
 
 .track-form ul {
@@ -10,6 +12,7 @@
 .track-form ul li {
   color: red;
 }
+
 #upload-buttons {
   display: flex;
   flex-direction: column;
