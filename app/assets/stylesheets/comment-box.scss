@@ -86,3 +86,8 @@
   position: relative;
   bottom: 6px;
 }
+
+.comment-body-and-delete {
+  display:flex;
+  justify-content: space-between;
+}

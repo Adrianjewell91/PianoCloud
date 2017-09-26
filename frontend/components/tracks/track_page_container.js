@@ -5,7 +5,7 @@ import {deleteTrack,
         requestTrack, updateTracks} from "../../actions/tracks_actions";
 import {receiveTrackToPlay} from '../../actions/audio_player_actions';
 
-import {fetchComments} from '../../actions/comment_actions';
+import {fetchComments, deleteComment} from '../../actions/comment_actions';
 
 import {toArray} from "../../util/selectors";
 import TrackPage from "./track_page";
@@ -28,7 +28,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
     updateTrack: (track) => dispatch(updateTrack(track)),
     requestTrack: (id) => dispatch(requestTrack(id)),
     receiveTrackToPlay: (track) => dispatch(receiveTrackToPlay(track)),
-    fetchComments: (track_id) => dispatch(fetchComments(track_id))
+    fetchComments: (track_id) => dispatch(fetchComments(track_id)),
+    deleteComment: (id) => dispatch(deleteComment(id))
   };
 }
 
