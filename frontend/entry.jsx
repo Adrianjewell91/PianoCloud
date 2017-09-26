@@ -5,7 +5,7 @@ import configureStore from "./store/store";
 import Root from "./components/root";
 
 
-import * as Actions from './actions/users_actions';
+import * as Actions from './actions/comment_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
 

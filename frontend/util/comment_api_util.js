@@ -10,5 +10,5 @@ export const createComment = (comment, track_id) => {
     method: "POST",
     url: `/api/tracks/${track_id}/comments`,
     data: { comment }
-  })
+  });
 }

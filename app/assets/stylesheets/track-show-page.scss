@@ -2,6 +2,13 @@
 .song-info {
   display: flex;
   flex-direction: column;
+  margin-left: 5px;
+}
+
+.song-info span {
+  color: white;
+  background-color: black;
+  margin-top: 3px;
 }
 .song-stats {
   display: flex;

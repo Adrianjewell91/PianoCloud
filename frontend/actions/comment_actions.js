@@ -4,7 +4,7 @@ export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 
 export const receiveComments = (comments) => ({
-  type: RECEIVE_COMMENT, comments
+  type: RECEIVE_COMMENTS, comments
 });
 
 export const receiveComment = (comment) => ({
