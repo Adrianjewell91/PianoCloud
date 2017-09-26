@@ -12,3 +12,10 @@ export const createComment = (comment, track_id) => {
     data: { comment }
   });
 }
+
+export const deleteComment = (id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/comments/${id}`,
+  });
+}

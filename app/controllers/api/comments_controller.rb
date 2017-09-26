@@ -17,6 +17,20 @@ class Api::CommentsController < ApplicationController
 
   end
 
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
+
+    if @comment.nil?
+      render json: {errors: ["Could not be found"]}, status: 404
+    elsif @comment.user.id == current_user.id
+      id = @comment.id
+      @comment.destroy
+      render json: {id: id}
+    else
+      render json: {errors: ["Not Authorized to Delete"]}, status: 422
+    end
+  end
+
   private
 
   def comment_params
