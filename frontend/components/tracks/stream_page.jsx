@@ -13,7 +13,6 @@ class StreamPage extends React.Component {
   }
 
   render() {
-
     return (
       <div className="stream">
         <h1>Stream</h1>

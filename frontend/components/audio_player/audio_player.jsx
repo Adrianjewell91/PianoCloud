@@ -30,7 +30,6 @@ class AudioPlayer extends React.Component {
       <div className='footer'>
         <ReactAudioPlayer className="react-audio-player"
           controls
-          controlsList="nodownload"
           autoPlay
           src={NowPlayingUrl}>
 
