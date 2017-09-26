@@ -5,7 +5,7 @@ import { createComment } from '../../actions/comment_actions';
 import CommentForm from './comment_form';
 
 const mapStateToProps = (state, ownProps) => {
-  return {};
+  return { currentUser: state.session.currentUser};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

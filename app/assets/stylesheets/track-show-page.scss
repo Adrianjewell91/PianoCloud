@@ -20,6 +20,10 @@
 
 .stats-waveform {
   margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 75px;
 }
 
 .song-stats-img {

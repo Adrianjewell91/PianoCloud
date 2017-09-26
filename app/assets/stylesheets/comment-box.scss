@@ -1,0 +1,17 @@
+.comments {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.comment-pic-frame {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.comment-pic {
+  height: 100%;
+  width: auto;
+  max-width: 40px;
+}

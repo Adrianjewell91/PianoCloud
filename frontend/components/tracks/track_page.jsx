@@ -70,22 +70,25 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
         </div>
 
-        <div className="comment-form">
+        <div className="comments">
 
-          <CommentFormContainer trackId={track.id}/>
+          <div className="comment-form">
 
+            <CommentFormContainer trackId={track.id}/>
+
+          </div>
+
+            {modifyButtons}
+
+          <ul>
+            {
+              this.props.comments.map((comment) => <CommentItem
+                                                    key={comment.id}
+                                                    comment={comment}/>)
+            }
+
+          </ul>
         </div>
-
-          {modifyButtons}
-
-        <ul>
-          {
-            this.props.comments.map((comment) => <CommentItem
-                                                  key={comment.id}
-                                                  comment={comment}/>)
-          }
-
-        </ul>
       </div>
     );
   }

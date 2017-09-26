@@ -20,14 +20,28 @@ class CommentForm extends React.Component {
   }
 
   render() {
+  let display = "";
+
+  if(this.props.currentUser) {
+      display = (
+        <div>
+          <div className="comment-pic-frame">
+              <img className="comment-pic"
+                   src={this.props.currentUser.thumb_nail_url}/>
+          </div>
+
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <input type="text"
+                   onChange={this.update("body")}
+                   value={this.state.body}
+                   placeholder="Write a comment"></input>
+          </form>
+      </div>)
+  }
+
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text"
-                 onChange={this.update("body")}
-                 value={this.state.body}
-                 placeholder="Write a comment"></input>
-        </form>
+        {display}
       </div>
     )
   }
