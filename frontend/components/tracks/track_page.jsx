@@ -76,8 +76,15 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
 
             {modifyButtons}
+          <div className="badge-and-comments">
+            <div className="profile-badge">
+              <div className="badge-frame">
+                <p>{track.artist}</p>
+              </div>
 
-            <ul>
+            </div>
+
+            <ul className="comments-ul">
               {
                 this.props.comments.map((comment) => <CommentItem
                                                       key={comment.id}
@@ -88,6 +95,7 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
             </ul>
           </div>
         </div>
+      </div>
     );
   }
 }
