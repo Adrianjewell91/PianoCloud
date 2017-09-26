@@ -27,13 +27,13 @@
 .now-playing-pic-frame {
   height: 30px;
   width: 30px;
-  // padding-top: 1px;
+  overflow: hidden;
   padding-left: 10px;
 }
 
 .now-playing-pic {
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 
 .artist-and-title {
