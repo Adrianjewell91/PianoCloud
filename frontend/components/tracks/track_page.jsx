@@ -52,11 +52,10 @@ class TrackPage extends React.Component {
                       id="play-button-large">▶</button>
 
               <div className="song-info">
-                <span className="first-span">{track.artist}</span>
+                <span>{track.artist}</span>
 
-                <span>{track.title}</span>
+                <span className="first-span">{track.title}</span>
 
-                <span>{track.genre}</span>
               </div>
             </div>
 
@@ -64,10 +63,10 @@ class TrackPage extends React.Component {
 src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
           </div>
-
-          <img className="song-stats-img" height="340px" width="340px"
-            src={track.thumb_nail_url}></img>
-
+          <div className="song-stats-frame">
+            <img className="song-stats-img" 
+              src={track.thumb_nail_url}></img>
+          </div>
         </div>
 
         <div className="comments">
@@ -76,13 +75,6 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
 
             {modifyButtons}
-          <div className="badge-and-comments">
-            <div className="profile-badge">
-              <div className="badge-frame">
-                <p>{track.artist}</p>
-              </div>
-
-            </div>
 
             <ul className="comments-ul">
               {
@@ -94,7 +86,7 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
               }
 
             </ul>
-          </div>
+
         </div>
       </div>
     );

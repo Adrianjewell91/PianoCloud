@@ -14,10 +14,6 @@
   padding-right: 5px;
 }
 
-.first-span {
-  font-size: 30px;
-}
-
 .song-stats {
   display: flex;
   flex-direction: row;
@@ -34,11 +30,21 @@
   margin-bottom: 75px;
 }
 
-.song-stats-img {
+.song-stats-frame {
+  height: 340px;
+  width: 340px;
   background: white;
   margin-left: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.song-stats-img {
+  height: 100%;
+  width: auto;
+  // max-width: 340px;
 }
 
 .song-and-play-button {
