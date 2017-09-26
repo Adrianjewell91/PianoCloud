@@ -67,3 +67,12 @@
   display: flex;
   flex-direction: column;
 }
+
+.commentor-stats a {
+  text-decoration: none;
+    color: gray;
+}
+
+.commentor-stats a:hover {
+  color: black;
+}
