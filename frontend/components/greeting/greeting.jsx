@@ -20,7 +20,8 @@ class Greeting extends React.Component {
     return (
       <div className="splash">
 
-      <img src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"/>
+      <img  
+        src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"/>
 
        <h1>Discover Music with PianoCloud</h1>
        {search_input}
