@@ -30,15 +30,40 @@
   border: 1px solid #e5e5e5;
 }
 
-.comment-pic-frame {
+.comment-form-pic-frame {
   height: 40px;
   width: 40px;
   display: flex;
   justify-content: center;
 }
 
-.comment-pic {
+.comment-form-pic {
   height: 100%;
   width: auto;
   max-width: 40px;
+}
+
+.comment-img-frame {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.comment-img-pic {
+  height:100%;
+  width: auto;
+  max-width: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.comment-li {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.commentor-stats {
+  display: flex;
+  flex-direction: column;
 }

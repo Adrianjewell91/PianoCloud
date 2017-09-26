@@ -25,8 +25,8 @@ class CommentForm extends React.Component {
   if(this.props.currentUser) {
       display = (
         <div className="comment-form">
-          <div className="comment-pic-frame">
-              <img className="comment-pic"
+          <div className="comment-form-pic-frame">
+              <img className="comment-form-pic"
                    src={this.props.currentUser.thumb_nail_url}/>
           </div>
 

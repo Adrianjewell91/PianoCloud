@@ -81,7 +81,8 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
               {
                 this.props.comments.map((comment) => <CommentItem
                                                       key={comment.id}
-                                                      comment={comment}/>)
+                                                      comment={comment}
+                                         currentUser={this.props.currentUser}/>)
               }
 
             </ul>
