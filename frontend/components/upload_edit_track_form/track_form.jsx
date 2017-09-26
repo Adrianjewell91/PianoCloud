@@ -32,7 +32,12 @@ class TrackForm extends React.Component {
     }
 
     handleSubmit(e) {
+
       e.preventDefault();
+      document.getElementsByClassName("track-form-submit")[0]
+        .disabled = true;
+      document.getElementsByClassName("track-form-submit")[0]
+        .value = "Uploading";
 
 
       if (this.props.formType === "create") {
@@ -67,8 +72,6 @@ class TrackForm extends React.Component {
         this.props.processForm(this.state)
         .then((res) => this.props.history.push(`/${res.track.artist}/${res.track.title}`));
       }
-
-
     }
 
     handleUpload(field) {
@@ -167,6 +170,7 @@ class TrackForm extends React.Component {
               <input className="track-form-submit"
                      type="submit"
                      value={text}/>
+
               {backButton}
           </form>
 
