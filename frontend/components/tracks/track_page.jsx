@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
 import EditFormContainer from '../upload_edit_track_form/edit_form_container';
+import CommentFormContainer from '../comments/comment_form_container';
+import CommentItem from "../comments/comment_item";
+
 import { JustTheButtons } from './edit_delete';
 
 class TrackPage extends React.Component {
@@ -10,6 +13,7 @@ class TrackPage extends React.Component {
 
   componentWillMount() {
     this.props.requestTrack(this.props.match.params.track_name)
+      .then((res) => this.props.fetchComments(res.track.id))
   }
 
   handleDeleteClick (e) {
@@ -24,7 +28,7 @@ class TrackPage extends React.Component {
   }
 
   render () {
-
+    console.log(this.props);
     const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
 
@@ -35,6 +39,8 @@ class TrackPage extends React.Component {
          <JustTheButtons track={track}
                          handleClick={this.handleDeleteClick.bind(this)}/> : '';
      }
+
+
 
     return (
       <div className="track-show">
@@ -66,15 +72,20 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
         <div className="comment-form">
 
-          <form>
-            <input type='text' placeholder="Comment Here"></input>
-          </form>
+          <CommentFormContainer/>
 
         </div>
 
-
           {modifyButtons}
 
+        <ul>
+          {
+            this.props.comments.map((comment) => <CommentItem
+                                                  key={comment.id}
+                                                  comment={comment}/>)
+          }
+
+        </ul>
       </div>
     );
   }
