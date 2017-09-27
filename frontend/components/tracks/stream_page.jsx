@@ -24,7 +24,8 @@ class StreamPage extends React.Component {
                       currentUser={this.props.currentUser}
                         editTrack={this.props.updateTrack}
                       deleteTrack={this.props.deleteTrack}
-                      receiveTrackToPlay={this.props.receiveTrackToPlay}/>})
+               receiveTrackToPlay={this.props.receiveTrackToPlay}
+                       nowPlaying={this.props.nowPlaying}/>})
         }
         </ul>
       </div>

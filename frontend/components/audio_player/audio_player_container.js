@@ -6,7 +6,7 @@ import AudioPlayer from './audio_player';
 import {playNextTrack} from "../../actions/audio_player_actions";
 
 const mapStateToProps = state => ({
-  nowPlaying: state.entities.now_playing[0]
+  nowPlaying: state.entities.nowPlaying[0]
 });
 
 const mapDispatchToProps = dispatch => ({

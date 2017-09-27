@@ -4,11 +4,8 @@ import { EditAndDeleteButtons } from './edit_delete';
 
 
 export const TrackItem = ({track, currentUser, receiveTrackToPlay,
-                           updateTrack, deleteTrack}) => {
-    const handleClick = (e) => {
-      e.preventDefault();
-      e.target.value = e.target.value === "▶" ? "||" : "▶";
-    }
+                           updateTrack, deleteTrack, nowPlaying}) => {
+
 
     let modifyButtons = null;
 
@@ -19,11 +16,31 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
                               /> : null;
     }
 
-
     const handleQueue = (e) => {
       e.preventDefault();
-      receiveTrackToPlay(track);
+
+
+      if (e.currentTarget.textContent === "||") {
+
+        e.currentTarget.textContent = "▶";
+        e.currentTarget.classList.remove("playing");
+        document.getElementsByClassName('react-audio-player')[0].pause()
+
+      } else {
+
+        let currently_playing = document.getElementsByClassName("playing")[0];
+        if (currently_playing) {
+          currently_playing.textContent = "▶";
+          currently_playing.classList.remove('playing');
+        }
+
+        e.currentTarget.textContent = "||";
+        e.currentTarget.classList.add("playing");
+        receiveTrackToPlay(track);
+        document.getElementsByClassName('react-audio-player')[0].play();
+      }
     }
+
 
     return (<li>
               <div id="track-item-thumb-nail">
@@ -34,8 +51,9 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
 
               <div id="information">
                 <div id="first-row">
-                  <button onClick={handleQueue.bind(this)}
-                          id="play-button-small">▶</button>
+                  <button onClick={handleQueue}
+                          className="play-button-small"
+                          id={`song-${track.id}`}>▶</button>
 
                     <div id="artist-and-title">
                       <span><Link to={`/users/${track.artist}`}>

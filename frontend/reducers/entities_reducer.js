@@ -8,7 +8,7 @@ const EntitiesReducer = combineReducers({
   tracks: TracksReducer,
   users: UsersReducer,
   comments: CommentsReducer,
-  now_playing: NowPlayingReducer
+  nowPlaying: NowPlayingReducer
 });
 
 export default EntitiesReducer;

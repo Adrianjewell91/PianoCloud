@@ -13,7 +13,8 @@ const mapStateToProps = state => {
 
   return {
     tracks: toArray(state.entities.tracks),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    nowPlaying: state.entities.nowPlaying[0]
   };
 }
 

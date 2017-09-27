@@ -33,7 +33,7 @@ class AudioPlayer extends React.Component {
 
     return(
       <div className='footer'>
-        <ReactAudioPlayer className="react-audio-player"
+        <ReactAudioPlayer
           controls
           autoPlay
           src={NowPlayingUrl}
