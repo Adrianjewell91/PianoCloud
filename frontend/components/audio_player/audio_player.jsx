@@ -4,11 +4,18 @@ import ReactAudioPlayer from 'react-audio-player';
 class AudioPlayer extends React.Component {
   constructor(props) {
     super(props);
-    this.handleEnd = this.handleEnd.bind(this);
   }
 
   handleEnd(e) {
     this.props.playNextTrack();
+  }
+
+  handlePause(e) {
+    //find the item that was playing and set it the pause. 
+  }
+
+  handlePlay (e) {
+    //find the item that was paused and set it to playing.
   }
 
   render() {
@@ -37,8 +44,9 @@ class AudioPlayer extends React.Component {
           controls
           autoPlay
           src={NowPlayingUrl}
-          onEnded={this.handleEnd}>
-
+          onEnded={this.handleEnd.bind(this)}
+          onPause={this.handlePause.bind(this)}
+          onPlay={this.handlePlay.bind(this)}
         </ReactAudioPlayer>
 
           {NowPlayingStats}
