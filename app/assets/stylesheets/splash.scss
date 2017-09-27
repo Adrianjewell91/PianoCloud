@@ -1,5 +1,7 @@
 .splash {
   text-align: center;
+  position: relative;
+  top: 50%;
 }
 
 .splash img {
@@ -11,7 +13,8 @@
 
 .splash h1 {
   position: relative;
-  
+  color: white;
+  background: #FB572E;
   // top: -300px;
 }
 

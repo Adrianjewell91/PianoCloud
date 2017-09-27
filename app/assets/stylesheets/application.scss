@@ -44,6 +44,11 @@ Organization of CSS Styling:
 
 }
 
+.greeting-background {
+  background-image: url(https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg);
+  height: -webkit-fill-available;
+}
+
 .main-page {
   margin-left: 2.7%;
   margin-right: 2.7%;

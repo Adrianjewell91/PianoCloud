@@ -15,7 +15,7 @@ const App = () => (
   <div>
     <NavBarContainer/>
 
-    <div className="main-page">
+    <div className="main-page greeting-background">
       <Switch>
         <Route exact path="/stream" component={StreamPageContainer} />
         <Route exact path="/users/:user_name" component={UserPageContainer} />
