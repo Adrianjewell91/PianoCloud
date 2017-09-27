@@ -17,11 +17,10 @@
   justify-content: flex-start;
   margin-top: 40px;
   width: 70%;
-  box-sizing: border-box;
 }
 
 .stream ul li:hover {
-  border: 1px solid #e5e5e5;
+  box-shadow: inset 0 0 1px gray;
 }
 
 .stream ul li div {
