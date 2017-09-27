@@ -3,8 +3,11 @@ import {Link} from 'react-router-dom';
 
 export const CommentItem = ({comment, currentUser, deleteComment}) => {
 
-  const deleteButton = currentUser.username === comment.author ?
-    (<button onClick={()=>deleteComment(comment.id)}>Delete</button>) : "";
+  let deleteButton = ""
+  if (currentUser) {
+    deleteButton = currentUser.username === comment.author ?
+      (<button onClick={()=>deleteComment(comment.id)}>Delete</button>) : "";
+  }
 
   return (<li className="comment-li">
             <div className="comment-img-frame">
