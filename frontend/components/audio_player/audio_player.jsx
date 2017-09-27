@@ -3,7 +3,12 @@ import ReactAudioPlayer from 'react-audio-player';
 
 class AudioPlayer extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.handleEnd = this.handleEnd.bind(this);
+  }
+
+  handleEnd(e) {
+    this.props.playNextTrack();
   }
 
   render() {
@@ -31,7 +36,8 @@ class AudioPlayer extends React.Component {
         <ReactAudioPlayer className="react-audio-player"
           controls
           autoPlay
-          src={NowPlayingUrl}>
+          src={NowPlayingUrl}
+          onEnded={this.handleEnd}>
 
         </ReactAudioPlayer>
 
