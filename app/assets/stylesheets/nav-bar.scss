@@ -51,6 +51,10 @@
   padding-right: 25px;
 }
 
+.the-log-out-buttons {
+  margin-top: 9px;
+}
+
 .profile-nav-thumbnail {
   margin-top: 8px;
   border-radius: 50%;
@@ -68,6 +72,23 @@
 .nav-button a {
   text-decoration: none;
   color: #B0B0B0
+}
+
+.nav-loggedout .the-log-out-buttons .nav-button {
+  height: 26px;
+  border: 1px solid #666;
+  margin-right: 15px;
+  border-radius: 3px;
+  color: white;
+}
+
+.nav-loggedout .the-log-out-buttons .nav-button:hover {
+  border: 1px solid #e5e5e5;
+}
+
+.nav-loggedout .the-log-out-buttons .nav-button:last-child {
+  background-color: #FD561F;
+  border: none;
 }
 
 button:focus {outline:0;}

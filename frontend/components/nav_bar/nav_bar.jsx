@@ -102,7 +102,6 @@ class NavBar extends React.Component {
               {search_input}
               <button className={navButtonClass}>{uploadButton}</button>
 
-
               <div className = 'profile-nav-thumbnail-frame'>
                 <Link to={`/users/${user.username}`}>
                   <img className = 'profile-nav-thumbnail'
@@ -129,7 +128,7 @@ class NavBar extends React.Component {
             {streamButton}</button>
           </div>
 
-          <div>
+          <div className="the-log-out-buttons">
             <button className={navButtonClass}
                     onClick={this.handleDemoLogin}>Demo Sign In</button>
 
