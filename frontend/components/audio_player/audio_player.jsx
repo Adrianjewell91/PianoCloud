@@ -11,7 +11,7 @@ class AudioPlayer extends React.Component {
   }
 
   handlePause(e) {
-    //find the item that was playing and set it the pause. 
+    //find the item that was playing and set it the pause.
   }
 
   handlePlay (e) {
@@ -46,7 +46,7 @@ class AudioPlayer extends React.Component {
           src={NowPlayingUrl}
           onEnded={this.handleEnd.bind(this)}
           onPause={this.handlePause.bind(this)}
-          onPlay={this.handlePlay.bind(this)}
+          onPlay={this.handlePlay.bind(this)}>
         </ReactAudioPlayer>
 
           {NowPlayingStats}

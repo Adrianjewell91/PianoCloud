@@ -23,19 +23,19 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
       if (e.currentTarget.textContent === "||") {
 
         e.currentTarget.textContent = "▶";
-        e.currentTarget.classList.remove("playing");
+        e.currentTarget.setAttribute("id","playing");
         document.getElementsByClassName('react-audio-player')[0].pause()
 
       } else {
 
-        let currently_playing = document.getElementsByClassName("playing")[0];
+        let currently_playing = document.getElementById("playing");
         if (currently_playing) {
           currently_playing.textContent = "▶";
-          currently_playing.classList.remove('playing');
+          currently_playing.removeAttribute('id','playing');
         }
 
         e.currentTarget.textContent = "||";
-        e.currentTarget.classList.add("playing");
+        e.currentTarget.setAttribute("id","playing");
         receiveTrackToPlay(track);
         document.getElementsByClassName('react-audio-player')[0].play();
       }
