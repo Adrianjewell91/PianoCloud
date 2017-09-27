@@ -13,14 +13,14 @@ class AudioPlayer extends React.Component {
   handlePause(e) {
     //find the item that was playing and set it the pause.
     let playButton = document.getElementById('playing');
-    playButton.textContent = "▶";
+    if (playButton) {playButton.textContent = "▶";}
 
   }
 
   handlePlay (e) {
     //find the item that was paused and set it to playing.
     let playButton = document.getElementById('playing');
-    playButton.textContent = "||";
+    if (playButton) {playButton.textContent = "||";}
 
   }
 
