@@ -114,8 +114,9 @@ class TrackForm extends React.Component {
                          <button>Back To Stream</button></Link>
 
       const currentImage = this.props.track ?
-                         <img height="260px" width="260px"
-                           src={this.props.track.thumb_nail_url}/> : (
+                         <div className="edit-pic-frame">
+                         <img className="edit-pic"
+                           src={this.props.track.thumb_nail_url}/></div> : (
                              <div id='upload-buttons'>
                                  <label>Thumbnail:
                                    <input type="file"

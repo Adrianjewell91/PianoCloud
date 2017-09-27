@@ -13,6 +13,17 @@
   color: red;
 }
 
+.edit-pic-frame {
+  height: 260px;
+  width: 260px;
+  overflow: hidden;
+  display: flex;
+}
+.edit-pic {
+  height: 100%;
+  width:auto;
+}
+
 #upload-buttons {
   display: flex;
   flex-direction: column;

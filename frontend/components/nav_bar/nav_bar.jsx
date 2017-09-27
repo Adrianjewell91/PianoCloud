@@ -89,29 +89,31 @@ class NavBar extends React.Component {
 
       display = (
         <div className={navLoggedIn}>
-          <Link to={`/users/${user.username}`}>{logoImage}</Link>
 
-          <button className={navButtonClass}>
-            <Link to={`/users/${user.username}`}>Home</Link>
-          </button>
-          <button className={navButtonClass}>{streamButton}</button>
-          {search_input}
+              <Link to={`/users/${user.username}`}>{logoImage}</Link>
 
-          <button className={navButtonClass}>{uploadButton}</button>
+              <button className={navButtonClass}>
+                <Link to={`/users/${user.username}`}>Home</Link>
+              </button>
+              <button className={navButtonClass}>{streamButton}</button>
+              {search_input}
+              <button className={navButtonClass}>{uploadButton}</button>
 
-          <div className = 'profile-nav-thumbnail-frame'>
-            <Link to={`/users/${user.username}`}>
-              <img className = 'profile-nav-thumbnail'
-                   src={userProfileUrl}/>
-            </Link>
-          </div>
 
-          <button className={navButtonClass}>
-              <Link to={`/users/${user.username}`}>{`${user.username}`}</Link>
-          </button>
+              <div className = 'profile-nav-thumbnail-frame'>
+                <Link to={`/users/${user.username}`}>
+                  <img className = 'profile-nav-thumbnail'
+                       src={userProfileUrl}/>
+                </Link>
+              </div>
 
-          <button className={navButtonClass}
-            onClick={this.handleLogOut.bind(this)}>Sign Out</button>
+
+              <button className={navButtonClass}>
+                  <Link to={`/users/${user.username}`}>{`${user.username}`}</Link>
+              </button>
+
+              <button className={navButtonClass}
+                onClick={this.handleLogOut.bind(this)}>Sign Out</button>
         </div>
       );
     } else { //If Logged out
