@@ -1,7 +1,6 @@
 // nav bar
 
 .header {
-
   position: fixed;
   width: 100%;
   top: 0px;
@@ -9,28 +8,26 @@
   height: 46px;
   background-color: #333333;
   z-index: 1000;
+
 }
 
-.nav-loggedin, .nav-loggedout {
-  max-width: 1020px;
-}
 
 .nav-loggedin {
   min-width: 1000px;
-  margin-left: 41px;
-  margin-right: 41px;
   display: flex;
   justify-content:space-between;
+  margin-left: 3.2%;
+  margin-right: 3.2%;
 }
 
 
 
 .nav-loggedout {
   min-width: 1020px;
-  margin-left: 41px;
-  margin-right: 41px;
   display: flex;
   justify-content: space-between;
+  margin-left: 3.2%;
+  margin-right: 3.2%;
 }
 
 .nav-button {
@@ -40,7 +37,6 @@
   font-size: 14px;
   height: 46px;
   cursor: pointer;
-
 }
 
 .nav-stream {
@@ -103,6 +99,6 @@ button:focus {outline:0;}
   color:#666666;
 }*/
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 800px) {
   .nav-search {width: 300px;}
 }
