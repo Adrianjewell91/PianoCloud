@@ -13,7 +13,8 @@ import {receiveTrackToPlay} from "../../actions/audio_player_actions";
 //Will need to add ownProps to get history in order to search
 const mapStateToProps = (state, ownProps) => {
   return {artist: toArray(state.entities.users),
-          currentUser: state.session.currentUser}
+          currentUser: state.session.currentUser,
+          nowPlaying: state.entities.nowPlaying[0]}
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

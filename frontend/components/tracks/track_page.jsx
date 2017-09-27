@@ -16,6 +16,10 @@ class TrackPage extends React.Component {
       .then((res) => this.props.fetchComments(res.track.id))
   }
 
+  componentDidUpdate() {
+      debugger
+  }
+
   handleDeleteClick (e) {
     e.preventDefault();
     const id = this.props.tracks[0].id;

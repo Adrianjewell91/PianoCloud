@@ -82,6 +82,7 @@ class UserPage extends React.Component {
                                                   editTrack={this.props.updateTrack}
                                                   deleteTrack={this.props.deleteTrack}
                                                   receiveTrackToPlay={this.props.receiveTrackToPlay}
+                                                  nowPlaying={this.props.nowPlaying}
                                                   />)
       )
 
