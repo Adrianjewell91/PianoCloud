@@ -8,12 +8,19 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
 
 
     let modifyButtons = null;
-
     if (currentUser) {
       modifyButtons = currentUser.id === parseInt(track.artist_id) ?
         <EditAndDeleteButtons track={track}
                               deleteTrack={deleteTrack}
                               /> : null;
+    }
+
+    let playButton = "▶";
+    let playButtonId = "";
+
+    if (nowPlaying && nowPlaying.id === track.id) {
+      playButton = "||";
+      playButtonId = "playing";
     }
 
     const handleQueue = (e) => {
@@ -53,7 +60,7 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
                 <div id="first-row">
                   <button onClick={handleQueue}
                           className="play-button-small"
-                          id={`song-${track.id}`}>▶</button>
+                          id={playButtonId}>{playButton}</button>
 
                     <div id="artist-and-title">
                       <span><Link to={`/users/${track.artist}`}>

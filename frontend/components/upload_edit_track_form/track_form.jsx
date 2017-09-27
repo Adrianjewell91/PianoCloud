@@ -21,7 +21,7 @@ class TrackForm extends React.Component {
   }
 
   componentWillUnmount() {
-    dispatch({type: "CLEAR_TRACK_ERRORS"});
+    // dispatch({type: "CLEAR_TRACK_ERRORS"});
   }
 
     update(field) {
