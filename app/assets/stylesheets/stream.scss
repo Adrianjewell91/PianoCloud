@@ -16,6 +16,12 @@
   display: flex;
   justify-content: flex-start;
   margin-top: 40px;
+  width: 70%;
+  box-sizing: border-box;
+}
+
+.stream ul li:hover {
+  border: 1px solid #e5e5e5;
 }
 
 .stream ul li div {
