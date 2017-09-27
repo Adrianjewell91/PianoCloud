@@ -78,7 +78,7 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
             <ul className="comments-ul">
               {
-                this.props.comments.map((comment) => <CommentItem
+                this.props.comments.reverse().map((comment) => <CommentItem
                                                       key={comment.id}
                                                       comment={comment}
                                          currentUser={this.props.currentUser}
