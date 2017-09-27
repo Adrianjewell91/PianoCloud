@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createTrack,
+import { createTrack, clearTrackErrors,
          receiveTrackErrors } from '../../actions/tracks_actions';
 import TrackForm from './track_form';
 
@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     processForm: (formTrack) => dispatch(processForm(formTrack)),
-    receiveTrackErrors: (errors) => dispatch(receiveTrackErrors(errors))
+    receiveTrackErrors: (errors) => dispatch(receiveTrackErrors(errors)),
+    clearTrackErrors: () => dispatch(clearTrackErrors())
   };
 };
 

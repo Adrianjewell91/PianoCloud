@@ -27,7 +27,7 @@ export const receiveTrackErrors = (errors) => ({
   errors
 });
 
-export const clearTrackErrors = ({
+export const clearTrackErrors = () => ({
   type: CLEAR_TRACK_ERRORS
 });
 

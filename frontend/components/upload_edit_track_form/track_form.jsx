@@ -21,6 +21,7 @@ class TrackForm extends React.Component {
   }
 
   componentWillUnmount() {
+    if (this.props.errors.length > 0) {this.props.clearTrackErrors();}
     // dispatch({type: "CLEAR_TRACK_ERRORS"});
   }
 
