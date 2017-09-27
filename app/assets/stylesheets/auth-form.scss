@@ -31,10 +31,16 @@
 
 .auth-form {
   text-align: center;
+  position: relative;
+    top: 25%;
 }
 
 .auth-form h1 {
   text-indent: 38px;
+}
+
+.auth-form form label:first-of-type {
+  margin-left: 6%;
 }
 
 .auth-form form input, select {
@@ -68,6 +74,11 @@
 
 .auth-form form .auth-button:focus {
   outline: 0;
+}
+
+.auth-form ul {
+  position: relative;
+  right: 5%;
 }
 
 .auth-form ul li {

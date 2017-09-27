@@ -23,13 +23,13 @@ class SessionForm extends React.Component {
         .then(() => this.props.history.push(`/users/${this.state.username}`));
     }
 
+    // <h1>{text}</h1>
     render() {
 
       const text = this.props.formType === "login" ? "Log In" : "Create Account";
 
       return (
         <div className="auth-form">
-          <h1>{text}</h1>
 
           <form onSubmit={this.handleSubmit.bind(this)}>
 
