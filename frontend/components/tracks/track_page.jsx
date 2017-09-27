@@ -58,6 +58,17 @@ class TrackPage extends React.Component {
                          handleClick={this.handleDeleteClick.bind(this)}/> : '';
      }
 
+     let playButton = "▶";
+     let playButtonId = "";
+     let audioPlayer = document.getElementsByClassName("react-audio-player")[0];
+
+     if (this.props.nowPlaying && typeof track === 'object') {
+       if (track.id === this.props.nowPlaying.id) {
+         playButtonId = 'playing';
+         if (!audioPlayer.paused)  {playButton = "||";}
+       }
+     }
+
     return (
       <div className="track-show">
         <div className="song-stats">
@@ -65,7 +76,8 @@ class TrackPage extends React.Component {
           <div className="stats-waveform">
             <div className="song-and-play-button">
               <button onClick={this.handleQueue.bind(this)}
-                      className="play-button-large">▶</button>
+                      className="play-button-large"
+                      id={playButtonId}>{playButton}</button>
 
               <div className="song-info">
                 <span><Link to={`/users/${track.artist}`}>{track.artist}</Link></span>
