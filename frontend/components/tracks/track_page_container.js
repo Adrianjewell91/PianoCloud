@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import {deleteTrack,
         requestTrack, updateTracks} from "../../actions/tracks_actions";
+
 import {receiveTrackToPlay} from '../../actions/audio_player_actions';
 
 import {fetchComments, deleteComment} from '../../actions/comment_actions';
@@ -16,7 +17,8 @@ const mapStateToProps = (state,ownProps) => {
   return {
     currentUser: state.session.currentUser,
     tracks: toArray(state.entities.tracks),
-    comments: toArray(state.entities.comments)
+    comments: toArray(state.entities.comments),
+    nowPlaying: state.entities.nowPlaying[0]
   };
 }
 

@@ -17,7 +17,10 @@ class TrackPage extends React.Component {
   }
 
   componentDidUpdate() {
-      debugger
+
+    if (this.nowPlaying) {
+
+    }
   }
 
   handleDeleteClick (e) {
@@ -50,7 +53,7 @@ class TrackPage extends React.Component {
   }
 
   render () {
-    console.log(this.props);
+
     const track = this.props.tracks.length === 1 ?
       this.props.tracks[0] : "";
 
@@ -61,8 +64,6 @@ class TrackPage extends React.Component {
          <JustTheButtons track={track}
                          handleClick={this.handleDeleteClick.bind(this)}/> : '';
      }
-
-
 
     return (
       <div className="track-show">
