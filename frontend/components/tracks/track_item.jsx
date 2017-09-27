@@ -17,10 +17,11 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
 
     let playButton = "▶";
     let playButtonId = "";
-
+    let audioPlayer = document.getElementsByClassName("react-audio-player")[0];
     if (nowPlaying && nowPlaying.id === track.id) {
-      playButton = "||";
+
       playButtonId = "playing";
+      if (!audioPlayer.paused) { playButton = "||"; }
     }
 
     const handleQueue = (e) => {
@@ -30,7 +31,7 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
       if (e.currentTarget.textContent === "||") {
 
         e.currentTarget.textContent = "▶";
-        e.currentTarget.removeAttribute("id","playing");
+        e.currentTarget.setAttribute("id","playing");
         document.getElementsByClassName('react-audio-player')[0].pause()
 
       } else {
