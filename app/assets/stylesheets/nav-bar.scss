@@ -21,7 +21,6 @@
 }
 
 
-
 .nav-loggedout {
   min-width: 1020px;
   display: flex;
@@ -43,6 +42,13 @@
   position: relative;
   bottom: 18px;
   padding-left: 20px;
+}
+
+.stream-button {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .profile-nav-thumbnail {

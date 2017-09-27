@@ -95,7 +95,10 @@ class NavBar extends React.Component {
               <button className={navButtonClass}>
                 <Link to={`/users/${user.username}`}>Home</Link>
               </button>
-              <button className={navButtonClass}>{streamButton}</button>
+              <button className={`${navButtonClass} stream-button`}>
+                {streamButton}
+              </button>
+
               {search_input}
               <button className={navButtonClass}>{uploadButton}</button>
 
