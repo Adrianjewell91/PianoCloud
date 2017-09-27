@@ -34,8 +34,9 @@ class NavBar extends React.Component {
   handleCloseModal() {
     this.setState({showLoginModal: false, showSigninModal: false});
     this.props.clearSessionErrors();
-    //Clear the errors
+
   }
+
   //A special thing !
   handleDemoLogin (e) {
     e.preventDefault();

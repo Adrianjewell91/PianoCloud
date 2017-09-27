@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
   def show
     params[:id].gsub! '%20', ' ' #to switch the thing.
     #could potentially do a rescue for track or song errors
-    @user = User.find_by(username: params[:id])
+    @user = User.includes(:tracks).find_by(username: params[:id])
     if @user
       render :show_profile
     else

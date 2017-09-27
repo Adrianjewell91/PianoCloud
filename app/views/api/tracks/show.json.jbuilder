@@ -1,2 +1,2 @@
-  json.partial! 'api/tracks/track', track: @track
+  json.partial! 'api/tracks/track', track: @track, user: @track.artist
   json.comment_ids @track.comments.map{|comment| comment.id}

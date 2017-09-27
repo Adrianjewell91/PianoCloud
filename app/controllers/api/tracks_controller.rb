@@ -6,7 +6,6 @@ class Api::TracksController < ApplicationController
 
   def show
     #This makes things work on heroku!
-    # debugger
     params[:id].gsub! '%20', ' '
 
     @track = Track.includes(:artist).find_by(title: params[:id])
