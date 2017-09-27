@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import ReactAudioPlayer from 'react-audio-player';
 
 class AudioPlayer extends React.Component {
@@ -37,8 +38,12 @@ class AudioPlayer extends React.Component {
                   src={this.props.nowPlaying.thumb_nail_url}></img>
           </div>
           <div className="artist-and-title">
-            <span id="artistNP">{this.props.nowPlaying.artist}</span>
-            <span id="titleNP">{this.props.nowPlaying.title}</span>
+            <span id="artistNP">
+              <Link to={`/users/${this.props.nowPlaying.artist}`}>
+                {this.props.nowPlaying.artist}</Link></span>
+            <span id="titleNP">
+              <Link to={`/${this.props.nowPlaying.artist}/${this.props.nowPlaying.title}`}>
+                {this.props.nowPlaying.title}</Link></span>
           </div>
         </div>
       )

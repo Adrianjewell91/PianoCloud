@@ -15,14 +15,14 @@ const App = () => (
   <div>
     <NavBarContainer/>
 
-    <div className="main-page greeting-background">
+    <div className="main-page">
       <Switch>
         <Route exact path="/stream" component={StreamPageContainer} />
         <Route exact path="/users/:user_name" component={UserPageContainer} />
         <ProtectedRoute exact path="/upload" component={TrackFormContainer} />
-        <Route exact path="/" component={GreetingContainer} />
         <ProtectedRoute exact path="/:user_name/:track_name/edit"
                component={TrackEditFormContainer} />
+        <Route exact path="/" component={GreetingContainer} />
         <Route exact path="/:user_name/:track_name"
                component={TrackPageContainer} />
 

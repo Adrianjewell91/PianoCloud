@@ -45,14 +45,20 @@
   padding-left: 3px;
 }
 
-#artistNP {
+#artistNP a {
+  text-decoration: none;
   position: relative;
   top: 6px;
   color: #999;
   cursor: pointer;
 }
 
-#titleNP {
+#artistNP a:hover {
+  color: black;
+}
+
+#titleNP a {
+  text-decoration: none;
   padding-top: 2px;
   color: #666;
   min-width: 200px;
