@@ -19,8 +19,6 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      document.getElementsByClassName("main-page")[0]
-        .classList.remove("greeting-background");
 
       this.props.processForm(this.state)
         .then(() => this.props.history.push(`/users/${this.state.username}`));

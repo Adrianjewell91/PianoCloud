@@ -40,9 +40,6 @@ class NavBar extends React.Component {
   handleDemoLogin (e) {
     e.preventDefault();
 
-    document.getElementsByClassName("main-page")[0]
-      .classList.remove("greeting-background");
-
     this.props.login({username: 'adriantest', password:'123456'})
       .then(() => this.props.history.push(`/users/adriantest`));
   }
@@ -52,9 +49,6 @@ class NavBar extends React.Component {
 
     this.props.logout()
       .then(() => this.props.history.push(`/`));
-
-    document.getElementsByClassName("main-page")[0]
-      .classList.add("greeting-background");
 
     this.handleCloseModal();
   }

@@ -10,6 +10,15 @@ class Greeting extends React.Component {
   componentDidMount () {
     if (this.props.currentUser) {
       this.props.history.push(`/users/${this.props.currentUser.username}`);}
+    else {
+      document.getElementsByClassName("main-page")[0]
+        .classList.add("greeting-background");
+    }
+  }
+
+  componentWillUnmount() {
+    document.getElementsByClassName("main-page")[0]
+      .classList.remove("greeting-background");
   }
 
   render () {
@@ -19,7 +28,7 @@ class Greeting extends React.Component {
 
     return (
       <div className="splash">
-        
+
        <h1>Discover Music with PianoCloud</h1>
        {search_input}
      </div>
