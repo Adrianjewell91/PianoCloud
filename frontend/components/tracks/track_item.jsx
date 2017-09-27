@@ -23,7 +23,7 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
       if (e.currentTarget.textContent === "||") {
 
         e.currentTarget.textContent = "▶";
-        e.currentTarget.setAttribute("id","playing");
+        e.currentTarget.removeAttribute("id","playing");
         document.getElementsByClassName('react-audio-player')[0].pause()
 
       } else {

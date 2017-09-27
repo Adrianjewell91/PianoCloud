@@ -22,9 +22,27 @@ class TrackPage extends React.Component {
     this.props.deleteTrack(id).then(this.props.history.push('/stream'));
   }
 
-  addToQueue(e) {
+  handleQueue(e) {
     e.preventDefault();
-    this.props.receiveTrackToPlay(this.props.tracks[0]);
+
+    if (e.currentTarget.textContent === "||") {
+      e.currentTarget.textContent = "▶";
+      e.currentTarget.removeAttribute("id","playing");
+      document.getElementsByClassName('react-audio-player')[0].pause()
+    } else {
+
+      let currently_playing = document.getElementById("playing");
+      if (currently_playing) {
+        currently_playing.textContent = "▶";
+        currently_playing.removeAttribute('id','playing');
+      }
+
+      e.currentTarget.textContent = "||";
+      e.currentTarget.setAttribute("id","playing");
+      this.props.receiveTrackToPlay(this.props.tracks[0]);
+
+      document.getElementsByClassName('react-audio-player')[0].play();
+    }
   }
 
   render () {
@@ -48,8 +66,8 @@ class TrackPage extends React.Component {
 
           <div className="stats-waveform">
             <div className="song-and-play-button">
-              <button onClick={this.addToQueue.bind(this)}
-                      id="play-button-large">▶</button>
+              <button onClick={this.handleQueue.bind(this)}
+                      className="play-button-large">▶</button>
 
               <div className="song-info">
                 <span><Link to={`/users/${track.artist}`}>{track.artist}</Link></span>
