@@ -6,7 +6,6 @@ class Api::TracksController < ApplicationController
     else
       @tracks = Track.includes(:artist).all
     end
-
   end
 
   def show

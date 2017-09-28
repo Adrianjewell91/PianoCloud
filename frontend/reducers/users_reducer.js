@@ -20,13 +20,6 @@ const UsersReducer = (state = {}, action) => {
       return {[action.user.id]: action.user};
     case RECEIVE_TRACK:
       return {};
-    // case RECEIVE_TRACKS:
-    //   return {};
-    // case REMOVE_TRACK:
-      // let newState = Object.assign({}, state);
-      // delete newState[Object.keys(state)[0]];
-      //
-      // return newState;
     default:
       return state;
   }
