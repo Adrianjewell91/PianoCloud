@@ -19,9 +19,7 @@ class EditUserForm extends React.Component {
                       });
   }
 
-  componentWillUnmount() {
 
-  }
 
   update(field) {
     return (e) => {
@@ -61,13 +59,6 @@ class EditUserForm extends React.Component {
 
                  <input type="submit"/>
         </form>
-
-        <ul>
-          {
-            this.props.errors.map((error) => <li key={error}>
-                                                {error}!</li>)
-          }
-        </ul>
 
       </div>
     );

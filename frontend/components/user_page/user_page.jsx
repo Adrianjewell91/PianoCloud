@@ -134,9 +134,16 @@ class UserPage extends React.Component {
                     onChange={this.handleUpload("image")}>
                   </input>
                   <br/>
-                  <input type="submit" value="Upload Image"/>
+                  <input class="change-profile-pic-input"
+                         type="submit" value="Upload Image"/>
                 </form>
               </div>
+              <ul>
+                {
+                  this.props.errors.map((error) => <li key={error}>
+                                                      {error}!</li>)
+                }
+              </ul>
             </ReactModal>
           </div>
 

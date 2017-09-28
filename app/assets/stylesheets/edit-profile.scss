@@ -16,6 +16,10 @@
   flex-direction: column;
 }
 
+.change-profile-pic-input:focus {
+  outline: none;
+}
+
 .inside-edit-modal  {
   display: flex;
   flex-direction: column;

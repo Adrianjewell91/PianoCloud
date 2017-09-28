@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
   return {artist: toArray(state.entities.users),
           tracks: toArray(state.entities.tracks),
           currentUser: state.session.currentUser,
-          nowPlaying: state.entities.nowPlaying[0]}
+          nowPlaying: state.entities.nowPlaying[0],
+          errors: state.errors.users}
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
