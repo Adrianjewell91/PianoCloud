@@ -78,10 +78,6 @@ class NavBar extends React.Component {
     src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"
     />)
 
-
-    let homeButton = (<Link to="/">Home</Link>);
-    let streamButton = (<Link to="/stream">Stream</Link>);
-    let uploadButton = (<Link to="/upload">Upload</Link>);
     let search_input = (
       <form onSubmit={this.handleSearch.bind(this)}
             className="nav-search-form">
@@ -133,8 +129,6 @@ class NavBar extends React.Component {
                       <img className = 'profile-nav-thumbnail'
                            src={userProfileUrl}/>
                   </div>
-
-
 
                 <button className={navButtonClass}>
                     {`${user.username}`}
