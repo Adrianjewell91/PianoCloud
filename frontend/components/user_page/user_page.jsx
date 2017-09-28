@@ -56,13 +56,18 @@ class UserPage extends React.Component {
 
   handleSubmit(e) {
       e.preventDefault();
+      // debugger
+      document.getElementsByClassName("change-profile-pic-input")[0]
+        .disabled = true;
 
       const formData = new FormData();
 
       formData.append("user[thumb_nail]", this.state.imageFile);
 
       this.props.updateUserImage(formData, this.props.artist[0].id)
-        .then(() => this.props.history.push(`/`));
+        .then(() => this.props.history.push(`/`))
+        .fail(() => document.getElementsByClassName("change-profile-pic-input")[0]
+                            .disabled = false);
   }
 
 
@@ -134,7 +139,7 @@ class UserPage extends React.Component {
                     onChange={this.handleUpload("image")}>
                   </input>
                   <br/>
-                  <input class="change-profile-pic-input"
+                  <input className="change-profile-pic-input"
                          type="submit" value="Upload Image"/>
                 </form>
               </div>

@@ -17,7 +17,6 @@ class TrackForm extends React.Component {
           this.setState(res.track);
       });
     }
-
   }
 
   componentWillUnmount() {
@@ -96,7 +95,6 @@ class TrackForm extends React.Component {
         } else {
           this.setState({[fieldURL]: "", [fieldFile]: null});
         }
-
       }
     }
 

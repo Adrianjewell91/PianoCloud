@@ -29,7 +29,7 @@ const TracksReducer = (state = {}, action) => {
       delete newState[`${action.trackId.id}`];
       return newState;
     case RECEIVE_USER:
-      return {};
+      return state;
     case RECEIVE_SEARCH_RESULTS:
 
       let searchedTracks = {};
