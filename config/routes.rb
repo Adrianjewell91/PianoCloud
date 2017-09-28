@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update, :index, :show] do
       resources :tracks, only: [:index]
     end
-    
+
     resource :session, only: [:create, :destroy]
 
     resources :tracks do
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
     resources :comments, only: [:destroy]
   end
+
+  get 'search', to: "api/tracks#search"
 
   root "static_pages#root"
 end

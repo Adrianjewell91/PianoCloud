@@ -63,6 +63,11 @@ class Api::TracksController < ApplicationController
     end
   end
 
+  def search
+    @search_results = Track.where("title LIKE '%#{params[:query]}%' ")
+    render json: @search_results
+  end
+
   private
 
   def track_params
