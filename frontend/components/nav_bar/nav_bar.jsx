@@ -142,6 +142,7 @@ class NavBar extends React.Component {
               </Link>
 
               <button className={navButtonClass}
+                      id="sign-out"
                 onClick={this.handleLogOut.bind(this)}>Sign Out</button>
         </div>
       );

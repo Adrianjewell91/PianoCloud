@@ -1,11 +1,11 @@
 /*Reset*/
-html body div form ul li a button {
+html body div form ul li a button input form  {
+// html * {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: sans-serif;
-  // font: inherit;
+  font-family: inherit;
   vertical-align: baseline;
 }
 
