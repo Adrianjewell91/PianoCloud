@@ -31,6 +31,7 @@ class NavBar extends React.Component {
   }
 
   handleSearch(e) {
+    debugger
     this.props.requestSearchResults(this.state.query)
       .then(() => this.props.history.push(`/search`));
   }
@@ -156,8 +157,8 @@ class NavBar extends React.Component {
               <ReactModal
                 className="auth-modal"
                 isOpen={this.state.showLoginModal}
-                contentLabel="auth-modal"
-              >
+                contentLabel="auth-modal">
+                
                 <button onClick={this.handleCloseModal}>X</button>
                 <LoginFormContainer/>
               </ReactModal>
@@ -168,8 +169,8 @@ class NavBar extends React.Component {
               <ReactModal
                 className="auth-modal"
                 isOpen={this.state.showSigninModal}
-                contentLabel="auth-modal"
-              >
+                contentLabel="auth-modal">
+
                 <button onClick={this.handleCloseModal}>X</button>
                 <SignupFormContainer/>
               </ReactModal>

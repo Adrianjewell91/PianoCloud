@@ -10,7 +10,7 @@ class SearchList extends React.Component {
   render() {
     return (
       <div className="stream">
-        <h1>Search Results</h1>
+        <h1>Search Results: Found {this.props.tracks.length} Item(s).</h1>
 
         <ul>
         {

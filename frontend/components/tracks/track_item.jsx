@@ -26,8 +26,7 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
 
     const handleQueue = (e) => {
       e.preventDefault();
-
-
+      
       if (e.currentTarget.textContent === "||") {
 
         e.currentTarget.textContent = "▶";
