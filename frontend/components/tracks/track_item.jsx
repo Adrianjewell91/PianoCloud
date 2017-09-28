@@ -63,7 +63,7 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
                           id={playButtonId}>{playButton}</button>
 
                     <div id="artist-and-title">
-                      <span><Link to={`/users/${track.artist}`}>
+                      <span><Link to={`/${track.artist}`}>
                                     {track.artist}</Link></span>
 
                       <Link to={`/${track.artist}/${track.title}`}>

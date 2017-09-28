@@ -80,7 +80,7 @@ class TrackPage extends React.Component {
                       id={playButtonId}>{playButton}</button>
 
               <div className="song-info">
-                <span><Link to={`/users/${track.artist}`}>{track.artist}</Link></span>
+                <span><Link to={`/${track.artist}`}>{track.artist}</Link></span>
 
                 <span className="first-span">{track.title}</span>
 

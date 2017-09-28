@@ -57,7 +57,7 @@ class NavBar extends React.Component {
     e.preventDefault();
 
     this.props.login({username: 'adriantest', password:'123456'})
-      .then(() => this.props.history.push(`/users/adriantest`));
+      .then(() => this.props.history.push(`/adriantest`));
   }
 
   handleLogOut(e) {
@@ -111,9 +111,9 @@ class NavBar extends React.Component {
       display = (
         <div className={navLoggedIn}>
 
-              <Link to={`/users/${user.username}`}>{logoImage}</Link>
+              <Link to={`/${user.username}`}>{logoImage}</Link>
 
-              <Link to={`/users/${user.username}`}>
+              <Link to={`/${user.username}`}>
                   <button className={navButtonClass}>Home</button>
               </Link>
 
@@ -127,7 +127,7 @@ class NavBar extends React.Component {
                 <button className={navButtonClass}>Upload</button>
               </Link>
 
-              <Link to={`/users/${user.username}`}>
+              <Link to={`/${user.username}`}>
                 <div className="nav-bar-pic-and-link">
                   <div className = 'profile-nav-thumbnail-frame'>
                       <img className = 'profile-nav-thumbnail'

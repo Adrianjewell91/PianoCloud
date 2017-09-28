@@ -17,7 +17,7 @@ export const CommentItem = ({comment, currentUser, deleteComment}) => {
 
             <div className="commentor-stats">
               <div className="commentor-stats-line-1">
-                <span><Link to={`/users/${comment.author}`}>
+                <span><Link to={`/${comment.author}`}>
                                {comment.author}</Link></span>
                 <span>{comment.created_at.substring(0,10)}</span>
               </div>

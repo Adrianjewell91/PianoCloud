@@ -20,13 +20,13 @@ const App = () => (
       <Switch>
         <Route exact path="/search" component={SearchContainer}/>
         <Route exact path="/stream" component={StreamPageContainer} />
-        <Route exact path="/users/:user_name" component={UserPageContainer} />
         <ProtectedRoute exact path="/upload" component={TrackFormContainer} />
         <ProtectedRoute exact path="/:user_name/:track_name/edit"
                component={TrackEditFormContainer}/>
         <Route exact path="/" component={GreetingContainer}/>
         <Route exact path="/:user_name/:track_name"
                component={TrackPageContainer}/>
+        <Route exact path="/:user_name" component={UserPageContainer} />
       </Switch>
     </div>
 

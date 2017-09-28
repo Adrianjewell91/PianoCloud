@@ -39,7 +39,7 @@ class AudioPlayer extends React.Component {
           </div>
           <div className="artist-and-title">
             <span id="artistNP">
-              <Link to={`/users/${this.props.nowPlaying.artist}`}>
+              <Link to={`/${this.props.nowPlaying.artist}`}>
                 {this.props.nowPlaying.artist}</Link></span>
             <span id="titleNP">
               <Link to={`/${this.props.nowPlaying.artist}/${this.props.nowPlaying.title}`}>
