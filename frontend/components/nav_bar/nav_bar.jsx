@@ -13,7 +13,8 @@ class NavBar extends React.Component {
     super(props)
     this.state = {
       showLoginModal: false,
-      showSignInModal: false
+      showSignInModal: false,
+      query: ""
     };
 
     this.handleOpenLoginModal = this.handleOpenLoginModal.bind(this);
@@ -21,6 +22,17 @@ class NavBar extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
 
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    }
+  }
+
+  handleSearch(e) {
+    this.props.requestSearchResults(this.state.query)
+      .then((res) => console.log(res));
   }
 
   handleOpenLoginModal() {
@@ -67,10 +79,13 @@ class NavBar extends React.Component {
     let streamButton = (<Link to="/stream">Stream</Link>);
     let uploadButton = (<Link to="/upload">Upload</Link>);
     let search_input = (
-      <form className="nav-search-form">
-        <input className="nav-search" type="text"
-                               placeholder="(For Display Only)"></input>
-
+      <form onSubmit={this.handleSearch.bind(this)}
+            className="nav-search-form">
+        <input className="nav-search"
+               onChange={this.update("query")}
+               value={this.state.query}
+               type="text"
+               placeholder="Search Artists and Music"></input>
       </form>)
 
 
