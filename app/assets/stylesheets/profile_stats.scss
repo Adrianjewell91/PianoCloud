@@ -18,13 +18,10 @@
 }
 
 .profile-pic{
-  border-radius: 50%;
-  background-color: white;
   margin-right: 8px;
-  // margin-left: 15px;
   height: 100%;
   width: auto;
-  max-width: 200px;
+
 }
 
 .picture-frame {
@@ -33,6 +30,9 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .user-info{

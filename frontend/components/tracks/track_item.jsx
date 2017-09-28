@@ -26,11 +26,11 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
 
     const handleQueue = (e) => {
       e.preventDefault();
-      
+
       if (e.currentTarget.textContent === "||") {
 
         e.currentTarget.textContent = "▶";
-        e.currentTarget.setAttribute("id","playing");
+        // e.currentTarget.setAttribute("id","playing");
         document.getElementsByClassName('react-audio-player')[0].pause()
 
       } else {

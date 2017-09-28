@@ -134,7 +134,7 @@ class UserPage extends React.Component {
                     onChange={this.handleUpload("image")}>
                   </input>
                   <br/>
-                  <input type="submit" value="Change Thumbnail"/>
+                  <input type="submit" value="Upload Image"/>
                 </form>
               </div>
             </ReactModal>

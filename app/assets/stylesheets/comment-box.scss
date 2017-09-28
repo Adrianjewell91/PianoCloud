@@ -53,14 +53,18 @@
   margin-top:5px;
   display: flex;
   justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+  background: white;
 }
 
 .comment-img-pic {
-  border: 1px solid gray;
+
   height:100%;
   width: auto;
   max-width: 40px;
-  border-radius: 50%;
+
 }
 
 .comment-li {

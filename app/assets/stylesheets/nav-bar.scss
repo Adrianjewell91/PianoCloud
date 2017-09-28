@@ -61,17 +61,17 @@
 }
 
 .profile-nav-thumbnail {
-  margin-top: 8px;
-  border-radius: 50%;
   height: 100%;
   width: auto;
-  max-width: 30px;
 }
 
 .profile-nav-thumbnail-frame {
   height:30px;
   width: 30px;
-
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .nav-button a {
