@@ -118,19 +118,20 @@ class NavBar extends React.Component {
 
               {search_input}
               <button className={navButtonClass}>{uploadButton}</button>
+              <div className="nav-bar-pic-and-link">
+                <div className = 'profile-nav-thumbnail-frame'>
+                  <Link to={`/users/${user.username}`}>
+                    <img className = 'profile-nav-thumbnail'
+                         src={userProfileUrl}/>
+                  </Link>
+                </div>
 
-              <div className = 'profile-nav-thumbnail-frame'>
-                <Link to={`/users/${user.username}`}>
-                  <img className = 'profile-nav-thumbnail'
-                       src={userProfileUrl}/>
-                </Link>
+
+                <button className={navButtonClass}>
+                    <Link to={`/users/${user.username}`}>{`${user.username}`}
+                    </Link>
+                </button>
               </div>
-
-
-              <button className={navButtonClass}>
-                  <Link to={`/users/${user.username}`}>{`${user.username}`}</Link>
-              </button>
-
               <button className={navButtonClass}
                 onClick={this.handleLogOut.bind(this)}>Sign Out</button>
         </div>
