@@ -64,8 +64,8 @@ class Api::TracksController < ApplicationController
   end
 
   def search
-    @search_track_results = Track.where("title LIKE '%#{params[:query]}%' ")
-    @search_user_results = User.where("username LIKE '%#{params[:query]}%' ")
+    @search_track_results = Track.where("title ILIKE '%#{params[:query]}%' ")
+    @search_user_results = User.where("username ILIKE '%#{params[:query]}%' ")
     render :search
   end
 

@@ -31,7 +31,8 @@ class NavBar extends React.Component {
   }
 
   handleSearch(e) {
-    debugger
+
+    e.preventDefault();
     this.props.requestSearchResults(this.state.query)
       .then(() => this.props.history.push(`/search`));
   }

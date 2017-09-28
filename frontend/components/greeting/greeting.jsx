@@ -14,6 +14,7 @@ class Greeting extends React.Component {
   }
 
   handleSearch(e) {
+    e.preventDefault();
     this.props.requestSearchResults(this.state.query)
       .then(() => this.props.history.push(`/search`));
   }

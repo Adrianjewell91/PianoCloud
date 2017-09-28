@@ -11,7 +11,6 @@
 
 }
 
-
 .nav-loggedin {
   min-width: 1000px;
   display: flex;
@@ -20,17 +19,26 @@
   margin-right: 3.2%;
 }
 
+.nav-loggedin a {
+  text-align: center;
+  text-decoration: none;
+  color: #B0B0B0
+}
+
 .nav-loggedin a:active {
   text-decoration: none;
 }
 
+.nav-loggedin a:hover {
+  text-decoration: none;
+  color: #FFFFFF
+}
 
-.nav-loggedout {
-  min-width: 1020px;
-  display: flex;
-  justify-content: space-between;
-  margin-left: 3.2%;
-  margin-right: 3.2%;
+button:focus {outline:0;}
+
+.nav-button:hover, .nav-button a:hover {
+  color: #FFFFFF;
+
 }
 
 .nav-button {
@@ -40,6 +48,16 @@
   font-size: 14px;
   height: 46px;
   cursor: pointer;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.nav-loggedout {
+  min-width: 1020px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 3.2%;
+  margin-right: 3.2%;
 }
 
 .nav-stream {
@@ -51,8 +69,6 @@
 .stream-button {
   border-right: 1px solid black;
   border-left: 1px solid black;
-  padding-left: 25px;
-  padding-right: 25px;
 }
 
 .the-log-out-buttons {
@@ -62,6 +78,10 @@
 .nav-bar-pic-and-link {
   display: flex;
   justify-content: center;
+}
+
+.nav-bar-pic-and-link .nav-button {
+    padding-left: 10px;
 }
 
 .profile-nav-thumbnail {
@@ -80,10 +100,6 @@
   background-color: white;
 }
 
-.nav-button a {
-  text-decoration: none;
-  color: #B0B0B0
-}
 
 .nav-loggedout .the-log-out-buttons .nav-button {
   height: 26px;
@@ -100,16 +116,6 @@
 .nav-loggedout .the-log-out-buttons .nav-button:last-child {
   background-color: #FD561F;
   border: none;
-}
-
-button:focus {outline:0;}
-
-.nav-button:hover, .nav-button a:hover {
-  color: #FFFFFF;
-}
-
-.nav-search-form {
-  /*min-width: 100px;*/
 }
 
 .nav-search {
