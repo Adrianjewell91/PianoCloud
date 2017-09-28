@@ -12,6 +12,8 @@ import {RECEIVE_USER} from '../actions/users_actions';
 
 const TracksReducer = (state = {}, action) => {
   Object.freeze(state);
+
+
   switch (action.type) {
     case RECEIVE_TRACKS:
 
@@ -29,10 +31,10 @@ const TracksReducer = (state = {}, action) => {
     case RECEIVE_USER:
       return {};
     case RECEIVE_SEARCH_RESULTS:
-      debugger
-      allTracks = {};
-      action.results.tracks.forEach((track) => allTracks[track.id] = track);
-      return allTracks;
+
+      let searchedTracks = {};
+      action.results.tracks.forEach((track) => searchedTracks[track.id] = track);
+      return searchedTracks;
     default:
       return state;
   }

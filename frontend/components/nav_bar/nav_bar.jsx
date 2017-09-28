@@ -32,7 +32,7 @@ class NavBar extends React.Component {
 
   handleSearch(e) {
     this.props.requestSearchResults(this.state.query)
-      .then((res) => console.log(res));
+      .then(() => this.props.history.push(`/search`));
   }
 
   handleOpenLoginModal() {
