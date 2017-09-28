@@ -148,14 +148,7 @@ button:focus {outline:0;}
 }
 
 
-/*
-.fa-search {
-  position:relative;
-  right: 25px;
-  color:#666666;
-}*/
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .nav-search {width: 300px;}
   .nav-loggedin {
     display: flex;
