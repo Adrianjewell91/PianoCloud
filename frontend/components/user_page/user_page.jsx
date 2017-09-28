@@ -65,7 +65,6 @@ class UserPage extends React.Component {
   }
 
 
-
   render () {
     const artist = this.props.artist.length === 1 ?
       this.props.artist[0] : "";
