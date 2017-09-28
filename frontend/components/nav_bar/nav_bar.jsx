@@ -143,8 +143,10 @@ class NavBar extends React.Component {
         <div className={navLoggedOut}>
           <div>
             <Link to="/">{logoImage}</Link>
-            <button className={`${navButtonClass} nav-stream`}>
-            {streamButton}</button>
+            <Link to="/stream">
+                <button className={`${navButtonClass} nav-stream`}>
+                Stream</button>
+            </Link>
           </div>
 
           <div className="the-log-out-buttons">
@@ -158,7 +160,7 @@ class NavBar extends React.Component {
                 className="auth-modal"
                 isOpen={this.state.showLoginModal}
                 contentLabel="auth-modal">
-                
+
                 <button onClick={this.handleCloseModal}>X</button>
                 <LoginFormContainer/>
               </ReactModal>
