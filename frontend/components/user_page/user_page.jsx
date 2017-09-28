@@ -56,7 +56,6 @@ class UserPage extends React.Component {
 
   handleSubmit(e) {
       e.preventDefault();
-      // debugger
       document.getElementsByClassName("change-profile-pic-input")[0]
         .disabled = true;
 
@@ -78,7 +77,6 @@ class UserPage extends React.Component {
     let track_display = "";
     let userProfileUrl = "";
     let editButton ="";
-    // debugger
     if (artist !== "") {
       track_display = (
           this.props.tracks.map((track) => <TrackItem key={track.title}

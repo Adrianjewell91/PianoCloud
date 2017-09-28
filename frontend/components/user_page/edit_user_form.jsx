@@ -36,7 +36,6 @@ class EditUserForm extends React.Component {
 
   render () {
     //Add image upload later.
-    console.log(this.state);
     return (
       <div className="edit-form">
         <h1>Edit Profile Info</h1>
