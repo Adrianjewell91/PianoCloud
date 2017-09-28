@@ -155,6 +155,10 @@ button:focus {outline:0;}
   color:#666666;
 }*/
 
-@media screen and (max-width: 900px) {
-  .nav-search {width: 200px;}
+@media screen and (max-width: 1000px) {
+  .nav-search {width: 300px;}
+  .nav-loggedin {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
