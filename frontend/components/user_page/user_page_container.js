@@ -6,13 +6,14 @@ import {toArray} from "../../util/selectors";
 import {requestUser, updateUserImage} from "../../actions/users_actions";
 
 import {deleteTrack,
-        requestTracks, updateTracks} from "../../actions/tracks_actions";
+        requestUserTracks, updateTracks} from "../../actions/tracks_actions";
 
 import {receiveTrackToPlay} from "../../actions/audio_player_actions";
 
 //Will need to add ownProps to get history in order to search
 const mapStateToProps = (state, ownProps) => {
   return {artist: toArray(state.entities.users),
+          tracks: toArray(state.entities.tracks),
           currentUser: state.session.currentUser,
           nowPlaying: state.entities.nowPlaying[0]}
 };
@@ -23,7 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     updateUserImage: (user, id) => dispatch(updateUserImage(user,id)),
     deleteTrack: (id) => dispatch(deleteTrack(id)),
     updateTrack: (track) => dispatch(updateTrack(track)),
-    requestTracks: () => dispatch(requestTracks()),
+    requestUserTracks: (user_id) => dispatch(requestUserTracks(user_id)),
     receiveTrackToPlay: (track) => dispatch(receiveTrackToPlay(track))
 });
 

@@ -25,8 +25,8 @@ const TracksReducer = (state = {}, action) => {
       delete newState[`${action.trackId.id}`];
       return newState;
     case RECEIVE_USER:
-      return {};
-      
+      return state;
+
     default:
       return state;
   }

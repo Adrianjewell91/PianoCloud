@@ -39,6 +39,12 @@ export const requestTracks = () => (dispatch) => {
     .fail((errors) => dispatch(receiveTrackErrors(errors)));
 };
 
+export const requestUserTracks = (user_id) => (dispatch) => {
+  return TrackUtil.getUserTracks(user_id)
+    .then((tracks) => dispatch(receiveTracks(tracks)))
+    .fail((errors) => dispatch(receiveTrackErrors(errors)));
+};
+
 export const requestTrack = (id) => (dispatch) => {
   return TrackUtil.getTrack(id)
     .then((track) => dispatch(receiveTrack(track)));

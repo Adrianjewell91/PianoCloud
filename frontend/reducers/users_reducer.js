@@ -3,6 +3,8 @@ import {
   RECEIVE_USER,
 } from '../actions/users_actions';
 
+import {REMOVE_TRACK} from "../actions/tracks_actions";
+
 import {RECEIVE_TRACK, RECEIVE_TRACKS} from '../actions/tracks_actions';
 //Here i want to clear users when RECEIVE_TRACK so that tracks aren't listed twice.
 
@@ -15,12 +17,16 @@ const UsersReducer = (state = {}, action) => {
       action.users.forEach((user) => allTracks[user.id] = user);
       return allUsers;
     case RECEIVE_USER:
-
       return {[action.user.id]: action.user};
     case RECEIVE_TRACK:
       return {};
-    case RECEIVE_TRACKS:
-      return {};
+    // case RECEIVE_TRACKS:
+    //   return {};
+    // case REMOVE_TRACK:
+      // let newState = Object.assign({}, state);
+      // delete newState[Object.keys(state)[0]];
+      //
+      // return newState;
     default:
       return state;
   }

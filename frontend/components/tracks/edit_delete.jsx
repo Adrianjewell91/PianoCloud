@@ -5,7 +5,8 @@ import TrackPageContainer from './track_page_container';
 export const EditAndDeleteButtons = ({track, deleteTrack}) => {
   const handleDeleteClick = (e) => {
     e.preventDefault();
-    deleteTrack(track.id);
+    debugger;
+    deleteTrack(track.id).then();
   }
 
   const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>

@@ -12,7 +12,8 @@ class UserPage extends React.Component {
   }
 
   componentWillMount() {
-    this.props.requestUser(this.props.match.params.user_name);
+    this.props.requestUser(this.props.match.params.user_name)
+      .then((res) => this.props.requestUserTracks(res.user.id));
   }
 
   componentWillReceiveProps(newProps) {
@@ -69,7 +70,7 @@ class UserPage extends React.Component {
     const artist = this.props.artist.length === 1 ?
       this.props.artist[0] : "";
 
-    let track_display = "Loading";
+    let track_display = "";
     let userProfileUrl = "";
     let editButton ="";
     // debugger

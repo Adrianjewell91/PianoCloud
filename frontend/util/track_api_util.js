@@ -5,6 +5,13 @@ export const getTracks = () => {
   });
 }
 
+export const getUserTracks = (user_id) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/users/${user_id}/tracks`
+  });
+}
+
 export const getTrack = (title) => {
 
   return $.ajax({
