@@ -2,7 +2,7 @@ class Api::TracksController < ApplicationController
   def index
     #Implement Search Here Eventually
     if params[:user_id]
-      @tracks = Track.where(user_id: params[:user_id])
+      @tracks = Track.includes(:artist).where(user_id: params[:user_id])
     else
       @tracks = Track.includes(:artist).all
     end
@@ -10,9 +10,9 @@ class Api::TracksController < ApplicationController
 
   def show
     #This makes things work on heroku!
-      params[:id].gsub! '%20', ' '
+    params[:id].gsub! '%20', ' '
 
-      @track = Track.includes(:artist).find_by(title: params[:id])
+    @track = Track.includes(:artist).find_by(title: params[:id])
 
     if @track.nil?
       render json: {errors: ["Could not be found"]}, status: 404
