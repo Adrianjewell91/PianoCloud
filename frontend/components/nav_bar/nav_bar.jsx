@@ -85,7 +85,7 @@ class NavBar extends React.Component {
                onChange={this.update("query")}
                value={this.state.query}
                type="text"
-               placeholder="Search Artists and Music"></input>
+               placeholder="Search Music"></input>
       </form>)
 
 

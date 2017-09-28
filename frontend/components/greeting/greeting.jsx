@@ -4,6 +4,18 @@ import { Link, Redirect } from 'react-router-dom';
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {query: ""}
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    }
+  }
+
+  handleSearch(e) {
+    this.props.requestSearchResults(this.state.query)
+      .then(() => this.props.history.push(`/search`));
   }
 
   //Set up ternary logic to redirect to user profile if logged in.
@@ -23,8 +35,13 @@ class Greeting extends React.Component {
 
   render () {
 
-    let search_input = (<input type="text"
-                               placeholder="Search Music and Artists"></input>)
+    let search_input = (<form onSubmit={this.handleSearch.bind(this)}>
+                              <input className="nav-search"
+                                     onChange={this.update("query")}
+                                     value={this.state.query}
+                                     type="text"
+                                     placeholder="Search Music"></input>
+                        </form>)
 
     return (
       <div className="splash">
