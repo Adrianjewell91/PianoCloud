@@ -62,7 +62,7 @@ class UserPage extends React.Component {
       formData.append("user[thumb_nail]", this.state.imageFile);
 
       this.props.updateUserImage(formData, this.props.artist[0].id)
-      .then(() => this.props.history.push(`/`));
+        .then(() => this.props.history.push(`/`));
   }
 
 

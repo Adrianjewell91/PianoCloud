@@ -24,6 +24,8 @@ class NavBar extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
+
+
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
