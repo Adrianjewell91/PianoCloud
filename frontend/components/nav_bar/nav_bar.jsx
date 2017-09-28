@@ -110,29 +110,36 @@ class NavBar extends React.Component {
 
               <Link to={`/users/${user.username}`}>{logoImage}</Link>
 
-              <button className={navButtonClass}>
-                <Link to={`/users/${user.username}`}>Home</Link>
-              </button>
-              <button className={`${navButtonClass} stream-button`}>
-                {streamButton}
-              </button>
+              <Link to={`/users/${user.username}`}>
+                  <button className={navButtonClass}>Home</button>
+              </Link>
+
+              <Link to="/stream">
+                <button className={`${navButtonClass} stream-button`}>
+                  Stream</button>
+              </Link>
 
               {search_input}
-              <button className={navButtonClass}>{uploadButton}</button>
-              <div className="nav-bar-pic-and-link">
-                <div className = 'profile-nav-thumbnail-frame'>
-                  <Link to={`/users/${user.username}`}>
-                    <img className = 'profile-nav-thumbnail'
-                         src={userProfileUrl}/>
-                  </Link>
-                </div>
+              <Link to="/upload">
+                <button className={navButtonClass}>Upload</button>
+              </Link>
+
+              <Link to={`/users/${user.username}`}>
+                <div className="nav-bar-pic-and-link">
+                  <div className = 'profile-nav-thumbnail-frame'>
+                      <img className = 'profile-nav-thumbnail'
+                           src={userProfileUrl}/>
+                  </div>
+
 
 
                 <button className={navButtonClass}>
-                    <Link to={`/users/${user.username}`}>{`${user.username}`}
-                    </Link>
+                    {`${user.username}`}
                 </button>
-              </div>
+
+                </div>
+              </Link>
+
               <button className={navButtonClass}
                 onClick={this.handleLogOut.bind(this)}>Sign Out</button>
         </div>
