@@ -71,11 +71,3 @@ button:focus, button:active
 /*---*/
 
 @import "react_audio_player";
-
-/*---*/
-
-.clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
