@@ -16,6 +16,11 @@ body {
 
 }
 
-ol ul {
+ol, ul {
   list-style: none;
+}
+
+*:focus {
+  outline:none;
+  transition: 0.3s;
 }
