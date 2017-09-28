@@ -77,12 +77,12 @@ class UserPage extends React.Component {
     if (artist !== "") {
       track_display = (
           this.props.tracks.map((track) => <TrackItem key={track.title}
-                                                  track={track}
-                                                  currentUser={this.props.currentUser}
-                                                  editTrack={this.props.updateTrack}
-                                                  deleteTrack={this.props.deleteTrack}
-                                                  receiveTrackToPlay={this.props.receiveTrackToPlay}
-                                                  nowPlaying={this.props.nowPlaying}
+                              track={track}
+                              currentUser={this.props.currentUser}
+                              editTrack={this.props.updateTrack}
+                              deleteTrack={this.props.deleteTrack}
+                              receiveTrackToPlay={this.props.receiveTrackToPlay}
+                              nowPlaying={this.props.nowPlaying}
                                                   />)
       )
 
