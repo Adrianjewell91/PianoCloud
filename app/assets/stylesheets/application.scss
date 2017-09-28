@@ -63,7 +63,14 @@ Organization of CSS Styling:
   font-size: 30px;
 }
 
-button:focus {outline:0;}
+button:focus, button:active
+  {outline:0;}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: gray;
+  transition: 0.3s;
+}
 
 /*---*/
 

@@ -47,6 +47,7 @@ button:focus {outline:0;}
   border-style: none;
   font-size: 14px;
   height: 46px;
+  // min-width: 104px;
   cursor: pointer;
   padding-left: 25px;
   padding-right: 25px;
@@ -130,9 +131,14 @@ button:focus {outline:0;}
   transition: 0.5s;
 }
 
+.nav-search-form {
+  margin-left: 6px;
+}
+
 .nav-search:focus {
   background-color: #FFFFFF;
   transition: 0.3s;
+  outline: none
 }
 
 
