@@ -7,30 +7,37 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Track.destroy_all
+Comment.destroy_all
 
-User.create(username: Faker::Name.first_name,
+user1 = User.create(username: 'fchopin',
             password: '123456',
-            name: Faker::Name.name)
+            name: "Frederic Chopin", location: "Paris, France")
 
-User.create(username: Faker::Name.first_name,
+user2 = User.create(username: 'fliszt',
             password: '123456',
-            name: Faker::Name.name)
+            name: "Franz Liszt", location: "Weimar, Germany")
 
-User.create(username: Faker::Name.first_name,
+user3 = User.create(username: 'lvbeethoven',
             password: '123456',
-            name: Faker::Name.name)
+            name: "Frederic Chopin",, location: "Bonn, Germany")
 
-User.create(username: Faker::Name.first_name,
+user4 = User.create(username: 'fschubert',
             password: '123456',
-            name: Faker::Name.name)
+            name: "Frederic Chopin",, location: "Mission, San Francisco")
 
-User.create(username: Faker::Name.first_name,
+user5 = User.create(username: 'adriantest',
             password: '123456',
-            name: Faker::Name.name)
+            name: "Adrian", location: "Boston, Massachusetts")
 
-User.create(username: Faker::Name.first_name,
-            password: '123456',
-            name: Faker::Name.name)
-User.create(username: 'adriantest',
-            password: '123456',
-            name: Faker::Name.name)
+
+track1 = Track.create(title: "Un Sospiro")
+track2 = Track.create(title: "Aeolian Harp")
+track3 = Track.create(title: "Impromptu in g flat")
+# track4 = Track.create(title: "")
+# track5 = Track.create(title:)
+# track6 = Track.create(title:)
+# track7 = Track.create(title:)
+# track8 = Track.create(title:)
+# track9 = Track.create(title:)
+# track10 = Track.create(title:)

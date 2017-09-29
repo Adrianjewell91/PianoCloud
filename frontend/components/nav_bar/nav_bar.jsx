@@ -118,7 +118,10 @@ class NavBar extends React.Component {
                   Stream</button>
               </Link>
 
+
               {search_input}
+
+
               <Link to="/upload">
                 <button className={navButtonClass}>Upload</button>
               </Link>
@@ -140,6 +143,7 @@ class NavBar extends React.Component {
               <button className={navButtonClass}
                       id="sign-out"
                 onClick={this.handleLogOut.bind(this)}>Sign Out</button>
+
         </div>
       );
     } else { //If Logged out
