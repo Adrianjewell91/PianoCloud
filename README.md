@@ -69,9 +69,19 @@ Users can comment on tracks if they are logged in. They can also delete the comm
 
 Querying by song title allows for the URL routing by artist names and track titles (i.e. /:artist_name/:track_title). This is a challenge because $.ajax replaces ' ' with '%20'. The solution is to parse the query in the Track model with rails gSUB!.  
 
+```ruby
+params[:id].gsub! '%20', ' '
+
+@track = Track.includes(:artist).find_by(title: params[:id])
+```
+
+
 ### N+1 Queries
 Because tracks and users are so closely linked, opportunities for N+1 queries are abundant. The way to remove the N+1 query is to call #includes() in the Controller queries, and, when appropriate, pass associations as variables into JBuilder partials. If the associations are not passed, then JBuilder would make the query again, and result would be an n+1 query.
 
+```ruby
+@tracks = Track.includes(:artist).where(user_id: params[:user_id])
+```
 
 ### Future Implementation Plans:
 
