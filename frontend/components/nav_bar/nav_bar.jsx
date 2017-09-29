@@ -106,7 +106,7 @@ class NavBar extends React.Component {
 
       display = (
         <div className={navLoggedIn}>
-
+           <div className="nav-third-1">
               <Link to={`/${user.username}`}>{logoImage}</Link>
 
               <Link to={`/${user.username}`}>
@@ -117,11 +117,11 @@ class NavBar extends React.Component {
                 <button className={`${navButtonClass} stream-button`}>
                   Stream</button>
               </Link>
-
+            </div>
 
               {search_input}
 
-
+            <div className="nav-third-3">
               <Link to="/upload">
                 <button className={navButtonClass}>Upload</button>
               </Link>
@@ -136,13 +136,13 @@ class NavBar extends React.Component {
                 <button className={navButtonClass}>
                     {`${user.username}`}
                 </button>
-
                 </div>
               </Link>
 
               <button className={navButtonClass}
                       id="sign-out"
                 onClick={this.handleLogOut.bind(this)}>Sign Out</button>
+            </div>
 
         </div>
       );

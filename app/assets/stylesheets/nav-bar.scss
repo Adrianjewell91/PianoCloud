@@ -19,6 +19,10 @@
   margin-right: 3.2%;
 }
 
+.nav-third-1, .nav-third-3 {
+  display: flex;
+  // width: 33%;
+}
 
 
 .nav-loggedin a {
@@ -40,7 +44,6 @@ button:focus {outline:0;}
 
 .nav-button:hover, .nav-button a:hover {
   color: #FFFFFF;
-
 }
 
 .nav-button {
@@ -129,7 +132,7 @@ button:focus {outline:0;}
 
 .nav-search {
   background-color: #E5E5E5;
-  width: 521px;
+  width: 99%;
   height: 26px;
   margin-top: 9px;
   border-radius: 5px;
@@ -140,7 +143,8 @@ button:focus {outline:0;}
 }
 
 .nav-search-form {
-  margin-left: 6px;
+  width: 100%;
+  margin-left: 15px;
 }
 
 .nav-search:focus {
@@ -150,7 +154,7 @@ button:focus {outline:0;}
 }
 
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1000px) {
   .nav-search {width: 300px;}
   .nav-loggedin {
     display: flex;
