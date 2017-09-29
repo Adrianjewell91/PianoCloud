@@ -17,7 +17,6 @@ class UserPage extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(newProps) {
@@ -76,6 +75,7 @@ class UserPage extends React.Component {
 
 
   render () {
+    window.scrollTo(0, 0);
     const artist = this.props.artist.length === 1 ?
       this.props.artist[0] : "";
 
