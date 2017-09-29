@@ -10,34 +10,85 @@ User.destroy_all
 Track.destroy_all
 Comment.destroy_all
 
+
 user1 = User.create(username: 'fchopin',
             password: '123456',
-            name: "Frederic Chopin", location: "Paris, France")
+            name: "Frederic Chopin", location: "Paris, France",
+            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/chopin.png"))
 
 user2 = User.create(username: 'fliszt',
             password: '123456',
-            name: "Franz Liszt", location: "Weimar, Germany")
+            name: "Franz Liszt", location: "Weimar, Germany",
+            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/56242280-portrait-of-the-composer-and-musician-franz-liszt.jpg"))
 
 user3 = User.create(username: 'lvbeethoven',
             password: '123456',
-            name: "Frederic Chopin",, location: "Bonn, Germany")
+            name: "Frederic Chopin", location: "Bonn, Germany",
+            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/beethoven.png"))
 
 user4 = User.create(username: 'fschubert',
             password: '123456',
-            name: "Frederic Chopin",, location: "Mission, San Francisco")
+            name: "Frederic Chopin", location: "Mission, San Francisco",
+            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
 
 user5 = User.create(username: 'adriantest',
             password: '123456',
-            name: "Adrian", location: "Boston, Massachusetts")
+            name: "Adrian", location: "Boston, Massachusetts",
+            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
 
 
-track1 = Track.create(title: "Un Sospiro")
-track2 = Track.create(title: "Aeolian Harp")
-track3 = Track.create(title: "Impromptu in g flat")
-# track4 = Track.create(title: "")
-# track5 = Track.create(title:)
-# track6 = Track.create(title:)
-# track7 = Track.create(title:)
-# track8 = Track.create(title:)
-# track9 = Track.create(title:)
-# track10 = Track.create(title:)
+
+track1 = Track.create(title: "Un Sospiro",  user_id: user2.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/01-Un-Sospiro-Franz-Liszt.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/dawn-190055_640.jpg"))
+track2 = Track.create(title: "Aeolian Harp", user_id: user1.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/12-Aeolian-Harp-op-25-no.-1-Chopin.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
+track3 = Track.create(title: "Impromptu in g flat", user_id: user4.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/02-Impromptu-in-G-flat-major-D.-899.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/dawn-190055_640.jpg"))
+track4 = Track.create(title: "Scherzo from Sonata Pastorale", user_id: user3.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/08-Sonata-Op-28-Beethoven-Scherzo.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/piano-2436670__480.jpg"))
+track5 = Track.create(title: "Rondo from Sonata Pastorale", user_id: user3.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/09-Sonata-Op.-28-Beethoven-Rondo.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/piano-2436670__480.jpg"))
+track6 = Track.create(title: "Farewell", user_id: user5.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/14-Forest-Scenes-Farewell.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
+track7 = Track.create(title: "The Prophet Bird", user_id: user5.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/06-Forest-Scenes-Bird-as-Prophet.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/octagonal-pavilion-1148883_640.jpg"))
+track8 = Track.create(title: "Nocturne in F minor", user_id: user1.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/10-Chopin-Nocturne-Op.-55-no.-1.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/octagonal-pavilion-1148883_640.jpg"))
+track9 = Track.create(title: "L'isle Joyeuse", user_id: user5.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/07-L_isle-Joyeuse-Claude-Debussy.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
+track10 = Track.create(title: "Prelude and First Valse", user_id: user2.id,
+                      track_recording: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/03-Prelude-and-First-Valse-Enrique-Granados.mp3"),
+                      track_thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/dawn-190055_640.jpg"))
+
+
+
+comment1 = Comment.create(body: "Wonderful", user_id: user1.id, track_id: track1.id)
+comment2 = Comment.create(body: "Love it!", user_id: user2.id, track_id: track5.id)
+comment3 = Comment.create(body: "Feels so Good!", user_id: user3.id, track_id: track10.id)
+comment4 = Comment.create(body: "Awesome", user_id: user4.id, track_id: track8.id)
+comment5 = Comment.create(body: "You're Great!", user_id: user5.id, track_id: track3.id)
+comment6 = Comment.create(body: "Such exquisite music!", user_id: user1.id, track_id: track6.id)
+comment7 = Comment.create(body: "Amazing", user_id: user2.id, track_id: track2.id)
+comment8 = Comment.create(body: "Dazzling", user_id: user3.id, track_id: track10.id)
+comment9 = Comment.create(body: "Brilliant", user_id: user4.id, track_id: track4.id)
+comment10 = Comment.create(body: "Hmm, how interesting", user_id: user5.id, track_id: track8.id)
+comment11 = Comment.create(body: "Thoughtful", user_id: user1.id, track_id: track7.id)
+comment12= Comment.create(body: "Just great.", user_id: user2.id, track_id: track6.id)
+comment13 = Comment.create(body: "A good listen", user_id: user3.id, track_id: track5.id)
+comment14 = Comment.create(body: "Makes me feel so good", user_id: user4.id, track_id: track9.id)
+comment15 = Comment.create(body: "Happy!", user_id: user5.id, track_id: track10.id)
+comment16 = Comment.create(body: "Lovely", user_id: user1.id, track_id: track2.id)
+comment17 = Comment.create(body: "So emotional", user_id: user2.id, track_id: track4.id)
+comment18 = Comment.create(body: "The world is a beautiful place", user_id: user3.id, track_id: track9.id)
+comment19 = Comment.create(body: "Let there be light!", user_id: user4.id, track_id: track4.id)
+comment20 = Comment.create(body: "Very nice.", user_id: user5.id, track_id: track5.id)
+comment21 = Comment.create(body: "Cool", user_id: user1.id, track_id: track6.id)
