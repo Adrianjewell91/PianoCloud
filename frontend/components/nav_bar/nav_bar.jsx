@@ -40,7 +40,7 @@ class NavBar extends React.Component {
   }
 
   handleOpenLoginModal() {
-    this.setState({showLoginModal: true});
+    this.setState({showLoginModal: true})
   }
 
   handleOpenSigninModal() {
