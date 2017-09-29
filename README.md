@@ -51,6 +51,7 @@ Pages are sensitive to the current song. For example, pressing the "play" button
 
 ![On Track Show](https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png =300x450)
 
+
 ![On Profile Show](https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence2.png =300x450)
 
 
