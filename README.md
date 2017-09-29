@@ -49,11 +49,7 @@ PianoCloud's streaming functionality is asynchronous with page navigation, and d
 
 Pages are sensitive to the current song. For example, pressing the "play" button on a track will persist that information to any other page in the application. A track can also be paused and restarted from anywhere in the app.  This is achieved with CSS class manipulation and vanilla javascript.
 
-![On Track Show](https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png =300x450)
-
-
-![On Profile Show](https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence2.png =300x450)
-
+<img height="450px" width="350px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png"/>
 
 ### <a name="pages"></a>Fully interconnected user pages, track pages, streaming and search.
 
