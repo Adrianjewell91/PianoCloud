@@ -52,7 +52,6 @@ Pages are sensitive to the current song. For example, pressing the "play" button
 <img height="450px" width="350px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png"/>
 
 ```javascript
-//components/audio_player/audio_player.jsx
 handlePlay (e) {
   let playButton = document.getElementById('playing');
   if (playButton) {playButton.textContent = "||";}
@@ -67,7 +66,6 @@ User, Track, Stream, and Search Pages are interconnected in two ways.
 The first is anchor linkage. Artist names and track titles link to their respective show pages.  It is possible to visit any page from any other page. Component lifecycle methods are responsible to handling the technicalities of this functionality.
 
 ```javascript
-//components/user_page/user_page.jsx
 componentWillReceiveProps(newProps) {
   if (newProps.match.params.user_name !==this.props.match.params.user_name) {
     newProps.requestUser(newProps.match.params.user_name)
@@ -89,7 +87,6 @@ Users can comment on tracks if they are logged in. They can also delete the comm
 Querying by song title allows for the URL routing by artist names and track titles (i.e. /:artist_name/:track_title). This is a challenge because $.ajax replaces ' ' with '%20'. The solution is to parse the query in the Track model with rails gSUB!.  
 
 ```ruby
-#controllers/api/tracks_controller.rb
 params[:id].gsub! '%20', ' '
 
 @track = Track.includes(:artist).find_by(title: params[:id])
@@ -100,7 +97,6 @@ params[:id].gsub! '%20', ' '
 Because tracks and users are so closely linked, opportunities for N+1 queries are abundant. The way to remove the N+1 query is to call #includes() in the Controller queries, and, when appropriate, pass associations as variables into JBuilder partials. If the associations are not passed, then JBuilder would make the query again, and result would be an n+1 query.
 
 ```ruby
-#controllers/api/tracks_controller.rb
 @tracks = Track.includes(:artist).where(user_id: params[:user_id])
 ```
 
