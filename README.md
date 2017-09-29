@@ -7,9 +7,9 @@ http://pianocloud.herokuapp.com
 ## Technologies
 PianoCloud's framework is a Rails backend and a React/Redux frontend. The backend is structured on the concept of the MVC (Model-View-Controller), while the frontend is organized according to principles of Flux.
 
-Additionally, sound and image files are hosted on AWS S3 Simple Storage. The Paperclip Gem links files to the database entries. Figaro keeps access keys hidden from the public repository.
+Sound and image files are hosted with AWS S3 Simple Storage. The Paperclip Gem links files to the database entries. Figaro keeps access keys hidden from the public repository.
 
-Supplementary technologies include $.ajax requests from JQuery, and JBuilder for passing JSON to the frontend.
+Other technologies include React Router, vanilla javascript, SQL/ActiveRecord, $.ajax requests, and JBuilder.
 
 ## Features:
 
@@ -45,11 +45,14 @@ The default method is HTTPS (to please heroku), and Figaro is used to hide acces
 
 ### <a name="stream"></a>Streaming Functionality.
 
-PianoCloud's streaming functionality is asynchronous with page navigation.
+PianoCloud's streaming functionality is asynchronous with page navigation, and displays the current track's information.
 
-Additionally, pages are sensitive to the currently playing song. For example, pressing the "play" button on a track will persist that information to any other page in the application. A track can also be paused and restarted from anywhere in the app.  This is achieved with CSS class manipulation and vanilla javascript.
+Pages are sensitive to the current song. For example, pressing the "play" button on a track will persist that information to any other page in the application. A track can also be paused and restarted from anywhere in the app.  This is achieved with CSS class manipulation and vanilla javascript.
 
-Automatically playing the next track occurs when the audio player calls a redux cycle to pop a track off the stack and load the next one.
+![On Track Show](https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png)
+
+![On Profile Show](https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence2.png)
+
 
 ### <a name="pages"></a>Fully interconnected user pages, track pages, streaming and search.
 
