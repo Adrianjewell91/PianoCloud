@@ -23,17 +23,17 @@ user2 = User.create(username: 'fliszt',
 
 user3 = User.create(username: 'lvbeethoven',
             password: '123456',
-            name: "Frederic Chopin", location: "Bonn, Germany",
+            name: "Ludwig van Beethoven", location: "Bonn, Germany",
             thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/beethoven.png"))
 
 user4 = User.create(username: 'fschubert',
             password: '123456',
-            name: "Frederic Chopin", location: "Mission, San Francisco",
-            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
+            name: "Franz Schubert", location: "Mission, San Francisco",
+            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/schubert.jpg"))
 
 user5 = User.create(username: 'adriantest',
             password: '123456',
-            name: "Adrian", location: "Boston, Massachusetts",
+            name: "Adrian", location: "Boston, Massachusetts", email: "adrianjewell91@gmail.com"
             thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
 
 

@@ -18,7 +18,8 @@ class UserPage extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.user_name !== this.props.match.params.user_name) {
-      newProps.requestUser(newProps.match.params.user_name);
+      newProps.requestUser(newProps.match.params.user_name)
+              .then((res) => this.props.requestUserTracks(res.user.id));
     }
   }
 
@@ -153,7 +154,7 @@ class UserPage extends React.Component {
         </div>
 
         <div className="stream">
-          <h1>My Tracks</h1>
+          <h1>Tracks</h1>
           <ul>
             {track_display}
           </ul>
