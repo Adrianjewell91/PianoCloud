@@ -51,7 +51,7 @@ Pages are sensitive to the current song. For example, pressing the "play" button
 
 <img height="450px" width="300px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png"/>
 
-<img height="450px" width="300px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence2.png" />
+<img style="display: inline;" height="450px" width="300px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence2.png" />
 
 
 ### <a name="pages"></a>Fully interconnected user pages, track pages, streaming and search.
