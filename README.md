@@ -7,7 +7,7 @@ http://pianocloud.herokuapp.com
 ## Technologies
 PianoCloud's framework is a Rails backend and a React/Redux frontend. The backend is structured on the concept of the MVC (Model-View-Controller), while the frontend is organized according to principles of Flux.
 
-Additionally, sound and image files are hosted on AWS S3 Simple Storage. the Paperclip Gem links files on AWS to database entries in the database.  
+Additionally, sound and image files are hosted on AWS S3 Simple Storage. The Paperclip Gem links files to the database entries. Figaro keeps access keys hidden from the public repository.
 
 Supplementary technologies include $.ajax requests from JQuery, and JBuilder for passing JSON to the frontend.
 
@@ -15,21 +15,21 @@ Supplementary technologies include $.ajax requests from JQuery, and JBuilder for
 
 1. [Comprehensive Navigation Bar.](#nav)
 
-2. Authentication.
+2. [Authentication.](#auth)
 
-3. Image/Sound Uploading.
+3. [Image/Sound Uploading.](#upload)
 
-4. Asynchronous Streaming.
+4. [Asynchronous Streaming.](#stream)
 
-5. Interconnected pages.
+5. [Interconnected pages.](#pages)
 
-6. Comments.
+6. [Comments.](#comments)
 
 ## Feature Highlights:
 
 ### <a name="nav"></a>Comprehensive Navigation Bar.
 
-The PianoCloud Navigation Bar is modeled closely after SoundCloud's. Nested 'div' elements and flex-box styling make it screen-responsive.
+The PianoCloud navigation bar is modeled closely after SoundCloud's. Nested 'div' elements and flex-box styling make it screen-responsive.
 
 ### <a name="auth"></a>Authentication.
 
@@ -53,9 +53,11 @@ Automatically playing the next track occurs when the audio player calls a redux 
 
 ### <a name="pages"></a>Fully interconnected user pages, track pages, streaming and search.
 
-User, Track, Stream, and Search Pages are interconnected in two ways. The first is by way of anchor linkage. Any appearance of an artist name or track title links to the respective show page.  Additionally, it is possible to navigate to any show page, not only from any index page, but form any other show page.  Attention to the component lifecycle allows this to be possible.
+User, Track, Stream, and Search Pages are interconnected in two ways.
 
-The second form of interconnectedness allows for only the relevant information displayed on any given page. This was accomplished with careful attention to reducer logic and state shape, of which this particular implementation is perhaps the most direct. At any given time, the page could be showing any number of users or tracks. To handle the multiple ways of presenting information, tracks and users were filtered with reducer logic.
+The first is anchor linkage. Artist names and track titles links to their respective show page.  It is possible to go to any page from any other pages. Component lifecycle methods are responsible to handling the technicalities of this functionality.
+
+The second form of interconnectedness allows for the relevant information to be displayed on any given page. This was accomplished with careful attention to reducer logic and state shape. At any given time, the page could be showing any number of users or tracks. Although, there are many ways to handle this, PianoCloud's implementation makes use of reducer logic to filter the correct information.
 
 ### <a name="comments"></a>Comments.
 
@@ -75,4 +77,4 @@ Because tracks and users are so closely linked, opportunities for N+1 queries ar
 
 1. Image and Sound File Manipulation after uploading.
 2. Comprehensive Search.
-3. Playlists and more audio-player buttons.
+3. Playlists.
