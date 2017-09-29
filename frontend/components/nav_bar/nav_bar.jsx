@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 
-ReactModal.defaultStyles.overlay.backgroundColor = "rgba(128,128,128,0.75)";
+// ReactModal.defaultStyles.overlay.backgroundColor = "rgba(128,128,128,0.75)";
 ReactModal.defaultStyles.overlay.zIndex="2";
 
 class NavBar extends React.Component {
@@ -161,7 +161,7 @@ class NavBar extends React.Component {
             <button className={navButtonClass}
               onClick={this.handleOpenLoginModal}>Sign In</button>
 
-              <ReactModal
+            <ReactModal overlayClassName="react-modal-overlay"
                 className="auth-modal"
                 isOpen={this.state.showLoginModal}
                 contentLabel="auth-modal">
@@ -173,7 +173,7 @@ class NavBar extends React.Component {
             <button className={navButtonClass}
               onClick={this.handleOpenSigninModal}>Create Account</button>
 
-              <ReactModal
+              <ReactModal overlayClassName="react-modal-overlay"
                 className="auth-modal"
                 isOpen={this.state.showSigninModal}
                 contentLabel="auth-modal">
