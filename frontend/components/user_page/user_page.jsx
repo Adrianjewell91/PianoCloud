@@ -16,6 +16,10 @@ class UserPage extends React.Component {
       .then((res) => this.props.requestUserTracks(res.user.id));
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentWillReceiveProps(newProps) {
     if (newProps.match.params.user_name !== this.props.match.params.user_name) {
       newProps.requestUser(newProps.match.params.user_name)

@@ -34,7 +34,7 @@ user4 = User.create(username: 'fschubert',
 user5 = User.create(username: 'adriantest',
             password: '123456',
             name: "Adrian", location: "Boston, Massachusetts", email: "adrianjewell91@gmail.com",
-            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/franz-winterhalter-89724_1280.jpg"))
+            thumb_nail: open("https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/Adrian_Jewell_1.jpg"))
 
 
 
