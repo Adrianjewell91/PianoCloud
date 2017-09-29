@@ -47,7 +47,7 @@ The default method is HTTPS, and Figaro is used to hide access keys.
 
 PianoCloud's streaming functionality is asynchronous with page navigation. The play-bar also displays the current track information.
 
-Pages are sensitive to the current song. For example, pressing the "play" button on a track will persist that information to any other page in the application. A track can also be paused and restarted from anywhere in the app.  This is achieved with CSS class manipulation and vanilla javascript.
+Pages are sensitive to the current song. For example, pressing the "play" button on a track will persist that information to any other page in the application. A track can also be paused and restarted from anywhere in the app.  This is achieved with CSS #id manipulation and vanilla javascript.
 
 <img height="450px" width="350px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png"/>
 
