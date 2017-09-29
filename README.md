@@ -5,9 +5,9 @@
 http://pianocloud.herokuapp.com
 
 ## Technologies
-PianoCloud's framework is a Rails backend and a React/Redux frontend. The backend is structured on the concept of the MVC (Model-View-Controller), while the frontend is organized according to principles of Flux.
+PianoCloud's uses a Rails back-end and a React/Redux front-end. The MVC (Model-View-Controller) dictates the architecture of the back-end, while the frontend organizes information according to principles of Flux.
 
-Sound and image files are hosted with AWS S3 Simple Storage. The Paperclip Gem links files to the database entries. Figaro keeps access keys hidden from the public repository.
+Sound and image files are hosted with AWS S3 Simple Storage, and the Paperclip Gem links files to database entries.
 
 Other technologies include React Router, vanilla javascript, SQL/ActiveRecord, $.ajax requests, and JBuilder.
 
@@ -29,39 +29,57 @@ Other technologies include React Router, vanilla javascript, SQL/ActiveRecord, $
 
 ### <a name="nav"></a>Comprehensive Navigation Bar.
 
-The PianoCloud navigation bar is modeled closely after SoundCloud's. Nested 'div' elements and flex-box styling make it screen-responsive.
+SoundCloud provided the model for PianoCloud's navigation bar. Nested 'div' elements and flex-box styling make the navigation bar screen-responsive.
 
 ### <a name="auth"></a>Authentication.
 
-Authentication offers the 'Demo Sign-In', 'Regular Sign-In,' and 'Create Account' option. Customization options are available on current-user's profile page.
+Authentication offers the 'Demo Sign-In', 'Regular Sign-In,' and 'Create Account' option. Customization options are available on the current user's profile page.
 
-React Modals provide the architecture for both the session forms and the edit forms.
+React Modals provide the skeleton for the 'session' and 'edit profile' forms.
 
 ### <a name="upload"></a>Image/Sound Uploading.
 
-As stated in the Technologies section, Amazon AWS S3 is the file hosting service for PianoCloud. Configuring PaperClip required loading the correct version( 2.10 for aws-sdk, and 5.0.0 for PaperClip). Removing the spoofing protection was also necessary to allow music uploads. This is a bug in paperclip that is, as far as the author know, currently unfixed.
+Amazon AWS S3 is the hosting service for PianoCloud. Configuring PaperClip requires the correct versions (2.10 for aws-sdk, and 5.0.0 for PaperClip). Removing spoof protection is also necessary to allow music uploads. This is a bug that is currently unfixed.
 
-The default method is HTTPS (to please heroku), and Figaro is used to hide access keys from the public repo.
+The default method is HTTPS, and Figaro is used to hide access keys.
 
 ### <a name="stream"></a>Streaming Functionality.
 
-PianoCloud's streaming functionality is asynchronous with page navigation, and displays the current track's information.
+PianoCloud's streaming functionality is asynchronous with page navigation. The play-bar also displays the current track information.
 
 Pages are sensitive to the current song. For example, pressing the "play" button on a track will persist that information to any other page in the application. A track can also be paused and restarted from anywhere in the app.  This is achieved with CSS class manipulation and vanilla javascript.
 
 <img height="450px" width="350px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png"/>
 
+```javascript
+handlePlay (e) {
+  //find the item that was paused and set it to playing.
+  let playButton = document.getElementById('playing');
+  if (playButton) {playButton.textContent = "||";}
+}
+```
+
+
 ### <a name="pages"></a>Interconnected user pages, track pages, streaming and search.
 
 User, Track, Stream, and Search Pages are interconnected in two ways.
 
-The first is anchor linkage. Artist names and track titles links to their respective show page.  It is possible to go to any page from any other pages. Component lifecycle methods are responsible to handling the technicalities of this functionality.
+The first is anchor linkage. Artist names and track titles link to their respective show pages.  It is possible to visit any page from any other page. Component lifecycle methods are responsible to handling the technicalities of this functionality.
 
-The second form of interconnectedness allows for the relevant information to be displayed on any given page. This was accomplished with careful attention to reducer logic and state shape. At any given time, the page could be showing any number of users or tracks. Although, there are many ways to handle this, PianoCloud's implementation makes use of reducer logic to filter the correct information.
+```javascript
+componentWillReceiveProps(newProps) {
+  if (newProps.match.params.user_name !==this.props.match.params.user_name) {
+    newProps.requestUser(newProps.match.params.user_name)
+            .then((res) => this.props.requestUserTracks(res.user.id));
+  }
+}
+```
+
+Interconnectedness challenges the app to display the correct tracks and users on any given page. At any given time, the page could be showing any number of things, but the user should only see those that which is relevant. To ensure this, reducer logic and state shape must be handled carefully.
 
 ### <a name="comments"></a>Comments.
 
-Users can comment on tracks if they are logged in. They can also delete the comments of which they are the author.
+Users can comment on tracks if they are logged in. They can also delete the comments that they have authored.
 
 # Discussion of Challenges
 
