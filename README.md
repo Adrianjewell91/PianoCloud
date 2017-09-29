@@ -51,7 +51,7 @@ Pages are sensitive to the current song. For example, pressing the "play" button
 
 <img height="450px" width="350px" src="https://github.com/Adrianjewell91/PianoCloud/blob/master/FSP/button-persistence1.png"/>
 
-### <a name="pages"></a>Fully interconnected user pages, track pages, streaming and search.
+### <a name="pages"></a>Interconnected user pages, track pages, streaming and search.
 
 User, Track, Stream, and Search Pages are interconnected in two ways.
 
