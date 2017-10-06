@@ -43,7 +43,7 @@ Amazon AWS S3 is the hosting service for PianoCloud. Configuring PaperClip requi
 
 The default method is HTTPS, and Figaro is used to hide access keys.
 
-### <a name="stream"></a>Streaming Functionality.
+### <a name="stream"></a>Streaming.
 
 PianoCloud's streaming functionality is asynchronous with page navigation. The play-bar also displays the current track information.
 
