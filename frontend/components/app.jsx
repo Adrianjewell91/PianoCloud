@@ -15,7 +15,6 @@ import {ProtectedRoute} from "../util/route_util";
 const App = () => (
   <div>
     <NavBarContainer/>
-
     <div className="main-page">
       <Switch>
         <Route exact path="/search" component={SearchContainer}/>
