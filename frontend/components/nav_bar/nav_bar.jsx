@@ -57,7 +57,7 @@ class NavBar extends React.Component {
     e.preventDefault();
 
     this.props.login({username: 'adriantest', password:'123456'})
-      .then(() => this.props.history.push(`/adriantest`));
+      .then(() => this.props.history.push(`/stream`));
   }
 
   handleLogOut(e) {
