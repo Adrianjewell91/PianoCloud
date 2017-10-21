@@ -16,7 +16,7 @@ class StreamPage extends React.Component {
 
     return (
       <div className="stream">
-        <h1>Stream - All Tracks (All Performances Recorded Live by Adrian Jewell)</h1>
+        <h1>Stream - (All Performances Live by Adrian Jewell)</h1>
         <ul>
         {
           this.props.tracks.map((track) => {
