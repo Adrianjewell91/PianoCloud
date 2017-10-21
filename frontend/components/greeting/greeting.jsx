@@ -41,7 +41,7 @@ class Greeting extends React.Component {
                                      onChange={this.update("query")}
                                      value={this.state.query}
                                      type="text"
-                                     placeholder="Search Music"></input>
+                                     placeholder="Search Music Titles (ex. Aeolian)"></input>
                         </form>)
 
     return (

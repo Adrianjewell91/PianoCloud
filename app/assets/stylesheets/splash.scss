@@ -1,15 +1,18 @@
 .splash {
-  text-align: center;
-  position: relative;
-  top: 50%;
+  // text-align: center;
+  // position: relative;
+  // top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.splash img {
-  position: relative;
-  opacity: 0.55;
-  width: 50%;
-  border-radius: 7px;
-}
+// .splash img {
+//   position: relative;
+//   opacity: 0.55;
+//   width: 50%;
+//   border-radius: 7px;
+// }
 
 .splash h1 {
   position: relative;
