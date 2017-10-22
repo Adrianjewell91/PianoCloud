@@ -44,7 +44,7 @@ export const TrackItem = ({track, currentUser, receiveTrackToPlay,
         e.currentTarget.textContent = "||";
         e.currentTarget.setAttribute("id","playing");
         receiveTrackToPlay(track);
-        document.getElementsByClassName('react-audio-player')[0].play();
+        document.getElementsByClassName('react-audio-player')[0].play()
       }
     }
 

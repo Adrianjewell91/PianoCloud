@@ -15,7 +15,6 @@ class AudioPlayer extends React.Component {
     //find the item that was playing and set it the pause.
     let playButton = document.getElementById('playing');
     if (playButton) {playButton.textContent = "▶";}
-
   }
 
   handlePlay (e) {
