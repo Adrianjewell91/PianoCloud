@@ -9,7 +9,7 @@ development:
     secret  : 'c7597fec1274cea86b6046b713b625b7c06426f1' # this is optional, but highly recommended, https://transloadit.com/docs/authentication
     duration: 1800 # 30 minute validity period for signed upload forms
 
-  templates:
+  templates: '2949fb90b82311e7ab4aed831185bd25'
     # template identified by template_id
     s3_store: 'S3_STORE_TEMPLATE_ID'
 
