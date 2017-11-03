@@ -9,7 +9,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('async actions', () => {
-  test('requestUserTracks gets all tracks by User Id', () => {
+  test('requestUserTracks gets called correctly', () => {
     // expect(1).toEqual(2);
 
     const tracks = 'tracks go here';
