@@ -42,7 +42,7 @@ export const requestTracks = () => (dispatch) => {
 export const requestUserTracks = (user_id) => (dispatch) => {
   return TrackUtil.getUserTracks(user_id)
     .then((tracks) => dispatch(receiveTracks(tracks)))
-    .fail((errors) => dispatch(receiveTrackErrors(errors)));
+    .catch((errors) => dispatch(receiveTrackErrors(errors)));
 };
 
 export const requestTrack = (id) => (dispatch) => {
