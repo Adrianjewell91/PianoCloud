@@ -1,4 +1,6 @@
 class Comment < ApplicationRecord
+  validates :body, :user_id, presence: true
+
   belongs_to :user,
   class_name: :User,
   primary_key: :id,
