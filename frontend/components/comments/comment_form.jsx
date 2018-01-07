@@ -3,7 +3,15 @@ import React from 'react';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {body: "", parent_id: this.props.parentId}
+    this.state = {body: "", parent_id: this.props.parentId};
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.revealForm = this.revealForm.bind(this);
+  }
+
+  revealForm() {
+    this.formBox.classList.toggle('hidden');
+    this.revealButton.classList.toggle('selected');
   }
 
   handleSubmit (e) {
@@ -33,7 +41,7 @@ class CommentForm extends React.Component {
 
   if(this.props.currentUser) {
       display = (
-        <div className="comment-form">
+        <div className="comment-form hidden" ref={(formBox) => {this.formBox = formBox}}>
           <div className="comment-form-pic-frame">
               <img className="comment-form-pic"
                    src={this.props.currentUser.thumb_nail_url}/>
@@ -50,6 +58,11 @@ class CommentForm extends React.Component {
 
     return (
       <div>
+        <button ref={(revealButton) => {this.revealButton = revealButton}}
+                onClick={this.revealForm}>
+                {this.props.replyName}
+        </button>
+
         {display}
       </div>
     )
