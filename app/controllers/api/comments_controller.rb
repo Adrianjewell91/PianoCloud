@@ -8,7 +8,6 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.track_id = params[:track_id]
-    @comment.parent_id = params[:parent_id]
 
     if @comment.save
       render :show

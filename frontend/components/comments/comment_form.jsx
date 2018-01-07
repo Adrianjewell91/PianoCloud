@@ -3,7 +3,7 @@ import React from 'react';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {body: ""}
+    this.state = {body: "", parent_id: this.props.parentId}
   }
 
   handleSubmit (e) {
@@ -11,8 +11,14 @@ class CommentForm extends React.Component {
 
     document.getElementById('submit-comment').blur()
 
-    this.props.createComment(this.state, this.props.trackId)
+    if (this.state.body === "") {
+      alert("You must provide some content");
+    } else {
+      this.props.createComment(this.state, this.props.trackId)
       .then(() => this.setState({body: ""}));
+    }
+
+    document.querySelectorAll('input').forEach((el) => el.value = "");
   }
 
   update (field) {
