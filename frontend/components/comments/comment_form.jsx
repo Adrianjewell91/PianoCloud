@@ -39,6 +39,7 @@ class CommentForm extends React.Component {
 
   render() {
   let display = "";
+  let revealButton = ""
 
   if(this.props.currentUser) {
       display = (
@@ -57,13 +58,17 @@ class CommentForm extends React.Component {
       </div>)
   }
 
+  if (this.props.currentUser) {
+    revealButton =
+      <button ref={(revealButton) => {this.revealButton = revealButton}}
+        onClick={this.revealForm}>
+        {this.props.replyName}
+      </button>
+  }
+
     return (
       <div>
-        <button ref={(revealButton) => {this.revealButton = revealButton}}
-                onClick={this.revealForm}>
-                {this.props.replyName}
-        </button>
-
+        {revealButton}
         {display}
       </div>
     )
