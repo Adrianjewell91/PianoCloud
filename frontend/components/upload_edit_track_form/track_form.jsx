@@ -101,7 +101,7 @@ class TrackForm extends React.Component {
     render() {
 
       let text = this.props.formType === "create" ?
-      "Upload A Song" : "Edit"
+      "Upload to PianoCloud" : "Edit"
 
       if (this.props.errors.length > 0) {
         document.getElementsByClassName("track-form-submit")[0]
@@ -117,15 +117,15 @@ class TrackForm extends React.Component {
                          <img className="edit-pic"
                            src={this.props.track.thumb_nail_url}/></div> : (
                              <div id='upload-buttons'>
-                                 <label>Thumbnail:
-                                   <input type="file"
+                                 <label className="file-label">Choose a Thumbnail
+                                   <input type="file" className="file-upload-btn"
                                      onChange={this.handleUpload("image")}/>
                                  </label>
 
                                  <br/>
 
-                                 <label>Song File(*.mp3):
-                                   <input type="file"
+                                 <label className="file-label">Choose an mp3 File
+                                   <input className="file-upload-btn" type="file"
                                      onChange={this.handleUpload("recording")}/>
                                  </label>
                              </div>
@@ -175,7 +175,7 @@ class TrackForm extends React.Component {
               </label>
               <br/>
 
-              <input className="submit"
+              <input className="submit track-form-submit"
                      type="submit"
                      value={text}/>
 

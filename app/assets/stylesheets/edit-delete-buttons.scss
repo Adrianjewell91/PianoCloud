@@ -9,3 +9,30 @@
 .form-text:hover, .back-to-page:hover {
     border-color:#B0B0B0;
 }
+
+.file-upload-btn {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.file-label {
+    width: fit-content;
+    border-radius: 3px;
+    // font-size: 1.25em;
+    // font-weight: 700;
+    text-indent: 5%;
+    padding-right: 5%;
+    color: white;
+    background-color: #FC561F;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.file_label:focus,
+.file_label:hover {
+    background-color: red;
+}
