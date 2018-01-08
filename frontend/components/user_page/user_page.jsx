@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import ReactModal from 'react-modal';
 
 import EditUserContainer from "./edit_user_container";
+import {setUploadListener} from '../../util/set_upload_listener';
 
 class UserPage extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class UserPage extends React.Component {
 
   handleOpenModal() {
     this.setState({showModal: true});
+
   }
 
   handleUpload(field) {
@@ -48,6 +50,7 @@ class UserPage extends React.Component {
 
       reader.onloadend = function() {
         that.setState({[fieldURL]: reader.result, [fieldFile]: file});
+
       };
 
       if (file) {
@@ -149,6 +152,7 @@ class UserPage extends React.Component {
                   <input className="submit change-profile-pic-input"
                          type="submit" value="Upload Image"/>
                 </form>
+                <script>{setUploadListener()}</script>
               </div>
               <ul>
                 {

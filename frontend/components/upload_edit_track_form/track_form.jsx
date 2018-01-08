@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {setUploadListener} from '../../util/set_upload_listener';
+
 
 class TrackForm extends React.Component {
   constructor (props) {
@@ -17,6 +19,10 @@ class TrackForm extends React.Component {
           this.setState(res.track);
       });
     }
+  }
+
+  componentDidMount() {
+    setUploadListener();
   }
 
   componentWillUnmount() {
