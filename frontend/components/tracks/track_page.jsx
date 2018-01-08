@@ -97,6 +97,7 @@ class TrackPage extends React.Component {
             <img height="100px" width="500px"
 src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
+            {modifyButtons}
           </div>
           <div className="song-stats-frame">
             <img className="song-stats-img"
@@ -106,7 +107,6 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
         <div className="comments">
 
-            {modifyButtons}
             <CommentFormContainer trackId={track.id}
                                   replyName="New Thread"
                                   parentId={null}/>

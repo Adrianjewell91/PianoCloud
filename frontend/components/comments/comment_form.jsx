@@ -61,7 +61,7 @@ class CommentForm extends React.Component {
   if (this.props.currentUser) {
     revealButton =
       <button ref={(revealButton) => {this.revealButton = revealButton}}
-        onClick={this.revealForm}>
+        onClick={this.revealForm} className="reply-name">
         {this.props.replyName}
       </button>
   }

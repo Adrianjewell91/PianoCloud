@@ -9,9 +9,10 @@ export const EditAndDeleteButtons = ({track, deleteTrack}) => {
   }
 
   const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
-                     <button>Edit</button></Link>;
+                     <button className="edit-delete-button">Edit</button></Link>;
 
-  const deleteButton = <button onClick={handleDeleteClick.bind(this)}>
+  const deleteButton = <button className="edit-delete-button"
+                               onClick={handleDeleteClick.bind(this)}>
                        Delete</button>;
 
   return (<div className="edit-delete">{editButton}{deleteButton}</div>);
@@ -21,9 +22,10 @@ export const EditAndDeleteButtons = ({track, deleteTrack}) => {
 export const JustTheButtons = ({track, handleClick}) => {
 
     const editButton = <Link to={`/${track.artist}/${track.title}/edit`}>
-                       <button>Edit</button></Link>;
+                       <button className="edit-delete-button">Edit</button></Link>;
 
-    const deleteButton = <button onClick={handleClick}>
+    const deleteButton = <button className="edit-delete-button"
+                                 onClick={handleClick}>
                          Delete Track</button>;
 
    return (<div className="edit-delete">{editButton}{deleteButton}</div>);

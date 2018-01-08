@@ -100,7 +100,8 @@ class UserPage extends React.Component {
       artist.thumb_nail_url;
 
       if (this.props.currentUser && (this.props.currentUser.id === artist.id)){
-        editButton = (<button onClick={this.handleOpenModal.bind(this)}>Edit
+        editButton = (<button className="edit-delete-button"
+                              onClick={this.handleOpenModal.bind(this)}>Edit
                       </button>);}
 
     }
