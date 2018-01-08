@@ -110,7 +110,7 @@ class TrackForm extends React.Component {
       }
 
       const backButton = <Link to="/stream">
-                         <button>Back To Stream</button></Link>
+                         <button className="back-to-page">Back To Stream</button></Link>
 
       const currentImage = this.props.track ?
                          <div className="edit-pic-frame">
@@ -175,7 +175,7 @@ class TrackForm extends React.Component {
               </label>
               <br/>
 
-              <input className="track-form-submit"
+              <input className="submit"
                      type="submit"
                      value={text}/>
 

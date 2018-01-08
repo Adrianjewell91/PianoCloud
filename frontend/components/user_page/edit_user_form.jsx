@@ -42,21 +42,24 @@ class EditUserForm extends React.Component {
         <form onSubmit={this.handleSubmit.bind(this)}>
 
             <input type="text"
+                   className="form-text"
                    placeholder="Name"
                    onChange={this.update('name')}
                    value={this.state.name}></input>
 
             <input type="text"
+                   className="form-text"
                    placeholder="Email"
                    onChange={this.update('email')}
                    value={this.state.email}></input>
 
             <input type="text"
+                   className="form-text"
                    placeholder="Location"
                    onChange={this.update('location')}
                    value={this.state.location}></input>
 
-                 <input type="submit"/>
+                 <input className="submit" type="submit"/>
         </form>
 
       </div>

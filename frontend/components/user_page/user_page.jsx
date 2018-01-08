@@ -144,7 +144,7 @@ class UserPage extends React.Component {
                     onChange={this.handleUpload("image")}>
                   </input>
                   <br/>
-                  <input className="change-profile-pic-input"
+                  <input className="submit"
                          type="submit" value="Upload Image"/>
                 </form>
               </div>
