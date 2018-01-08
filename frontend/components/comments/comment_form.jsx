@@ -27,6 +27,7 @@ class CommentForm extends React.Component {
     }
 
     document.querySelectorAll('input').forEach((el) => el.value = "");
+    this.revealForm();
   }
 
   update (field) {
