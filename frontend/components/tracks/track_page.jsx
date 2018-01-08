@@ -106,10 +106,12 @@ src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/waveform.png"/>
 
         <div className="comments">
 
-            <CommentFormContainer trackId={track.id}/>
-
-
             {modifyButtons}
+            <CommentFormContainer trackId={track.id}
+                                  replyName="New Thread"
+                                  parentId={null}/>
+
+
 
             <ul className="comments-ul">
               {

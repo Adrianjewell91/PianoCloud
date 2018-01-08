@@ -3,7 +3,15 @@ import React from 'react';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {body: ""}
+    this.state = {body: "", parent_id: this.props.parentId};
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.revealForm = this.revealForm.bind(this);
+  }
+
+  revealForm() {
+    this.formBox.classList.toggle('hidden');
+    this.revealButton.classList.toggle('selected');
   }
 
   handleSubmit (e) {
@@ -11,8 +19,15 @@ class CommentForm extends React.Component {
 
     document.getElementById('submit-comment').blur()
 
-    this.props.createComment(this.state, this.props.trackId)
+    if (this.state.body === "") {
+      alert("You must provide some content");
+    } else {
+      this.props.createComment(this.state, this.props.trackId)
       .then(() => this.setState({body: ""}));
+    }
+
+    document.querySelectorAll('input').forEach((el) => el.value = "");
+    this.revealForm();
   }
 
   update (field) {
@@ -27,7 +42,7 @@ class CommentForm extends React.Component {
 
   if(this.props.currentUser) {
       display = (
-        <div className="comment-form">
+        <div className="comment-form hidden" ref={(formBox) => {this.formBox = formBox}}>
           <div className="comment-form-pic-frame">
               <img className="comment-form-pic"
                    src={this.props.currentUser.thumb_nail_url}/>
@@ -44,6 +59,11 @@ class CommentForm extends React.Component {
 
     return (
       <div>
+        <button ref={(revealButton) => {this.revealButton = revealButton}}
+                onClick={this.revealForm}>
+                {this.props.replyName}
+        </button>
+
         {display}
       </div>
     )

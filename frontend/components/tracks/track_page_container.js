@@ -11,13 +11,13 @@ import {fetchComments, deleteComment} from '../../actions/comment_actions';
 import {toArray} from "../../util/selectors";
 import TrackPage from "./track_page";
 
+import {nestComments} from "../../selectors/nest_comments";
 
 const mapStateToProps = (state,ownProps) => {
-
   return {
     currentUser: state.session.currentUser,
     tracks: toArray(state.entities.tracks),
-    comments: toArray(state.entities.comments),
+    comments: nestComments(state.entities.comments, 'id', 'parent_id'),
     nowPlaying: state.entities.nowPlaying[0]
   };
 }

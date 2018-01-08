@@ -77,6 +77,13 @@ button:focus, button:active
     transition: background-color 1.5s;
 }
 
+.selected {
+  background: grey;
+}
+
+.hidden {
+  display: none;
+}
 
 /*---*/
 
