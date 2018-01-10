@@ -142,7 +142,8 @@ class UserPage extends React.Component {
 
                 <br/>
                 <h1>Change Profile Image</h1>
-                <form onSubmit={this.handleSubmit.bind(this)}>
+                <form   className="upload-user-image-modal"
+                        onSubmit={this.handleSubmit.bind(this)}>
                   <label className="file-label">Choose a new Thumbnail
                     <input type="file" className="file-upload-btn"
                       onChange={this.handleUpload("image")}>
