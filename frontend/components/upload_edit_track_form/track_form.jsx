@@ -138,7 +138,7 @@ class TrackForm extends React.Component {
                            );
 
       return (
-        <div >
+        <div className="track-form-wrapper">
           <div className="track-form">
             <h1>{text}</h1>
 
