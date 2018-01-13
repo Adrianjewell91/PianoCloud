@@ -47,7 +47,7 @@ class Greeting extends React.Component {
     return (
       <div className="splash">
 
-       <h1>Connect with PianoCloud</h1>
+       <h1>Listen On PianoCloud</h1>
        {search_input}
      </div>
     );
