@@ -46,7 +46,7 @@ Organization of CSS Styling:
 }
 
 .greeting-background {
-  background-image: url(https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg);
+  // background-image: url(https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg);
   height: -webkit-fill-available;
 }
 
@@ -54,8 +54,8 @@ Organization of CSS Styling:
   margin-left: 2.7%;
   margin-right: 2.7%;
   background-color: white;
-  padding-top: 35px;
-  padding-bottom: 60px;
+  // padding-top: 35px;
+  // padding-bottom: 60px;
   border-radius: 7px;
   min-width: 1000px;
 }

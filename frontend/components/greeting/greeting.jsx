@@ -46,9 +46,12 @@ class Greeting extends React.Component {
 
     return (
       <div className="splash">
-
-       <h1>Listen On PianoCloud</h1>
-       {search_input}
+        <img className="splash-image"
+             src="https://s3-us-west-2.amazonaws.com/pianocloud-adrianjewell/hero.jpg"/>
+        <div className="splash-title-search">
+          <h1>Listen On PianoCloud</h1>
+          {search_input}
+        </div>
      </div>
     );
   }
