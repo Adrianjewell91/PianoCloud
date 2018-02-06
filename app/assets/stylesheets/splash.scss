@@ -1,3 +1,8 @@
+.splash {
+  display: flex;
+  justify-content: space-around;
+}
+
 .splash-image {
   opacity: .40;
   width: 100%;
@@ -9,7 +14,6 @@
   flex-direction: column;
   position: absolute;
   top: 25%;
-  left: 15%;
 }
 
 .splash h1 {
